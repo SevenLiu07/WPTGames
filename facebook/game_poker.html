@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="Play free poker online with the PlayWPT casino game. The most authentic texas holdem poker play online!" />
+<meta name="keywords" content="poker,texas holdem,online poker,online casino,free poker,poker games,free texas holdem,free online poker,play wpt, wpt" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=10">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" />
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="Pragma" content="no-cache" />
+<title>PLAYWPT</title>
+<link href="../css/reset.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body id="gm_pic" class="game_poker" style="overflow-y: auto; overflow-x: auto;">
+<div class="chose_game flr" id="change_bg">
+  <!--<div class="panels_poker">-->
+       <div class="gm_part_fb">
+         <div class="gm_con_fb" style=" background: none;">
+           <div id="FlashInputDiv"></div>
+           <div id="gameSwf"></div>
+         </div>
+         <div class="copyright">PlayWPT ©2017 WPT Enterprises, Inc.</div>
+       </div>
+  </div>
+<!--</div>-->
+<div class="clear"></div>
+<div id="poker" class="widget-dialog small_shop" style="display: none;"><a href="javascript:void('close');" class="close" id="close" hidefocus style="margin-right: 8px; margin-top: -5px;"></a>
+<iframe id="frame_shop" name="frame_shop" src="../shop/shop.html" width="642" height="571" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+</div>
+<div id="personal" class="widget-dialog open_personal" style="display: none;"><a href="javascript:void('close');" class="close" id="close_pers" hidefocus style="margin-right: 0;"></a>
+<iframe name="frame_personal" src="../personal/index.html" width="595" height="560" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+</div>
+<div id="payment" class="widget-dialog small_shop" style="display: none;"><a href="javascript:void('close');" class="close" id="close_pay" hidefocus></a>
+<iframe name="frame_pay" id="frame_pay" src="" width="642" height="571" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+</div>
+<div id="leaderboard" class="widget-dialog small_shop" style="display: none;"><a href="javascript:void('close');" class="close" id="close_lb" hidefocus style="margin-right: 18px; top:60px;"></a>
+<iframe name="frame_lb" id="frame_lb" src="" width="646" height="571" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+</div>
+<!--选择游戏角色头像-->
+<div id="dialog_head" class="widget-dialog" style="display: none;">
+	<div class="topbg"></div>
+	<a href="javascript:void('close');" class="close" hidefocus></a>
+	<div class="pop_bg">
+	<h2 style="text-align: center">Introduce yourself</h2>
+	<!--<p style="text-align: center">Select an avatar and set a username</p>-->
+	<div class="chose_head" id="chose_head">
+		<div id="show_head" style="display: none;"><!--选择头像部分-->
+			<div class="chose_con">
+				<p style="padding-bottom: 5px;">Select an avatar</p>
+				<a href="javascript:void(0);" class="fll ch_default active_head" id="1"><img src="https://static.playwpt.com/www/images/1008.png" id="man"><span class="active_icon" id="act_icon_1" style="display: block;"></span></a>
+				<a href="javascript:void(0);" class="flr ch_default" id="2"><img src="https://static.playwpt.com/www/images/2004.png" id="woman"><span class="active_icon" id="act_icon_2" style="display: none;"></span></a><div class="clear"></div>
+			</div>
+				<div class="start_gm" id="start_gm"><input name="" type="submit" value=" " id="open_mail"></div><div class="clear"></div>
+		</div>
+		<div id="show_name"><!--username部分-->
+			<div class="chose_con">
+				<p style="padding-top: 5px;">Set a username</p>
+				<input name="" type="text" placeholder="Enter a Display Name" maxlength="20" value="" id="ipt_name" style="margin-top: 5px;">
+				<div class="worn" id="worn_name"></div>
+			</div>
+				<div class="next_btn" id="btn_next"><input name="" type="submit" value=" "></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	</div><!--pop_bg end/-->
+	<div class="botbg"></div>
+</div>
+<!--选择游戏角色头像 end/-->
+<!--IP被封-->
+<div id="dialog_ip" class="widget-dialog" style="display: none;">
+	<div class="topbg"></div>
+	<div class="pop_bg">
+	<div class="ip_worn"></div>
+	<p id="info_ip"></p>
+	</div><!--pop_bg end/-->
+	<div class="botbg"></div>
+</div><!--IP被封-->
+<!--支付成功提示信息弹窗-->
+<div id="complete" class="widget-dialog" style="display: none;">
+            <div class="topbg" id="show_title"><div class="notice_title"></div> </div>
+            <div class="pop_bg">
+                <div class="vali_con"><p id="m_info"></p></div>
+                <div class="qd_btn" id="qd_ok"><input name="" type="submit" value=" "></div><div class="clear"></div>
+            </div><!--pop_bg end/-->
+            <div class="botbg"></div>
+</div><!--/.widget-dialog支付成功提示信息弹窗-->
+<div id="dialog_flv" class="widget-dialog dialog_flv" style="display: none;"><!--flash版本提示窗口-->
+     <div class="topbg"></div>
+     <a href="javascript:void('close');" class="close close_btn" hidefocus></a>
+     <div class="pop_bg">
+       <div class="retry_con"><p id="flv_info"></p></div>
+       <div class="btn_retry" id="btn_retry"><a href="javascript:void (0)"></a> </div>
+     </div><!--pop_bg end/-->
+     <div class="botbg"></div>
+</div><!--flash版本提示窗口 end/-->
+<!--统一提示弹窗-->
+<div id="dialog_public" class="widget-dialog" style="display: none;">
+	<div class="topbg"></div>
+	<a href="javascript:void('close');" class="close" hidefocus></a>
+	<div class="pop_bg">
+		<h2 id="title_m">Congratulations!</h2>
+	<div class="mail_info">
+		<p id="pub_info"></p>
+	</div>
+  <div class="qd_btn" id="btn_ok"><input name="" type="submit" value=" "></div><div class="clear"></div>
+	</div><!--pop_bg end/-->
+	<div class="botbg"></div>
+</div>
+
+<script type="text/javascript" src="../js/our.js"></script>
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+</script>
+<!-- End Google Analytics -->
+<script type="text/javascript" src="https://static.playwpt.com/www/scripts/google_tg.js" defer></script><!--google统计-->
+<script type="text/javascript" src="https://www.googleadservices.com/pagead/conversion_async.js" charset="utf-8"></script>
+<script type="text/javascript" src="../js/swfobject.js"></script>
+<script type="text/javascript" src="js/game_poker.js?version=2.16"></script><!--?version=1.13-->
+<script type="text/javascript" src="../js/dialog.js"></script>
+
+<script type="text/javascript" src="https://msg.playwpt.com/wptweb/scripts/mc_wpt.js"></script>
+<script type="text/javascript" src="https://static.playwpt.com/poker/client/scripts/flash.input.js"></script>
+<script type="text/javascript" src="https://static.playwpt.com/poker/client/scripts/flash.mouse.js"></script>
+<script type="text/javascript">
+
+//FB sdk
+window.fbAsyncInit = function() {
+    FB.init({
+      appId: '122212108221118',
+      xfbml      : true,
+      version    : 'v2.7'
+    });
+  // 登录集成
+/*  function onLogin(response) {
+    if (response.status == 'connected') {
+      FB.api('/me?fields=first_name', function(data) {
+        *//*var welcomeBlock = document.getElementById('fb-welcome');
+        welcomeBlock.innerHTML = 'Hello, ' + data.first_name + '!';*//*
+      });
+    }
+  }*/
+  FB.getLoginStatus(function(response) {
+    if (response.status == 'connected') {
+    } else {
+      // Otherwise, show Login dialog first.
+      FB.login(function(response) {
+      }, {scope: 'user_friends, email'});
+    }
+  });
+};
+(function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+/*创建订单 小商城打开fb支付参数pay_info：1*/
+function FacebookCreditsOrder(order_info,pay_info) {
+  var GoodsName=document.getElementsByTagName('iframe')[0].contentWindow.goods_nm;//获取小商城存储的商品名称
+  var obj = {
+    method: 'pay',
+    action: 'purchaseitem',
+    product: order_info.url,
+    request_id: order_info.pid
+    //quantity: 1
+  };
+  FB.ui(obj, function (data) {
+    if (data) {
+      var parameter = {
+        "amount": data.amount,
+        "currency": data.currency,
+        "payment_id": data.payment_id,
+        "quantity": data.quantity,
+        "request_id": data.request_id,
+        "signed_request": data.signed_request,
+        "status": data.status
+      };
+      if (data.status == 'completed') {
+        var url = "https://shop.playwpt.com/webapi/page/Home/FacebookCallBackHandler?amount=" + data.amount + "&currency=" + data.currency + "&payment_id=" + data.payment_id + "&quantity=" + data.quantity + "&signed_request=" + data.signed_request + "&status=" + data.status+"&request_id="+data.request_id;
+        new Request(url, {mode:"jsonp",maxTime: 8000})
+            .on('complete', function (e) {
+              var return_obj = e.data;
+              if (return_obj.State == 1) {
+                //closeMall();
+                try {
+                    document.getElementById("gameSwf").pay_success();
+                    } catch (e) {
+                }
+                //支付成功提示信息弹窗 小商城打开fb支付参数pay_info：1
+                if(pay_info==1){
+                  $('#complete').open();
+                  $("#m_info").innerHTML = 'You have successfully purchased ' + GoodsName + '. Good luck! ';
+                }
+              }
+              else if (return_obj.State != 1) {
+                try {
+                    document.getElementById("gameSwf").close_pay();
+                    } catch (e) {
+                }
+              }
+            }).send();
+      }
+      else {
+        try {
+            document.getElementById("gameSwf").close_pay();//关闭支付
+            } catch (e) {
+        }
+      }
+    }
+  });
+}
+/*window.onload=function(){
+  lzMessageCenter.queryUnreadCount(function(count) {
+    console.log(count);
+  });
+};*/
+//打开消息中心弹窗
+function open_dialog(element){
+  lzMessageCenter.show();
+}
+//消息中心初始化
+lzMessageCenter.init({
+  hostName: 'msg.playwpt.com',
+  appName: location.parameters.appName || 'dzpk',
+  skinName: 'wpt',
+  httpType:'https://',
+  pinnedTarget: document.getElementById('game'),
+  width: 595,
+  height: 511,
+  top: 60
+});
+/*flashChecker();//检测用户浏览器是否安装flash插件*/
+</script>
+</body>
+</html>

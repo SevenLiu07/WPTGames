@@ -1,0 +1,149 @@
+<div ms-controller="personal"    class="widget-dialog ms-controller QA_myAccount" ms-widget="dialog,show_person,$ssOpts">
+  <!--content-->
+  <div class="corner_bg scroll_con" ms-controller="personal"><!--scroll_con height:619px-->
+    <div class="corner_con info_width QA_userInfo">
+      <div class="column_title">{{nick_name}}</div>
+      <div class="column_con show_infos">
+        <ul>
+          <li class="clear"><p class="fll">Email</p><div class="infos fll">{{email}}</div><a href="javascript:void(0)" ms-click="btnValidate()" ms-visible="validate">Validate</a> </li>
+          <li class="clear"><p class="fll">Password</p><div class="infos fll">******</div><a href="javascript:void(0)" ms-click="btnChangepwd()" ms-visible="changepwd">Change Password</a></li>
+        </ul>
+        <!--change password popups-->
+        <div class="widget-dialog popup popup_small" ms-widget="dialog,show_validate,$ggOpts" style="display: block;">
+          <div class="top_pop">
+            <div class="top_leftbg fll"></div>
+            <div class="top_centbg top_centbg_small fll">
+              <div class="title title_small">
+                <div class="title_leftbg">
+                  <div class="title_rightbg"><div class="title_name title_pwd" id="popup_titles"></div><!--样式保留title_name--></div>
+                </div>
+              </div>
+            </div>
+            <div class="top_rightbg fll">
+              <div class="close_btns flr" ms-click="_close" ms-if="showClose"><a href="javascript:void(0)"></a></div>
+            </div>
+          </div><!--/end top_pop弹窗头部-->
+          <div class="pop_con_rightbg">
+          <div class="pop_con">
+            <!--con-->
+            <div ms-visible="show_validate">
+              <div class="corner_bg small_pop_con">
+                <p ms-html="info_validate" class="pads"></p>
+              </div>
+              <div class="btn_validate"><a href="javascript:void(0)" ms-click="_close"></a> </div>
+            </div><!--show_validate-->
+            <div ms-visible="show_changepwd" ms-controller="pwd">
+              <div class="corner_bg small_pop_con">
+                <form id="change_pwd" name="change_pwd" action="" method="post">
+                <div class="show_txt clear">
+                  <p class="fll">Old Password:</p>
+                  <input oncut="return false;" oncopy="return false;" onpaste="return false;" id="oldpwd" name="" maxlength="16" type="password" class="change_input flr"/>
+                </div>
+                <div class="show_txt clear">
+                  <p class="fll">New Password:</p>
+                  <input oncut="return false;" oncopy="return false;" onpaste="return false;" id="password" name="" maxlength="16" type="password" class="change_input flr"/>
+                </div>
+                <div class="show_txt clear">
+                  <p class="fll">Confirm Password:</p>
+                  <input oncut="return false;" oncopy="return false;" onpaste="return false;" id="cpassword" name="" maxlength="16" type="password" class="change_input flr"/>
+                </div>
+                <div class="erro">{{erro_pwd}}</div>
+                </form>
+              </div>
+              <div class="btn_pwd"><a href="javascript:void(0)" ms-click="change_onsubmit_email()"></a></div><!--_close-->
+              <input type="hidden" name="sub_cg_pwd" id="sub_cg_pwd" value="0" />
+            </div><!--show_changepwd-->
+          </div>
+          </div><!--/end pop_con_rightbg弹窗内容部分-->
+          <div class="bottom_pop">
+            <div class="bot_leftbg fll"></div>
+            <div class="bot_centbg bot_centbg_small fll"></div>
+            <div class="bot_rightbg fll"></div>
+          </div>
+        </div>
+        <!--change password popups end-->
+      </div>
+    </div><!--personal info end/-->
+    <div id="each_edit">
+    <div class="corner_con info_width QA_cardInfo"><!--credit card info/-->
+    <div class="column_title">Credit Card</div>
+    <div class="column_con show_infos">
+      <ul>
+        <li class="clear">
+          <p class="fll">Credit Card Number</p>
+          <div class="infos fll" ms-visible="show_cardnum" ms-html="creditNum"></div>
+          <input id="txt_cardnum" ms-blur="set_info('credit')" name="card" maxlength="16" type="text" class="change_input fll" ms-visible="txt_cardnum"/>
+          <a href="javascript:void(0)" ms-click="show_change('txtcardnum')">Edit</a><div class="clear"></div>
+          <div class="erro">{{erro_cardnum}}</div>
+        </li>
+        <li class="clear">
+          <p class="fll">Expiration Date</p>
+          <div class="infos fll" ms-visible="show_date" ms-html="expirationDate"></div>
+          <input id="txt_date" ms-blur="set_info('date')" name="date" placeholder="MMYY" maxlength="4" type="text" class="change_input fll" ms-visible="txt_date"/>
+          <a href="javascript:void(0)" ms-click="show_change('txtdate')">Edit</a><div class="clear"></div>
+          <div class="erro">{{erro_date}}</div>
+        </li>
+      </ul>
+    </div>
+    </div><!--credit card info end/-->
+    <div class="corner_con info_width no_margin QA_billingInfo"><!--billing info/-->
+          <div class="column_title">Billing Information</div>
+          <div class="column_con show_infos">
+            <ul>
+              <li class="clear">
+                <p class="fll">Name</p>
+                <div class="infos fll" ms-visible="show_name" ms-html="name"></div>
+                <input id="txt_name" ms-blur="set_info('name')" name="name" maxlength="30" type="text" class="change_input fll" ms-visible="txt_name"/>
+                <a href="javascript:void(0)" ms-click="show_change('txtname')">Edit</a><div class="clear"></div>
+                <div class="erro">{{erro_name}}</div>
+              </li>
+              <li class="clear">
+                <p class="fll">Address</p>
+                <div class="infos fll" ms-visible="show_addr" ms-html="address"></div>
+                <input id="txt_addr" ms-blur="set_info('addr')" name="address" maxlength="50" type="text" class="change_input fll" ms-visible="txt_addr"/>
+                <a href="javascript:void(0)" ms-click="show_change('txtaddr')">Edit</a><div class="clear"></div>
+                <div class="erro">{{erro_addr}}</div>
+              </li>
+              <li class="clear">
+                <p class="fll">Country</p>
+                <div class="infos fll" ms-visible="show_country" ms-html="country"></div>
+                <select id="sel_country" ms-blur="set_info('country')" name="" class="sel_country fll" ms-visible="sel_country" ms-change="show_textbox">
+                  <option value="USA">United States of America</option>
+                  <option value="GB">United Kingdom</option>
+                  <option value="CA">Canada</option>
+                  <option value="AU">Australia</option>
+                  <option value="FR">France</option>
+                  <option value="0">Other</option>
+                 </select>
+                <input id="txt_country" ms-blur="set_info('country')" name="name" maxlength="20" type="text" class="input_other fll" ms-visible="txt_country"/>
+                <a href="javascript:void(0)" ms-click="show_change('selcountry')">Edit</a><div class="clear"></div>
+                <div class="erro">{{erro_country}}</div>
+              </li>
+              <li class="clear">
+                <p class="fll">City</p>
+                <div class="infos fll" ms-visible="show_city" ms-html="city"></div>
+                <input id="txt_city" ms-blur="set_info('city')" name="city" maxlength="20" type="text" class="change_input fll" ms-visible="txt_city"/>
+                <a href="javascript:void(0)" ms-click="show_change('txtcity')">Edit</a><div class="clear"></div>
+                <div class="erro">{{erro_city}}</div>
+              </li>
+              <li class="clear">
+                <p class="fll">State</p>
+                <div class="infos fll" ms-visible="show_state" ms-html="state"></div>
+                <input id="txt_state" ms-blur="set_info('state')" name="state" maxlength="20" type="text" class="change_input fll" ms-visible="txt_state"/>
+                <a href="javascript:void(0)" ms-click="show_change('txtstate')">Edit</a><div class="clear"></div>
+                <div class="erro">{{erro_state}}</div>
+              </li>
+              <li class="clear">
+                <p class="fll">Postal Code</p>
+                <div class="infos fll" ms-visible="show_postal" ms-html="postal"></div>
+                <input id="txt_postal" ms-blur="set_info('postal')" name="postal" maxlength="30" type="text" class="change_input fll" ms-visible="txt_postal"/>
+                <a href="javascript:void(0)" ms-click="show_change('txtpostal')">Edit</a><div class="clear"></div>
+                <div class="erro">{{erro_postal}}</div>
+              </li>
+            </ul>
+          </div>
+    </div><!--billing info end/-->
+    </div><!--each_edit end/-->
+  </div>
+  <!--content end-->
+</div>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Personal Center</title>
+<link href="../css/reset.css" rel="stylesheet" type="text/css">
+<link href="css/personal.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="personal"><!--<a href="#" class="close"></a>-->
+     <div class="per_t_bg"></div>
+     <div class="per_c_bg">
+          <div class="widget-tabpanel" id="panel_personal">
+          <ul class="tabs">
+            <li class="tab" id="tab1"></li>
+            <li class="tab" id="tab2"></li>
+            <li class="tab" id="tab3"></li>
+            <li class="tab" id="tab4"></li>
+            <li class="tab" id="tab5"></li>
+          </ul>
+          <div class="panels" id="scroll-1">
+            <!--panel PERSONAL-->
+            <div class="panel">
+                 <ul id="infos" class="clear">
+                 <li><div class="info"><span class="sp_width">Name</span><span class="sp_widths" id="user_name" style="width: 310px;"></span><a href="javascript:void (0)" id="edit_nm" class="edit">Edit</a></div>
+                     <div class="open_ul" id="close_name">
+                       <div class="txtbox"><p class="ques">Name</p>
+                         <input name="" id="name" maxlength="30" type="text" class="txt_iput"/>
+                         <div class="clears"></div>
+                         <div class="worn error_Msg"><p id="error_name"></p></div>
+                       </div>
+                       <div class="btns">
+                            <div class="btn_apply fll" id="nm_state"><a href="javascript:void (0)" onclick="check_nm()"></a> </div>
+                            <div class="btn_discard flr"><a href="javascript:void (0)" class="discard"></a> </div><div class="clears"></div>
+                       </div>
+                     </div>
+                 </li>
+                   <li><div class="info"><span class="sp_width">Email Address</span><span class="sp_widths" id="mail_val"></span>
+                     <input name="" type="button" id="e_vali" class="validate" />
+                   </div>
+                   </li>
+                   <li><div class="info"><span class="sp_width">Password</span><span class="sp_pwd" id="pwd_val">******</span><span class="get_pwd" id="pwd_time"></span><a href="javascript:void (0)" id="edit_pwd" class="edit">Edit</a></div>
+                       <div class="open_ul" id="close_pwd"><!--Password-->
+                         <form id="change_pwd" name="change_pwd" action="" method="post">
+                         <div class="txtbox"><p class="widthp">Old Password</p>
+                           <input oncut="return false;" oncopy="return false;" onpaste="return false;" name="" maxlength="16" type="password" class="txt_iput" id="oldpwd"/>
+                           <div class="clears"></div>
+                         </div>
+                         <div class="txtbox"><p class="widthp">New Password</p>
+                           <input oncut="return false;" oncopy="return false;" onpaste="return false;" name="password" id="password" onchange="q_checkUPassword();"  maxlength="16" type="password" class="txt_iput"/><div class="clear"></div>
+                           <div class="clears"></div>
+                         </div>
+                         <div class="txtbox"><p class="widthp">Confirm Password</p>
+                           <input oncut="return false;" oncopy="return false;" onpaste="return false;" name="cpassword" id="cpassword" onchange="q_checkUPassword();"  maxlength="16" type="password" class="txt_iput"/><div class="clears"></div>
+                           <div class="clears"></div>
+                         </div>
+                         <div class="worn error_Msg"><p id="error_mess_cg"></p></div>
+                         <div class="btns">
+                              <div class="btn_apply fll"><a href="javascript:void (0) " onclick="change_onsubmit_email();" target="_self"></a> </div>
+                              <div class="btn_discard flr"><a href="javascript:void (0)" class="discard"></a> </div><div class="clears"></div>
+                         </div>
+                         <input type="hidden" name="sub_cg_pwd" id="sub_cg_pwd" value="0" />
+                         </form>
+                       </div>
+                   </li>
+                   <li><div class="info"><span class="sp_width">Address</span><span class="sp_widths" id="addr_val" style="width: 330px;"></span><a href="javascript:void (0)" class="edit" id="edit_addr">Edit</a></div>
+                       <div class="open_ul" id="close_addr">
+                         <div class="txtbox"><p class="ques">Address</p>
+                           <input name="" maxlength="50" type="text" class="txt_iput" id="addr"/>
+                           <div class="clears"></div>
+                         </div>
+                         <div class="worn error_Msg"><p id="error_addr"></p></div>
+                         <div class="btns">
+                              <div class="btn_apply fll"><a href="javascript:void (0)" id="cg_addr"></a> </div>
+                              <div class="btn_discard flr"><a href="javascript:void (0)" class="discard"></a> </div><div class="clears"></div>
+                         </div>
+                       </div>
+                   </li>
+                   <li><div class="info"><span class="sp_width">City</span><span class="sp_widths" id="city_val"></span><a href="javascript:void (0)" id="edit_city" class="edit">Edit</a></div>
+                       <div class="open_ul" id="close_city">
+                         <div class="txtbox"><p class="ques">City</p>
+                           <input name="" maxlength="20" type="text" id="city" class="txt_iput"/><div class="clears"></div>
+                         </div>
+                         <div class="worn error_Msg"><p id="error_city"></p></div>
+                         <div class="btns">
+                              <div class="btn_apply fll"><a href="javascript:void (0)" id="cg_city"></a> </div>
+                              <div class="btn_discard flr"><a href="javascript:void (0)" class="discard"></a> </div><div class="clears"></div>
+                         </div>
+                       </div>
+                   </li>
+                   <li><div class="info"><span class="sp_width">State</span><span class="sp_widths" id="state_val"></span><a href="javascript:void (0)" id="edit_state" class="edit">Edit</a></div>
+                       <div class="open_ul" id="close_state">
+                         <div class="txtbox"><p class="ques">State</p><input name="" maxlength="20" type="text" id="state" class="txt_iput"/><div class="clears"></div> </div>
+                         <div class="worn error_Msg"><p id="error_state"></p></div>
+                         <div class="btns">
+                              <div class="btn_apply fll"><a href="javascript:void (0)" id="cg_state"></a> </div>
+                              <div class="btn_discard flr"><a href="javascript:void (0)" class="discard"></a> </div><div class="clears"></div>
+                         </div>
+                       </div>
+                   </li>
+                   <li><div class="info"><span class="sp_width">Postal Code</span><span class="sp_widths" id="pc_val"></span><a href="javascript:void (0)" id="edit_pc" class="edit">Edit</a></div>
+                       <div class="open_ul" id="close_pc">
+                         <div class="txtbox"><p class="ques">Postal Code</p>
+                           <input name="" maxlength="6" type="text" class="txt_iput" id="pos_input"/><div class="clears"></div>
+                         </div>
+                         <div class="worn error_Msg"><p id="error_pos"></p></div>
+                         <div class="btns">
+                              <div class="btn_apply fll"><a href="javascript:void (0)" id="pos_code"></a> </div>
+                              <div class="btn_discard flr"><a href="javascript:void (0)" class="discard"></a> </div><div class="clears"></div>
+                         </div>
+                       </div>
+                   </li>
+                   <li><div class="info"><span class="sp_width">Country</span><span class="sp_widths" id="coun_val"></span><a href="javascript:void (0)" id="edit_coun" class="edit">Edit</a></div>
+                       <div class="open_ul" id="close_coun">
+                         <div class="txtbox"><p class="ques">Country</p>
+                           <select name="" class="sel_iput_mid fll" id="country">
+                             <option value="United States">United States</option>
+                             <option value="United Kingdom">United Kingdom</option>
+                             <option value="Canada">Canada</option>
+                             <option value="Australia">Australia</option>
+                             <option value="France">France</option>
+                             <option value="0">Other</option>
+                            </select>
+                           <input name="" maxlength="20" type="text" class="txt_iput_mid fll" id="other_coun"/>
+                           <div class="clear"></div> </div>
+                         <div class="worn error_Msg"><p id="error_count"></p></div>
+                         <div class="btns">
+                              <div class="btn_apply fll"><a href="javascript:void (0)" id="cg_country"></a> </div>
+                              <div class="btn_discard flr"><a href="javascript:void (0)" class="discard"></a> </div><div class="clears"></div>
+                         </div>
+                       </div>
+                   </li>
+                   <li><div class="info"><span class="sp_width">Phone</span><span class="sp_widths" id="phone_val"></span><a href="javascript:void (0)" id="edit_ph" class="edit">Edit</a></div>
+                       <div class="open_ul" id="close_ph">
+                         <div class="txtbox"><p class="ques" style="width:80px;">Phone</p>
+                           <select name="" class="sel_iput_mid fll" id="phone">
+                             <option value="1">United States(1)</option>
+                             <option value="44">United Kingdom(44)</option>
+                             <option value="1">Canada(1)</option>
+                             <option value="61">Australia(61)</option>
+                             <option value="33">France(33)</option>
+                             <option value="0">Other</option>
+                           </select>
+                           <input name="" maxlength="3" type="text" class="txt_iput_phone fll" id="other_phone"/>
+                           <input name="" maxlength="11" type="text" class="txt_iput_mid fll" id="phone_num"/>
+                           <div class="clears"></div> </div>
+                         <div class="worn error_Msg"><p id="error_ph"></p></div>
+                         <div class="btns">
+                              <div class="btn_apply fll"><a href="javascript:void (0)" id="cg_phone"></a> </div>
+                              <div class="btn_discard flr"><a href="javascript:void (0)" class="discard"></a> </div><div class="clears"></div>
+                         </div>
+                       </div>
+                   </li>
+                   <li><div class="info"><span class="sp_width">Birthdate</span><span class="sp_widths" id="birth_val"></span><a href="javascript:void (0)" id="edit_bd" class="edit">Edit</a></div>
+                       <div class="open_ul" id="close_bd">
+                         <div class="txtbox"><p class="ques" style="padding-top: 20px;">Birthdate</p>
+                           <div class="birth">
+                           <p>Month</p>
+                           <select name="month" onchange="getDates('month_change')" id="month" class="sel_iputs">
+                           <script language="javascript" type="text/javascript">
+                           for(var i=1;i<=12;i++){
+                           document.write("<option value="+i+">"+i+"</option>");
+                           }
+                           </script>
+                           </select>
+                           </div>
+                           <div class="birth">
+                           <p>Day</p>
+                           <select name="day" id="day" class="sel_iputs">
+                           <script language="javascript" type="text/javascript">
+                           for(var i=1;i<=31;i++){
+                           document.write("<option value="+i+">"+i+"</option>");
+                           }
+                           </script>
+                           </select>
+                           </div>
+                           <div class="birth">
+                             <p>Year</p>
+                             <select name="year" onchange="getDates('year_change')" id="year" class="sel_iputs">
+                                                        <script language="javascript" type="text/javascript">
+                                                        var date=new Date();
+                                                        var year=date.getFullYear()-6;
+                                                        for(var i=year;i>=year-80;i--){document.write("<option value="+i+">"+i+"</option>");}
+                                                        function append(o,v){
+                                                        var option=new Option(v,v);
+                                                        o.options.add(option);
+                                                        }
+                                                        function getDates(show_change){
+                                                        var y=document.getElementsByName("year")[0].value;
+                                                        var m=document.getElementsByName("month")[0].value;
+                                                        var day=document.getElementsByName("day")[0];
+                                                          var day_num=day.value;
+                                                        day.innerHTML="";
+                                                        if(m==1 || m==3 || m==5 || m==7 || m==8 || m==10 || m==12){
+                                                        for(var j=1;j<=31;j++){append(day,j);}
+                                                        }
+                                                        else if(m==4 || m==6 || m==9 || m==11){
+                                                        for(var j=1;j<=30;j++){append(day,j);}
+                                                        }
+                                                        else if(m==2){
+                                                        var flag=true;
+                                                        flag=y%4==0&&y%100!=0||y%400==0;
+                                                        if(flag){
+                                                        for(var j=1;j<=29;j++){append(day,j);}
+                                                        }
+                                                        else{
+                                                        for(var j=1;j<=28;j++){append(day,j);}
+                                                        }
+                                                        }
+                                                        if(show_change=='year_change'){
+                                                          if(!flag&&m==2&&day_num==29){
+                                                             day.value=1;
+                                                          }else{
+                                                             day.value=day_num;
+                                                          }
+                                                        }
+                                                        }
+                                                        </script>
+                             </select>
+                           </div>
+                           <div class="clears"></div> </div>
+                         <div class="worn error_Msg"><p id="error_birth"></p></div>
+                         <div class="btns">
+                              <div class="btn_apply fll"><a href="javascript:void (0)" id="cg_birth"></a> </div>
+                              <div class="btn_discard flr"><a href="javascript:void (0)" class="discard"></a> </div><div class="clears"></div>
+                         </div>
+                       </div>
+                   </li>
+                 </ul>
+            </div>
+            <!--panel PERSONAL end/-->
+            <!--panel BILLING-->
+            <div class="panel">
+              <div class="title"><span>Credit card</span></div>
+              <ul id="info_billing" class="clear">
+                  <li><div class="info"><span class="sp_width">Credit card number</span><span class="sp_widths" id="card_num" style="padding-left: 20px;"></span><a href="javascript:void (0)" id="edit_number" class="edit">Edit</a></div>
+                      <div class="open_ul" id="close_num">
+                           <div class="txtbox"><p class="big_wd">Credit card number</p>
+                                <input name="" id="card" maxlength="16" type="text" class="txt_iput"/>
+                                <div class="clears"></div>
+                                <div class="worn error_Msg"><p id="error_card"></p></div>
+                           </div>
+                           <div class="btns">
+                                <div class="btn_apply fll"><a href="javascript:void (0)" id="cg_card_num"></a> </div>
+                                <div class="btn_discard flr"><a href="javascript:void (0)" class="discard"></a> </div><div class="clears"></div>
+                           </div>
+                        </div>
+                  </li><!--Credit card number end/-->
+                  <li><div class="info"><span class="sp_width">Expiration Date</span><span class="sp_widths" id="ex_val" style="padding-left: 20px;"></span><a href="javascript:void (0)" id="edit_exp" class="edit">Edit</a></div>
+                                       <div class="open_ul" id="close_ex">
+                                         <div class="txtbox"><p class="big_wd" style="padding-top: 20px;">Expiration Date</p>
+                                           <div class="birth">
+                                           <p>Month</p>
+                                           <select name="month" onchange="getDate()" id="months" class="sel_iputs">
+                                           <script language="javascript" type="text/javascript">
+                                           for(var i=1;i<=12;i++){
+                                           document.write("<option value="+i+">"+i+"</option>");
+                                           }
+                                           </script>
+                                           </select>
+                                           </div>
+                                           <div class="birth">
+                                             <p>Year</p>
+                                             <select name="year" onchange="getDate()" id="years" class="sel_iputs">
+                                                                        <script language="javascript" type="text/javascript">
+                                                                        var date_ex=new Date();
+                                                                        var year_ex=date_ex.getFullYear();
+                                                                        for(var i=year_ex;i<=year_ex+24;i++){document.write("<option value="+i+">"+i+"</option>");}
+                                                                        function append(o,v){
+                                                                        var option=new Option(v,v);
+                                                                        o.options.add(option);
+                                                                        }
+                                                                        function getDate(){
+                                                                        var y=document.getElementsByName("year")[0].value;
+                                                                        var m=document.getElementsByName("month")[0].value;
+                                                                        var day=document.getElementsByName("day")[0];
+                                                                        day.innerHTML="";
+                                                                        if(m==1 || m==3 || m==5 || m==7 || m==8 || m==10 || m==12){
+                                                                        for(var j=1;j<=31;j++){append(day,j);}
+                                                                        }
+                                                                        else if(m==4 || m==6 || m==9 || m==11){
+                                                                        for(var j=1;j<=30;j++){append(day,j);}
+                                                                        }
+                                                                        else if(m==2){
+                                                                        var flag=true;
+                                                                        flag=y%4==0&&y%100!=0||y%400==0;
+                                                                        if(flag){
+                                                                        for(var j=1;j<=29;j++){append(day,j);}
+                                                                        }
+                                                                        else{for(var j=1;j<=28;j++){append(day,j);}}
+                                                                        }
+                                                                        }
+                                                                        </script>
+                                             </select>
+                                           </div>
+                                           <div class="clears"></div> </div>
+                                         <div class="worn error_Msg"><p id="error_ex"></p></div>
+                                         <div class="btns">
+                                              <div class="btn_apply fll"><a href="javascript:void (0)" id="cg_ex"></a> </div>
+                                              <div class="btn_discard flr"><a href="javascript:void (0)" class="discard"></a> </div><div class="clears"></div>
+                                         </div>
+                                       </div>
+                  </li>
+                <!--<li><div class="info"><span class="sp_width">CCV2</span><span class="sp_widths" id="user_ccv"></span><a href="javascript:void (0)" id="edit_ccv" class="edit">Edit</a></div>
+                    <div class="open_ul" id="close_ccv">
+                         <div class="txtbox">
+                              <div class="doubt" id="doubt"><a href="javascript:void (0)"></a></div>
+                              <div class="tips" id="tips"><p>CCV2 is a three or four digitvalue which is on the back of the card</p></div>
+                              <p class="ques">CCV2</p>
+                              <input name="" id="ccv" maxlength="30" type="text" class="txt_iput"/>
+                              <div class="clears"></div>
+                              <div class="worn error_Msg"><p id="error_ccv"></p></div>
+                         </div>
+                         <div class="btns">
+                              <div class="btn_apply fll"><a href="javascript:void (0)" id="cg_ccv"></a> </div>
+                              <div class="btn_discard flr"><a href="javascript:void (0)" class="discard"></a> </div><div class="clears"></div>
+                         </div>
+                      </div>
+                </li>-->
+                </ul>
+            </div>
+            <!--panel BILLING end/-->
+            <div class="panel">
+              <div class="avatar_bg">
+                <div class="ava_list">
+                <div class="show_ava">
+                  <ul id="ava_list">
+                  </ul>
+                </div>
+                <div class="btn_get" id="btn_getAva"><a href="javascript:void(0);"></a> </div>
+                </div><!--ava_list end/-->
+                <div class="confirm_ava flr">
+                     <div class="avatar_pic">
+                       <ul id="ava_pic">
+                       </ul>
+                     </div>
+                     <div class="btn_ok" id="btn_curAvatar"><a href="javascript:void(0);"></a> </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel"><!--永久礼物-->
+              <div class="charm_bg">
+                <div class="charm_list">
+                <ul id="charms">
+                </ul>
+                </div>
+                <div class="btn_gift" id="btn_gift"><a href="javascript:void (0)"></a> </div>
+              </div>
+            </div><!--永久礼物 end/-->
+            <div class="panel">
+              <div class="title"><span class="ticket_name role">Name</span><span class="ticket_ex role">Amount</span><span class="ticket_ex">Expiration</span></div>
+              <div class="tickets">
+                <ul id="tk_list">
+                </ul>
+              </div>
+            </div>
+          </div>
+            <div id="open_tourney" class="widget-dialog"><!--门票弹出窗口-->
+                               <div class="topbg"><div class="tk_title"></div></div>
+                               <a href="javascript:void('close');" class="close" hidefocus></a>
+                               <div class="pop_bg">
+                                 <div class="tour_list">
+                                   <ul id="tour_list">
+                                     <li><a href="javascript:void (0)"><span>step 2 SNG</span><span>6/6</span></a> </li>
+                                     <li><a href="javascript:void (0)"><span>step 3 SNG</span><span>7/6</span></a> </li>
+                                     <li><a href="javascript:void (0)"><span>step 4 SNG</span><span>8/6</span></a> </li>
+                                   </ul>
+                                 </div>
+                                 <div class="btns_pop">
+                                      <div class="btn_close fll"><a href="javascript:void (0)"></a> </div>
+                                      <div class="btn_regist flr"><a href="javascript:void (0)"></a> </div><div class="clears"></div>
+                                 </div>
+                               </div><!--pop_bg end/-->
+                               <div class="botbg"></div>
+            </div><!--门票弹出窗口 end/-->
+            <div id="dialog" class="widget-dialog"><!--验证邮箱弹出窗口-->
+                 <div class="topbg" id="show_title"></div>
+                 <a href="javascript:void('close');" class="close" hidefocus></a>
+                 <div class="pop_bg">
+                   <div class="vali_con"><p id="m_info"></p></div>
+                   <div class="btns_pop">
+                        <div class="btn_vali" style="margin: 0 auto;" id="ben_vali"><a href="javascript:void (0)"></a> </div>
+                        <div class="btn_red_ok mar_auto" id="btn_ok" style="display: none;"><a href="javascript:void (0)"></a> </div><div class="clears"></div>
+                   </div>
+                 </div><!--pop_bg end/-->
+                 <div class="botbg"></div>
+            </div><!--验证邮箱弹出窗口 end/-->
+        </div>
+     </div>
+     <div class="per_b_bg"></div>
+</div>
+<script type="text/javascript" src="../js/our.js"></script>
+<script type="text/javascript" src="../js/tabpanel.js"></script>
+<script type="text/javascript" src="../js/dialog.js"></script>
+<script type="text/javascript" src="../scripts/BigInt.js"></script>
+<script type="text/javascript" src="../scripts/Barrett.js"></script>
+<script type="text/javascript" src="../scripts/RSA.js"></script>
+<script type="text/javascript" src="../scripts/CodeManage.js"></script>
+<script type="text/javascript" src="js/personal.js?v=2.2.7"></script>
+<script type="text/javascript" src="js/otherInfos.js?v=2.2.7"></script>
+<script type="text/javascript" src="js/email.js?v=2.1.9"></script>
+<script type="text/javascript">
+Date.prototype.format = function(format){
+var o = {
+"M+" : this.getMonth()+1, //month
+"d+" : this.getDate(), //day
+"h+" : this.getHours(), //hour
+"m+" : this.getMinutes(), //minute
+"s+" : this.getSeconds(),
+"q+" : Math.floor((this.getMonth()+3)/3), //quarter
+"S" : this.getMilliseconds() //millisecond
+};
+if(/(y+)/.test(format)) {
+format = format.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+}
+for(var k in o) {
+if(new RegExp("("+ k +")").test(format)) {
+format = format.replace(RegExp.$1, RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+}
+}
+return format;
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* CSS Document */
+/* --------------------------------------------------[Reset] */
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, p, blockquote, pre, form, fieldset, legend, button, input, textarea, th, td{ margin: 0; padding: 0; }
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, p, blockquote, pre, form, fieldset, legend, button, input, textarea, th, td{ font: 12px/30px Arial, Helvetica, Verdana, SimSun, sans-serif;}
+ul, ol { list-style: outside none; }
+fieldset, img { border: 0; }
+table { border-collapse: collapse; border-spacing: 0; }
+body, small, sup, sub, button, input, textarea, select { font: 12px/1 Arial, Helvetica, Verdana, SimSun, sans-serif;color: #525252 }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+address, cite, dfn, em, var { font-style: normal; }
+code, kbd, pre, samp { font-family: Consolas, "Lucida Console", Courier, SimSun, monospace; }
+sup, sub { position: relative; vertical-align: baseline; }
+sup { top: -3px; }
+sub { bottom: -3px; }
+button { padding: 5px 10px; overflow: visible; }
+a{color: #ffffff}
+a{text-decoration:none;}
+a:hover{text-decoration:none;}
+/*绝对清除浮动*/
+.clearfix, .content{*zoom:1;}
+.clearfix:before, .clearfix:after, .content:after{content:".";display:block;height:0;line-height:0;clear:both;visibility:hidden;}
+.clearfix:after{clear:both;}
+.clear{clear:both;}
+.f_left{float:left;}
+.f_right{float:right;}
+/*黑白滤镜*/
+.gray { -webkit-filter: grayscale(1);  -moz-filter: grayscale(100%);  -ms-filter: grayscale(100%);   -o-filter: grayscale(100%);  filter: grayscale(100%);  filter: gray;}
+
+/*常用字体*/
+.font20{font-size: 20px;}
+.font18{font-size: 18px;}
+.font16{font-size: 16px;}
+.font14{font-size: 14px;}
+.font12{font-size: 12px;}
+.ms-controller,.ms-important,[ms-controller],[ms-important]{ visibility: hidden;}
+
+.common{background: url("../images/common.png");}
+
+
+
+/********************************滚动条样式*********************************************************/
+/*横滚动条*/
+.scrollBarContainer{position:relative;overflow:hidden;z-index:1;margin: 0 auto}
+.scrollBarTrack{position:absolute;cursor:pointer;right:0;top:0;height:100%;background:#aaa;background:url(../images/scrollBar_bg.png) repeat-y;}
+.scrollBarDrag{position:absolute;cursor:pointer;overflow:hidden;z-index: 99999999;left: 9px;}
+/*scrollBar核心*/
+.scrollBarDragTop{position:absolute;top: 1px;left:0;overflow:hidden;background:url(../images/scrollBar_up.png) no-repeat;height:6px;}
+.scrollBarDragMiddle{position:absolute;top:7px;left:0;background:url(../images/scrollBar_middle.png) repeat-y;height:8px;}
+.scrollBarDragBottom{position:absolute;bottom:0;left:0;overflow:hidden;background:url(../images/scrollBar_down.png) no-repeat;height:8px;}
+/*scrollBar上下箭头*/
+a.scrollArrowUp{display:block;position:absolute;z-index:1;top:0;right:0;text-indent:-2000px;overflow:hidden;height:48px;background:url(../images/scrollBar_arrowUp.png) no-repeat;}
+a.scrollArrowDown{display:block;position:absolute;z-index:1;bottom:0;right:0;text-indent:-2000px;overflow:hidden;height:48px;background:url(../images/scrollBar_arrowDown.png) no-repeat}
+/*竖滚动条*/
+.jspPane2{overflow: hidden;position: relative;/* left: 5px; */}
+.jspPane{position: relative; z-index: 999;}
+.jspVerticalBar{ position: absolute;}
+.jspHorizontalBar{position: absolute;bottom: 0;left: 56px;height: 16px;top: 583px;z-index: 99999999999999;}
+.jspHorizontalBar .jspCap{display: none;float: left;}
+.jspDrag{  position: absolute; top: 2px;  left: 0;cursor: pointer;}
+.jspTrack{position: relative;}
+.jspHorizontalBar .jspTrack,.jspHorizontalBar .jspDrag{  float: left;   height: 100%;}
+/*滚动条核心*/
+.jspDragLeft{position:absolute;top: 0px;left:0;overflow:hidden;background:url(../images/scrollBar_left.png) no-repeat;height: 20px;width: 8px;}
+.jspDragMiddle{position:absolute;left: 7px;background:url(../images/scrollBar_middle_02.png) repeat-x;height:19px;}
+.jspDragRight{position:absolute;bottom:0;right: 2px;overflow:hidden;background:url(../images/scrollBar_right.png) no-repeat;height: 19px;width: 8px;top: 0px;}
+.jspArrow.jspDisabled{cursor: default;}
+.jspVerticalBar .jspArrow{height: 16px;}
+.jspHorizontalBar .jspArrow{width: 16px;float: left;height: 100%;}
+.jspCorner{float: left;height: 100%;}
+/*滚动条背景*/
+.jspTrack .jspTrackLeft{background: url("../images/scrollBar_bg02_left.png") no-repeat;width: 10px;height: 23px;float: left;}
+.jspTrack .jspTrackMiddle{background: url("../images/scrollBar_bg02_middle.png") repeat-x;width: 97.7%;height: 23px;margin-left: 10px;margin-right: -2px;}
+.jspTrack .jspTrackRight{background: url("../images/scrollBar_bg02_right.png") no-repeat;width: 10px;height: 23px;float: left;position: absolute;right: 0;top: 0px;}
+.jspHorizontalBar,.jspVerticalBar,.jspTrack{height: 19px;}
+.jspHorizontalBar .jspArrow{width: 37px;height: 92px;}
+/*滚动条左右箭头*/
+.jspArrowLeft{cursor:pointer;background: url("../images/scrollBar_left_arrow.png") no-repeat;width: 32px;height: 91px;position: absolute;left: -50px;top: -347px;}
+.jspArrowRight{cursor:pointer;background: url("../images/scrollBar_right_arrow.png") no-repeat;width: 32px;height: 91px;position: absolute;right: -17px;top: -347px;z-index: 9999999999;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript" src="js/our.js"></script>
+    <!-- Google Analytics -->
+    <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    </script>
+    <!-- End Google Analytics -->
+    <script type="text/javascript" src="https://www.googleadservices.com/pagead/conversion_async.js" charset="utf-8"></script>
+</head>
+<body>
+<!-- yahoo pixel Analytics-->
+<script type="application/javascript">(function(w,d,t,r,u){w[u]=w[u]||[];w[u].push({projectId:"10000",properties:{pixelId:"10024933"}});var s=d.createElement(t);s.src=r;s.async=true;s.onload=s.onreadystatechange=function(){var y,rs=this.readyState,c=w[u];if(rs&&rs!="complete"&&rs!="loaded"){return}try{y=YAHOO.ywa.I13N.fireBeacon;w[u]=[];w[u].push=function(p){y([p])};y(c)}catch(e){}};var scr=d.getElementsByTagName(t)[0],par=scr.parentNode;par.insertBefore(s,scr)})(window,document,"script","https://s.yimg.com/wi/ytc.js","dotq");
+window.dotq = window.dotq || [];
+function yAnalytics(ec, ea, el, ev, gv) {
+    window.dotq.push({
+      'projectId': '10000',
+      'properties': {
+        'pixelId': '10024933',
+        'qstrings': {
+          'et': 'custom',
+          'ec': ec,
+          'ea': ea,
+          'el': el,
+          'ev': ev,
+          'gv': gv
+        }
+      } 
+    });
+}
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://sp.analytics.yahoo.com/spp.pl?a=10000&.yp=10024933"/></noscript>
+<script type="text/javascript">
+var http_type = location.protocol + '//';
+var getHost = window.location.host.split('.');
+var url = '';
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+                document,'script','https://connect.facebook.net/en_US/fbevents.js');
+/*统计对象*/
+var conversionLabels = {
+  as: "iIUfCJqZ7G0QzISpnAM",//Avatar selected
+  ue: "QXcECK7C0m0QzISpnAM",//Username entered
+  fb: "BsikCKvC0m0QzISpnAM",//Registration w/ Facebook
+  em: "rvKdCMzw5m0QzISpnAM" //Registration w/ Email Address
+};
+function shut() {
+  if (location.href.indexOf('staging') !== -1) {
+    if (cookie.getItem('rewardUrl')) {
+      url = http_type + "staging-games." + getHost[1] + '.com/' + 'poker/?' + cookie.getItem('rewardUrl');
+    } else {
+      url = http_type + "staging-games." + getHost[1] + '.com/' + 'poker';
+    }
+  } else {
+    if (cookie.getItem('rewardUrl')) {
+      url = http_type + "games." + getHost[1] + '.com/' + 'poker/?' + cookie.getItem('rewardUrl');
+    } else {
+      url = http_type + "games." + getHost[1] + '.com/' + 'poker';
+    }
+  }
+  if (window.localStorage) {
+    var storage = window.localStorage;
+    if (storage.getItem("newH5")) {
+      if (storage.getItem("newH5").indexOf("new_vote") !== -1 || storage.getItem("newH5").indexOf("stories") !== -1 || storage.getItem("newH5").indexOf("vote_end") !== -1) {
+        url = storage.getItem("newH5");
+      } else {
+        url = baseUrls + "poker";
+      }
+    }
+  }
+  localStorage.setItem('usefacebook', 'facebook');
+  location.href = url;
+}
+shut();
+//fb用户首次登陆相当于注册
+if (location.parameters.source == "fb" && location.parameters.state == 1) {
+  //google统计
+  ga('send', 'event', 'Signup', 'Register', 'Facebook');
+  window.google_trackConversion({google_conversion_id: 864698956, google_conversion_label: conversionLabels.fb, google_remarketing_only: false});
+  yAnalytics('signup', 'signup', 'signup', 'facebook', 'success')
+  fbq('track', 'signup_fb_success');//facebook像素统计facebook注册成功
+  ga('send', 'event', 'signup', 'fb', 'success');
+} else {
+  yAnalytics('login', 'login', 'login', 'facebook', 'success')
+  fbq('track', 'login_fb_success');//facebook像素统计facebook登陆成功
+  ga('send', 'event', 'login', 'fb', 'success');
+}
+</script>
+</body>
+</html>

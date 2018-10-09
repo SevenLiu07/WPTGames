@@ -1,0 +1,123 @@
+<div ms-controller="leaderboard" class="widget-dialog ms-controller lboard-dialog" ms-widget="dialog,show_leaderboard,$leaderboard">
+  <!--leaderboard content-->
+  <div class="leaderboard">
+       <div class="top"></div>
+       <div class="top-bar leaderb_top"></div>
+       <div class="lb-con">
+         <div class="tabs clear">
+               <ul class="fll">
+                <li ms-repeat="tabs" ms-class="current:navindex===$index" ms-click="tab_switch($index,el)">
+                  <a href="javascript:void(0)" class="sprites" ms-class="{{el}}"></a>
+                </li>
+               </ul>
+           <!--<div class="friends flr">
+                  <div id="fdOnly" class="sprites fd-only"><a href="javascript:void(0)" ms-click="friendOnly"></a> </div>
+                  <div class="frd">Friends Only</div>
+                  <div class="sprites doubts"></div>
+                </div>--><!--friends筛选 end/-->
+         </div>
+         <div>
+                 <!--panel hands won-->
+                 <div id="handswon" class="panel" ms-visible="handswon">
+                   <div class="corner_bg">
+                     <div class="lb-title">
+                       <a class="tit-rank role" ms-click="dataSort('handswon',1)"><span></span>Rank</a>
+                       <a class="tit-player role" ms-click="dataSort('handswon',2)"><span></span>Player</a>
+                       <a class="tit-player" ms-click="dataSort('handswon'),3"><span></span>Hands Won</a>
+                     </div>
+                     <!--leaderboard ME-->
+                     <div class="panel">
+                          <ul>
+                            <li>
+                              <div class="tit-rank sprites icon-me">{{itselfRank}}</div>
+                              <span class="" ms-class="one:itselfRank===1" ms-class-1="two:itselfRank===2" ms-class-2="three:itselfRank===3"></span>
+                              <div class="tit-player">{{itselfPlayer}}</div>
+                              <div class="tit-player"><span class="sprites icon-poker">{{itselfHandswon}}</span></div>
+                            </li>
+                          </ul>
+                     </div>
+                   </div><!-- end corner_bg marg-top-->
+                   <div class="corner_bg panels marg-top">
+                     <div class="scroll-pane">
+                     <ul>
+                       <li ms-repeat="handswonData">
+                         <div class="tit-rank">{{el.Rank}}</div>
+                         <span class="" ms-class="one:el.Rank===1" ms-class-1="two:el.Rank===2" ms-class-2="three:el.Rank===3"></span>
+                         <div class="tit-player">{{el.RoleName}}</div>
+                         <div class="tit-player"><span class="sprites icon-poker">{{el.Score}}</span></div>
+                       </li>
+                     </ul>
+                     </div>
+                   </div>
+                 </div><!--panel hands won end-->
+                   <!--panel biggest pot-->
+                   <div id="biggest" class="panel" ms-visible="biggest">
+                     <div class="corner_bg">
+                       <div class="lb-title">
+                         <a class="tit-rank role" ms-click="dataSort('biggest',1)">Rank</a>
+                         <a class="tit-player role" ms-click="dataSort('biggest',2)">Player</a>
+                         <a class="tit-player" ms-click="dataSort('biggest',3)">Biggest Pot</a>
+                       </div>
+                       <!--leaderboard ME-->
+                       <div class="panel">
+                            <ul>
+                              <li>
+                                <div class="tit-rank sprites icon-me">{{itselfRank}}</div>
+                                <span class="" ms-class="one:itselfRank===1" ms-class-1="two:itselfRank===2" ms-class-2="three:itselfRank===3"></span>
+                                <div class="tit-player">{{itselfPlayer}}</div>
+                                <div class="tit-player"><span class="sprites icon-gold">{{itselfHandswon}}</span></div>
+                              </li>
+                            </ul>
+                       </div>
+                     </div><!-- end corner_bg marg-top-->
+                     <div class="corner_bg panels marg-top">
+                       <div class="scroll-pane">
+                       <ul>
+                         <li ms-repeat="handswonData">
+                           <div class="tit-rank">{{el.Rank}}</div>
+                           <span class="" ms-class="one:el.Rank===1" ms-class-1="two:el.Rank===2" ms-class-2="three:el.Rank===3"></span>
+                           <div class="tit-player">{{el.RoleName}}</div>
+                           <div class="tit-player"><span class="sprites icon-gold">{{el.Score}}</span></div>
+                         </li>
+                       </ul>
+                       </div>
+                     </div>
+                   </div><!--panel biggest pot end-->
+                   <!--panel most chips-->
+                   <div id="mostchips" class="panel" ms-visible="mostchips">
+                     <div class="corner_bg">
+                       <div class="lb-title">
+                         <a class="tit-rank role" ms-click="dataSort('mostchips',1)">Rank</a>
+                         <a class="tit-player role" ms-click="dataSort('mostchips',2)">Player</a>
+                         <a class="tit-player" ms-click="dataSort('mostchips',3)">Most Chips</a>
+                       </div>
+                       <!--leaderboard ME-->
+                       <div class="panel">
+                            <ul>
+                              <li>
+                                <div class="tit-rank sprites icon-me">{{itselfRank}}</div>
+                                <span class="" ms-class="one:itselfRank===1" ms-class-1="two:itselfRank===2" ms-class-2="three:itselfRank===3"></span>
+                                <div class="tit-player">{{itselfPlayer}}</div>
+                                <div class="tit-player"><span class="sprites icon-gold">{{itselfHandswon}}</span></div>
+                              </li>
+                            </ul>
+                       </div>
+                     </div><!-- end corner_bg marg-top-->
+                     <div class="corner_bg panels marg-top">
+                       <div class="scroll-pane">
+                       <ul>
+                         <li ms-repeat="handswonData">
+                           <div class="tit-rank">{{el.Rank}}</div>
+                           <span class="" ms-class="one:el.Rank===1" ms-class-1="two:el.Rank===2" ms-class-2="three:el.Rank===3"></span>
+                           <div class="tit-player">{{el.RoleName}}</div>
+                           <div class="tit-player"><span class="sprites icon-gold">{{el.Score}}</span></div>
+                         </li>
+                       </ul>
+                       </div>
+                     </div>
+                   </div><!--panel hands won end-->
+         </div>
+       </div>
+  </div>
+  <!--end leaderboard content-->
+</div>

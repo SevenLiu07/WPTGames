@@ -1,0 +1,375 @@
+<div ms-controller="store"  class="widget-dialog ms-controller store_dialog big_store_dialog" ms-widget="dialog,show_store,openDialog">
+          <div class="store">
+              <div class="top"></div>
+              <div class="top_bar goldtitle_bg">
+                  <!--<div class="store_04 title_store"></div>-->
+              </div>
+              <!--content-->
+              <div class="clear"></div>
+              <!--items-->
+              <div id="items"  class="corner_bg" ms-visible="items" ms-controller="items">
+                  <div class="corner_con">
+                      <!--submenu-->
+                      <ul class="nav2">
+                          <li ms-repeat="baseData2"  ms-class="now:smallNavIndex===$index"  ms-click="smallTabClick($index,el)">
+                              <span class="store_01" ms-class="{{el}}"></span>
+                          </li>
+                      </ul>
+                      <div class="scroll_pane">
+                              <!--avatars-->
+                              <div  class="store_avatars wide" ms-visible="avatars" id="store_avatars">
+                                  <div class="column_con">
+                                      <div class="clear item" ms-repeat="avatarsData">
+                                          <div class="title">  <!--{{el.GoodsInfo.Name}}--></div>
+                                          <div class="store_03 previews" ms-visible="el.showChangeClothesBtn"  ms-click="showChangeClothes('show_changeClothes',el.GoodsInfo)"></div>
+                                          <div class="img" ms-click="showBuy('show_single_buy',el.GoodsInfo,'avatars')">
+                                              <img ms-src="{{el.GoodsInfo.PicPath}}">
+                                          </div>
+                                          <div class="text_01" ms-html="el.GoodsInfo.Descr">{{el.GoodsInfo.Descr}}</div>
+                                          <div class="price_01" ms-if="!el.GoodsInfo.IsBuy">
+                                              <div class="store_01 btn" ></div>
+                                              <div class="text">{{el.GoodsInfo.Price}}</div>
+                                          </div>
+                                          <div class="price_01" ms-if="el.GoodsInfo.IsBuy">
+                                              <div class="text owned">OWNED</div>
+                                          </div>
+                                          <div class="price_01 customize" ms-if="el.showChangeClothesfonts">
+                                              <div class="text owned no_mgleft">CUSTOMIZE</div>
+                                          </div>
+                                          <div class="hover_bg" ms-click="showBuy('show_single_buy',el.GoodsInfo,'avatars',el.showChangeClothesBtn,el.GoodsInfo)"></div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <!--charms-->
+                              <div  class="store_charms wide" ms-visible="charms"  id="store_charms">
+                                  <div class="column_con">
+                                      <div class="clear item" ms-repeat="charmsData">
+                                          <div class="title">{{el.GoodsInfo.Name}}</div>
+                                          <div class="img" ms-click="showBuy('show_single_buy',el.GoodsInfo,'charms')">
+                                              <img ms-src="{{el.GoodsInfo.PicPath}}">
+                                          </div>
+                                          <div class="store_01 preview"  ms-click="openCharmsDialog($event,el.GoodsInfo.PicPath,el.GoodsInfo.GoodsCode)"></div>
+                                          <div class="text_01" ms-html="el.GoodsInfo.Descr">{{el.GoodsInfo.Descr}}</div>
+                                          <div class="price_01">
+                                              <div class="store_01 btn" ></div>
+                                              <div class="text">{{el.GoodsInfo.Price}}</div>
+                                          </div>
+                                          <div class="hover_bg" ms-click="showBuy('show_single_buy',el.GoodsInfo,'charms')"></div>
+                                      </div>
+                                  </div>
+                              </div>
+                               <!--emojis-->
+                               <div  class="store_emojis wide" ms-visible="emojis"  id="store_emojis">
+                                          <div class="column_con">
+                                              <div class="clear item" ms-repeat="emojisData">
+                                                  <div class="title">{{el.GoodsInfo.Name}}</div>
+                                                  <div class="img" ms-click="showBuy('show_single_buy',el.GoodsInfo,'emojis')">
+                                                      <img ms-src="{{el.GoodsInfo.PicPath}}">
+                                                  </div>
+                                                  <div class="store_01 preview" ms-click="showEmojis('show_emojis',el.DescriptionList[0].FieldValue)"></div>
+                                                  <div class="text_01" ms-html="el.GoodsInfo.Descr">{{el.GoodsInfo.Descr}}</div>
+                                                  <div class="price_01" ms-if="!el.GoodsInfo.IsBuy">
+                                                      <div class="store_01 btn" ></div>
+                                                      <div class="text">{{el.GoodsInfo.Price}}</div>
+                                                  </div>
+                                                  <div class="price_01" ms-if="el.GoodsInfo.IsBuy">
+                                                      <div class="text owned">OWNED</div>
+                                                  </div>
+                                                  <div class="hover_bg" ms-click="showBuy('show_single_buy',el.GoodsInfo,'emojis')"></div>
+                                              </div>
+                                          </div>
+                                </div>
+                               <!--other-->
+                              <!-- <div  class="store_other  wide"  ms-visible="other" id="store_other">
+                                  <div class="column_con">
+                                      <div class="clear item" ms-repeat="otherData">
+                                          <div class="title">{{el.GoodsInfo.Name}}</div>
+                                          <div class="img" ms-click="showBuy('show_single_buy',el.GoodsInfo,'other')">
+                                              <img ms-src="{{el.GoodsInfo.PicPath}}">
+                                          </div>
+                                          <div class="text_01" ms-html="el.GoodsInfo.Descr">{{el.GoodsInfo.Descr}}</div>
+                                          <div class="price_02">
+                                              <div class="store_01 btn" ></div>
+                                              <div class="text">{{el.GoodsInfo.Price}}</div>
+                                          </div>
+                                          <div class="hover_bg" ms-click="showBuy('show_single_buy',el.GoodsInfo,'other')"></div>
+                                      </div>
+                                  </div>
+                              </div>-->
+                          </div>
+                  </div>
+              </div>
+              <div class="h_height" style="height: 58px;"></div>
+              <!--charms-->
+              <div class="store_charms_dialog"  ms-visible="storeCharmsDialog" ms-class="left:storeCharmsDialogIndex===0"  ms-class-1="center:storeCharmsDialogIndex===1" ms-class-2="right:storeCharmsDialogIndex===2">
+                  <div class="top_pop">
+                      <div class="top_leftbg fll"></div>
+                      <div class="top_centbg top_centbg_small fll">
+                          <div class="store_01 store_text"></div>
+                      </div>
+                      <div class="top_rightbg fll">
+                          <div class="close_btns flr" ms-click="closeStoreCharmsDialog"><a href="javascript:void(0)"></a></div>
+                      </div>
+                  </div>
+                  <div class="pop_con_rightbg">
+                      <div class="pop_con store_show_charms">
+                          <div class="column_con2 left">
+                              <div class="content_top">
+                                  <div class="light"
+                                       ms-class="zhaocaimao:curSmallCharmGoodsCode==='Charms_41001'"
+                                       ms-class-1="yueya:curSmallCharmGoodsCode==='Charms_41002'"    ms-class-2="tuzijiao:curSmallCharmGoodsCode==='Charms_41003'"
+                                       ms-class-3="siyecao:curSmallCharmGoodsCode==='Charms_41004'"  ms-class-4="heitao:curSmallCharmGoodsCode==='Charms_41005'">
+                                      <div class="items">
+                                          <img  ms-src="{{currentSmallCharmUrl}}">
+                                      </div>
+                                      <div class="avatars">
+                                          <img  ms-src="{{bigAvatarUrl}}">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="bottom"></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="bottom_pop">
+                      <div class="bot_leftbg fll"></div>
+                      <div class="bot_centbg bot_centbg_small fll"></div>
+                      <div class="bot_rightbg fll"></div>
+                  </div>
+              </div>
+              <!--emojis-->
+              <div class="widget-dialog" ms-widget="dialog,show_emojis,openEmojisDialog">
+                  <div class="top_pop">
+                      <div class="top_leftbg fll"></div>
+                      <div class="top_centbg top_centbg_small fll">
+                          <div class="store_01 store_text"></div>
+                      </div>
+                      <div class="top_rightbg fll">
+                          <div class="close_btns flr" ms-click="_close" ms-if="showClose"><a href="javascript:void(0)"></a></div>
+                      </div>
+                  </div>
+                  <div class="pop_con_rightbg">
+                      <div class="pop_con store_show_emojis">
+                          <div class="column_con left">
+                              <div class="top">
+                                  <div class="light">
+                                      <div class="items">
+                                          <img  ms-src="{{smallCharmUrl}}">
+                                      </div>
+                                      <div class="avatars">
+                                          <img  ms-src="{{bigAvatarUrl}}">
+                                      </div>
+                                      <div class="select_avatars">
+                                          <img  ms-src="{{bigEmojisUrl}}">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="bottom"></div>
+                          </div>
+                          <div class="column_con right">
+                              <div class="scroll-pane">
+                                  <ul>
+                                      <li ms-repeat="smallEmojisData" >
+                                               <span class="img"  ms-click="clickEmojis($index)">
+                                                   <img ms-src="el.SmallEmojisUrl">
+                                               </span>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="bottom_pop">
+                      <div class="bot_leftbg fll"></div>
+                      <div class="bot_centbg bot_centbg_small fll"></div>
+                      <div class="bot_rightbg fll"></div>
+                  </div>
+              </div>
+              <!--change skin popups-->
+              <div class="widget-dialog show_changeClothes" ms-widget="dialog,show_changeClothes,openChangeClothesDialog">
+                  <div class="top_pop">
+                      <div class="top_leftbg fll"></div>
+                      <div class="top_centbg top_centbg_small fll">
+                          <div class="title_text">CUSTOMIZE</div>
+                      </div>
+                      <div class="top_rightbg fll">
+                          <div class="close_btns flr" ms-click="_close" ms-if="showClose"><a href="javascript:void(0)"></a></div>
+                      </div>
+                  </div>
+                  <div class="pop_con_rightbg">
+                      <div class="pop_con store_show_emojis store_show_changeClothes">
+                          <div class="left">
+                              <div class="top">
+                                  <img ms-src="currentClothes">
+                                  <div class="price_01">
+                                      <div class="store_01 btn"></div>
+                                      <div class="text">{{currentClothesPrice}}</div>
+                                  </div>
+                              </div>
+                              <div class="" ms-class="button:clothesIsBuy==false" ms-class-1="owned_btn:clothesIsBuy==true" ms-click="showBuy('show_single_buy',clothesGoodsInfo,'avatars')"></div>
+                          </div>
+                          <div class="column_con right">
+                              <div class="scroll-pane">
+                                  <ul>
+                                      <li ms-repeat="changeClothesData"  class="store_03" ms-class="now:changeClothesDataIndex===$index" >
+                                          <span class="img"  ms-click="clickChangeClothes($index)">
+                                               <img ms-src="el.smallClothesUrl">
+                                          </span>
+                                          <span class="store_03 now"></span>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="bottom_pop">
+                      <div class="bot_leftbg fll"></div>
+                      <div class="bot_centbg bot_centbg_small fll"></div>
+                      <div class="bot_rightbg fll"></div>
+                  </div>
+              </div>
+              <!--single buy popups-->
+              <div class="widget-dialog show_single_buy"  ms-widget="dialog,show_single_buy,openSingleBuyDialog">
+                  <div class="top_pop">
+                      <div class="top_leftbg fll"></div>
+                      <div class="top_centbg top_centbg_small fll">
+                          <div class="title title_small">
+                              <div class="title_leftbg">
+                                  <div class="title_rightbg">
+                                      <div class="title_name" id="popup_title">
+                                          <div class="store_02 title_single_buy"></div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="top_rightbg fll">
+                          <div class="close_btns flr" ms-click="_close"><a href="javascript:void(0)"></a></div>
+                      </div>
+                  </div><!--/end top_pop弹窗头部-->
+                  <div class="pop_con_rightbg">
+                      <div class="pop_con"  ms-class="{{currentItemType}}">
+                          <div class="corner_bg">
+                              <div class="left">
+                                  <div class="img">
+                                      <img ms-src="{{currentItemData.PicPath}}">
+                                  </div>
+                                  <div class="title" ms-visible="showTitle">{{currentItemData.Name}}</div>
+                              </div>
+                              <div class="right">
+                                  <div class="text" ms-html="currentItemData.Descr">{{currentItemData.Descr}}</div>
+                                  <div class="price_01" ms-visible="!currentItemData.IsBuy" ms-class="price_02:currentItemType==='other'" >
+                                      <div class="store_01 btn"  ms-class-1="btn_02:currentItemType==='masterPoint'" ></div>
+                                      <div class="text">{{queryPriceData.TotalPrice}}</div>
+                                  </div>
+                                  <div class="price_01"   ms-visible="currentItemData.IsBuy">
+                                      <div class="text owned">OWNED</div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="store_02 confirm"  ms-click="confirmSingleBuy(currentItemData.GoodsCode)"></div>
+                      </div>
+                  </div><!--/end pop_con_rightbg弹窗内容部分-->
+                  <div class="bottom_pop">
+                      <div class="bot_leftbg fll"></div>
+                      <div class="bot_centbg bot_centbg_small fll"></div>
+                      <div class="bot_rightbg fll"></div>
+                  </div>
+                  <div class="gray_bg" id="loadingBuy" >
+                      <div class="ld_shadow">
+                          <div class="loading"><p>LOADING...</p><span class="image"></span></div>
+                      </div>
+                  </div>
+              </div>
+              <!--public message popups-->
+              <div class="widget-dialog show_single_buy"  ms-widget="dialog,show_info,openPublicShowInfo">
+                  <div class="top_pop">
+                      <div class="top_leftbg fll"></div>
+                      <div class="top_centbg top_centbg_small fll">
+                          <div class="title title_small">
+                              <div class="title_leftbg">
+                                  <div class="title_rightbg">
+                                      <div class="title_name" id="popup_title">
+                                          <div class="store_02 title_single_buy"></div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="top_rightbg fll">
+                          <div class="close_btns flr" ms-click="_close"><a href="javascript:void(0)"></a></div>
+                      </div>
+                  </div><!--/end top_pop弹窗头部-->
+                  <div class="pop_con_rightbg">
+                      <div class="pop_con show_info">
+                          <div class="corner_bg">
+                              <div class="text">{{messageInfo}}</div>
+                              <div  class="go_person"  ms-visible="messageOtherInfo"  ms-click="showInventory('show_inventory')">Go To My Inventory</div>
+                           </div>
+                          <div class="store_02 confirm" ms-class="toStore:showStoreBtn===true"  ms-click="_confirm"></div>
+                      </div>
+                  </div><!--/end pop_con_rightbg弹窗内容部分-->
+                  <div class="bottom_pop">
+                      <div class="bot_leftbg fll"></div>
+                      <div class="bot_centbg bot_centbg_small fll"></div>
+                      <div class="bot_rightbg fll"></div>
+                  </div>
+              </div>
+              <!--batch purchase popups-->
+              <div class="widget-dialog show_single_buy show_batch_buy"  ms-widget="dialog,show_batch_buy,openBatchBuyDialog">
+                  <div class="top_pop">
+                      <div class="top_leftbg fll"></div>
+                      <div class="top_centbg top_centbg_small fll">
+                          <div class="title title_small">
+                              <div class="title_leftbg">
+                                  <div class="title_rightbg">
+                                      <div class="title_name" id="popup_title">
+                                          <div class="store_02 title_single_buy"></div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="top_rightbg fll">
+                          <div class="close_btns flr" ms-click="_close"><a href="javascript:void(0)"></a></div>
+                      </div>
+                  </div><!--/end top_pop弹窗头部-->
+                  <div class="pop_con_rightbg">
+                      <div class="pop_con">
+                          <div class="corner_bg">
+                              <div class="left">
+                                  <div class="img">
+                                      <img ms-src="{{currentItemData.PicPath}}">
+                                  </div>
+                                  <a class="descr" ms-attr-title="currentItemData.Descr" ms-html="currentItemData.Descr">{{currentItemData.Descr}}</a>
+                                  <div class="title">{{currentItemData.Name}}</div>
+                              </div>
+                              <div class="right">
+                                  <div class="unit_price">${{queryPriceData.TotalPrice}}</div>
+                                  <div class="number">
+                                      <div class="store_01 minus" ms-click="batchBuyMinus"></div>
+                                      <input class="store_01" type="text"  ms-duplex-number="batchBuyNumber" ms-blur="batchBuyBlur" ms-input="batchBuyInput"/>
+                                      <div class="store_01 add"   ms-click="batchBuyAdd"></div>
+                                  </div>
+                                  <div class="price_02">
+                                      <div class="store_01 btn" ></div>
+                                      <div class="text total_price">{{batchBuyTotalPrice}}</div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div  class="store_02 confirm"  ms-click="confirmBatchBuy(currentItemData.GoodsCode)"></div>
+                      </div>
+                  </div><!--/end pop_con_rightbg弹窗内容部分-->
+                  <div class="bottom_pop">
+                      <div class="bot_leftbg fll"></div>
+                      <div class="bot_centbg bot_centbg_small fll"></div>
+                      <div class="bot_rightbg fll"></div>
+                  </div>
+                  <div class="gray_bg" id="loadingBatchBuy" >
+                      <div class="ld_shadow">
+                          <div class="loading"><p>LOADING...</p><span class="image"></span></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+  </div>

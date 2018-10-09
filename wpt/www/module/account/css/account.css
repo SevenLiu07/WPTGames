@@ -1,0 +1,123 @@
+
+/*body{ overflow-y: hidden;}*/
+.account_01 {background: url("/wpt/www/module/account/images/account.png") no-repeat}
+.account_btn{cursor:pointer;background-position: -20px -225px;width: 342px;height: 63px;text-align: center;line-height: 51px;font-size: 20px;}
+.account_facebook_btn{display:block;color:#ffffff;cursor:pointer;background-position: -15px -128px;width: 342px;height: 62px;text-align: center;line-height: 56px;font-size: 20px;padding-left: 10px;}
+.account_btn_gray{background-position: -19px -323px;width: 342px;height: 63px;text-align: center;line-height: 51px;font-size: 20px;}
+/*账号系统弹框公共样式*/
+.show_account   .top{position: absolute;right: 45px;top: 45px;}
+.show_account   .top a{display: block;background-position: -28px -32px;width: 63px;height: 63px;}
+.show_account  .register{background: url("/wpt/www/module/account/images/account_bg.png") no-repeat;width: 968px;height: 614px;position: relative;margin: 0 auto;}
+.show_account .content{width: 342px;margin-left: 130px;position: relative;top: 148px;color: #ffffff;}
+.show_account  .content div,.show_account  .content a,.show_account  .content em,.show_account  .content input,.show_account  .content span{font-family: Arial;}
+
+.show_account .errorInfo{color:#bd2d2d;line-height: 14px;padding-bottom: 8px;}
+
+
+/*注册弹框*/
+.show_account .title{font-size: 26px;font-weight: bold;}
+.show_account .name{font-size: 18px;}
+.show_account input{background: none;color: #fff;font-size: 18px;margin-left: 3px;}
+/*.show_account input::-webkit-input-placeholder {color: #ffffff}
+.show_account input::-moz-placeholder {color: #ffffff}
+.show_account input::-moz-placeholder {color: #ffffff}
+.show_account input::-ms-input-placeholder {color: #ffffff}*/
+.show_account input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ color: #979eaa; }
+.show_account input::-moz-placeholder { /* Mozilla Firefox 19+ */ color: #979eaa; }
+.show_account input:-ms-input-placeholder{ color: #979eaa; }
+.show_account input::-webkit-input-placeholder{ color: #979eaa; }
+
+
+.show_account .email{margin-top: 35px;border-bottom: 1px solid #215ca6;margin-bottom: 18px;padding-bottom: 5px;}
+.show_account .email input{width: 100%;}
+.show_account .password{border-bottom: 1px solid #215ca6;padding-bottom: 5px;}
+.show_account .password input{width: 100%;}
+.show_account .descr{font-size: 14px;color: #2f99e7; padding: 10px 0;}
+.show_account .descr em{  display: block; line-height: 21px;}
+.show_account .descr a{color: #2f99e7;text-decoration: underline}
+.show_account .account_btn{}
+.show_account .account_facebook_btn{}
+.show_account .border{height: 1px;background: #1d4985;margin-top: 20px;margin-bottom: 15px;}
+.show_account .login_text{font-size:18px;color: #2f99e7;margin-left: 30px;}
+.show_account .login_text a{color: #e6e6e6;text-decoration: none;margin-left: 10px;}
+.show_account .captcha{height: 53px;line-height: 53px;background: #152c70;position: absolute;width: 100%;}
+.show_account .captcha input{width: 47%;height: 46px;float: left;margin-top: 2px;}
+.show_account .captcha img{ width: 100px;  height: 46px;   margin-top: 3px; float: left;}
+.show_account .captcha span.refresh{display: block;float: left;color: #2b8cd9;font-size: 18px;cursor: pointer;margin-left: 10px;}
+
+
+/*创建角色名称弹框*/
+.show_account  .create_username,.show_account  .select_avatar,.show_account  .validateEmail_suc{background: url("/wpt/www/module/account/images/createUsername_bg.png") no-repeat;width: 833px;height: 492px;position: relative;margin: 0 auto;}
+.show_account  .create_username .content,.show_account  .select_avatar .content,.show_account  .validateEmail_suc  .content{width: 737px;margin-left: 90px;position: relative;top: 138px;color: #ffffff;}
+.show_account  .create_username .content .title,.show_account  .select_avatar .content .title,.show_account  .validateEmail_suc  .content .title{font-size: 36px;text-align: center;}
+.show_account  .create_username .content .input_username{display:block;color:#6d7186;font-size: 30px;background: #141d4b;border: 1px solid #1c3c7d;border-radius: 4px;height: 65px;width: 340px;margin: 55px auto 45px auto;text-align: center;}
+.show_account  .create_username .content .input_username::-webkit-input-placeholder {color: #6d7186}
+.show_account  .create_username .content .input_username::-moz-placeholder {color: #6d7186}
+.show_account  .create_username .content .input_username::-moz-placeholder {color: #6d7186}
+.show_account  .create_username .content .input_username::-ms-input-placeholder {color: #6d7186}
+.show_account  .content .button{font-size: 20px;margin: 0 auto;cursor: pointer;background-position: -20px -225px;width: 342px;height: 63px;text-align: center;line-height: 51px;}
+.show_account  .content .button_red{font-size: 20px;margin: 0 auto;cursor: pointer;background-position: -20px -386px;width: 342px;height: 63px;text-align: center;line-height: 51px;}
+.show_account  .create_username .top,.show_account  .select_avatar .top,.show_account  .validateEmail_suc .top{ right: -65px; top: 21px;}
+.show_account  .create_username .errorInfo{ text-align: center;}
+.show_account  .create_username .content .button{margin-top: 94px}
+.show_account  .create_username .errorInfo{line-height: 20px;font-size: 18px;font-weight: 500;position: absolute;top: 193px;text-align: center;width: 733px;white-space: normal;}
+
+
+/*创建角色弹框*/
+.show_account  .select_avatar .content .title{margin-bottom: 23px;}
+.show_account  .select_avatar .content .avatar{margin: 0 auto 23px auto;width: 337px;height: 170px;background: #141d4b;border: 1px solid #1c3c7d;}
+.show_account  .select_avatar .content .avatar .left{width: 147px;height: 142px;float: left;margin-left: 14px;margin-top: 14px;background: url("/wpt/www/module/account/images/avatar_bg.png") no-repeat;}
+.show_account  .select_avatar .content .avatar  img{width: 142px;height: 142px;cursor: pointer;}
+.show_account  .select_avatar .content .avatar .right{width: 147px;height: 142px;float: left;margin-left: 14px;margin-top: 14px;background: url("/wpt/www/module/account/images/avatar_bg.png") no-repeat;}
+.show_account  .select_avatar .content .avatar .select{background: url("/wpt/www/module/account/images/avatar_select_bg.png") no-repeat;}
+
+
+/*邮箱验证*/
+.show_account .validate_email{background: url("/wpt/www/module/account/images/validate_email_bg.png") no-repeat;width: 903px;height: 590px;position: relative;margin: 0 auto;}
+.show_account .validate_email .top{right: -1px;top: 149px;}
+.show_account .validate_email .content{width: 351px;margin-left: 130px;position: relative;top: 253px;color: #ffffff;}
+.show_account .validate_email .content .title { height: 40px; line-height:40px; font-size: 26px; padding-top: 0;}
+.show_account .validate_email .content .title .text{ font-weight: bold;}
+.show_account .validate_email .content .title .username{ width: 210px; float: right; overflow: hidden; display: block; white-space: nowrap;text-overflow: ellipsis;}
+.show_account .validate_email .content .title .omit{ width: 351px; float: right; overflow: hidden; display: block; white-space: nowrap;text-overflow: ellipsis;}
+.show_account .validate_email .content .descr{font-size: 16px; line-height: 22px; color: #8cd7f0; }
+.show_account .validate_email .content .descr_validate{font-size: 12px; line-height: 18px; color: #8cd7f0; padding: 10px 0 15px 0;}
+.show_account .validate_email .content .descr_validate span{font-size: 18px !important; line-height: 28px !important; display: block;}
+.descr_validate p{ font-size: 16px;}
+.descr_validate font{ color: #fcc737;}
+.descr_validate .white_notice{ color: #fff; line-height: 40px!important;}
+.show_account .validate_email .content .button{background: url("/wpt/www/module/account/images/validate_email_btn.png") no-repeat;padding-left: 25px;}
+.show_account .validate_email .content .button a{color: #ffffff}
+.show_account .validate_email .content .border{height: 1px;background: #1d4985;margin-top: 14px;}
+.show_account .validate_email .content .resend_email{color: #74b6d7;font-size: 20px;margin-top: 14px;text-align: center;}
+.show_account .validate_email .content .resend_email .btn{cursor: pointer}
+.show_account .validate_email .content .resend_email .count_down{margin-left: 30px;}
+.show_account .validate_email .content .button.gmail{background: url("/wpt/www/module/account/images/gmail_btn.png") no-repeat;}
+.show_account .validate_email .content .button.hotmail{background: url("/wpt/www/module/account/images/hotmail_btn.png") no-repeat;}
+.show_account .validate_email .content .button.yahoo{background: url("/wpt/www/module/account/images/yahoo_btn.png") no-repeat;}
+.show_account .validate_email .content .button.outlook{background: url("/wpt/www/module/account/images/outlook_btn.png") no-repeat;}
+
+/*邮箱验证成功*/
+.show_account  .validateEmail_suc .content .title{margin-bottom: 40px;}
+.show_account  .validateEmail_suc .content .text{color: #8cd7f0;font-size: 16px;width: 468px;height: 65px;margin: 0 auto;text-align: center;margin-bottom: 43px;margin-top: 66px;}
+.show_account  .validateEmail_suc .content .text em{color: #fff;}
+.show_account  .validateEmail_error .button em{margin-left: 26px;}
+.show_account  .validateEmail_error .account_btn_gray{cursor:inherit;background-position: -19px -323px;width: 342px;height: 63px;text-align: center;line-height: 51px;font-size: 20px;}
+
+
+/*登陆*/
+.show_account .txtarea{ border-bottom: 1px solid #215ca6; line-height: 40px; margin:5px 0;}
+.show_account .discription{ font-size: 14px; line-height: 24px;}
+.checkbox{ line-height: 42px; min-height: 42px; padding: 8px 0;}
+.checkbox input{ width:20px; height:20px; float:left; margin-top: 12px;}
+.checkbox p{ line-height:42px; float:left; color:#8cd7f0; padding-left:10px; margin: 0 !important;}
+
+.link_color{ font-size: 14px; color: #2f99e7;}
+.forget_pwd{background: url("/wpt/www/module/account/images/change_pwd_bg.png") no-repeat;width: 903px;height: 470px;position: relative;margin: 0 auto;}
+.discript_con{ min-height: 150px; padding: 20px 0 0 0;}/*提示信息内容*/
+.discript_con p{ color: #99e9ff; font-size: 14px;}
+.font_blue{ color: #99e9ff; padding: 10px 0 0 0;}
+.discript_con p a{ color: #99e9ff; font-size: 14px; text-decoration: underline;}
+.errorInfoPwd{color:#bd2d2d; margin-bottom: 5px; line-height: 14px;}
+.marg_top{ margin-top: 12px;}
+.pad_pwd{ padding: 12px 0;}

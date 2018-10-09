@@ -1,0 +1,64 @@
+<div ms-controller="gamehall">
+<div class="widget-dialog public_notice QA_notice" ms-widget="dialog,public_notice,$notice">
+    <div class="top_pop">
+        <div class="top_leftbg fll"></div>
+        <div class="top_centbg top_centbg_small fll">
+            <div class="title title_small">
+                <div class="title_leftbg">
+                    <div class="title_rightbg">
+                        <div class="title_name title_notice"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top_rightbg fll">
+            <div class="close_btns flr" ms-click="_close"><a href="javascript:void(0)"></a></div>
+        </div>
+    </div><!--/end top_pop弹窗头部-->
+    <div class="pop_con_rightbg">
+        <div class="pop_con">
+          <div class="text">{{loginMsg}}</div>
+          <div class="pay_button clear">
+            <div class="btn_ok marg_auto"><a href="javascript:void (0)" ms-click="hidden('public_notice')"></a> </div>
+          </div>
+        </div>
+    </div><!--/end pop_con_rightbg弹窗内容部分-->
+    <div class="bottom_pop">
+        <div class="bot_leftbg fll"></div>
+        <div class="bot_centbg bot_centbg_small fll"></div>
+        <div class="bot_rightbg fll"></div>
+    </div>
+</div>
+    <!--recharge popups-->
+    <div class="widget-dialog advert_recharge" ms-widget="dialog,show_rechargeBoot,$recharge">
+        <div class="close_btns flr" ms-click="_close"><a href="javascript:void(0)"></a></div>
+        <!--<img ms-src="rechargeUrl" ms-click="advert_recharge"/>-->
+        <div class="re_con">
+            <h1 ms-class="title_play:rechargeTitle===1" ms-class-1="title_unlock:rechargeTitle===2" ms-class-2="title_backgm:rechargeTitle===3" ms-class-3="title_backgm:rechargeTitle===4"></h1>
+            <p><span>{{goldsName}}</span> for <br></p>
+            <div class="price"><span class="fll">________</span>${{goldsPrice}}<span class="flr">________</span></div>
+            <div class="btn_buy"><a href="javascript:void (0)" ms-click="advert_recharge"></a> </div>
+        </div>
+    </div>
+    <!--fb users login for first time to get free reminders popups-->
+    <div class="widget-dialog advert_recharge" ms-widget="dialog,fbFirstLogin,$fbFirstLogin">
+        <div class="close_btns flr" ms-click="_close"><a href="javascript:void(0)"></a></div>
+        <!--<img ms-src="rechargeUrl" ms-click="advert_recharge"/>-->
+        <div class="re_con">
+            <div class="fb_prompt">
+                <p>{{getGoldNum}}&nbsp;Gold</p>
+                <a href="javascript:void (0)" ms-click="playNow"></a>
+            </div>
+        </div>
+    </div>
+    <div class="widget-dialog online_notice" ms-widget="dialog,online_notice,$onlineNotice">
+        <div class="bg">
+            <a href="javascript:void(0)" class="close" ms-click="_close"></a>
+        </div>
+    </div>
+    <!--FB 0美元促销-->
+    <div class="widget-dialog fb_promotion" ms-widget="dialog,fb_promotion,$fbPromot">
+        <a href="javascript:void(0)" class="close" ms-click="_close"></a>
+        <div class="promotPic" ms-click="pay_promotion"></div>
+    </div>
+</div>

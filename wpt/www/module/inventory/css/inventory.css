@@ -1,0 +1,124 @@
+
+
+/*公共背景图*/
+.title .title_rightbg .title_inventory{background: url("/wpt/www/module/inventory/images/inventory_title.png") no-repeat;background-position: center;padding-top: 17px;}
+.inventory_01 {background: url("/wpt/www/module/inventory/images/inventory_01.png") no-repeat}
+.inventory_02 {background: url("/wpt/www/module/inventory/images/inventory_02.png") no-repeat}
+
+
+/*导航*/
+.nav{padding-left: 19px;}
+.nav ul  li{float: left;display: block;margin-right: 7px;cursor: pointer;}
+.nav ul  li span{display: block;height: 43px;line-height: 43px;width:142px;}
+.nav ul  li .avatars{background-position: -20px -10px;}
+.nav ul  li .charms{background-position: -21px -71px;}
+.nav ul  li .emojis{background-position: -21px -149px;}
+.nav ul  li .items{background-position: -21px -242px;}
+.nav ul  li .tickets{background-position: -21px -331px;}
+.nav ul  li.now .avatars{background-position: -229px -10px;}
+.nav ul  li.now .charms{background-position: -229px -71px;}
+.nav ul  li.now .emojis{background-position: -229px -149px;}
+.nav ul  li.now .items{background-position: -229px -242px;}
+.nav ul  li.now .tickets{background-position: -229px -331px;}
+
+/*公共按钮样式*/
+.tickets, .get_button{ height: 75px;}
+.get_button .btn,.get_button .tourmode{width: 317px;height: 71px;display: block;}
+.btn_padding{ padding: 11px 110px 0 110px;}
+
+/*道具*/
+#items .corner_con{ padding: 6px;}
+#items .scroll-pane{width:940px;height:460px;overflow:auto;}
+#items .scroll-pane{background: url("/wpt/www/module/inventory/images/items_bg.png");}
+#items .scroll-pane ul{padding-left: 40px;padding-top: 20px;}
+#items .scroll-pane li{float: left;display: block;margin-right: 47px;}
+#items .scroll-pane li img{width: 167px;height: 107px;}
+#items .scroll-pane li span{display: block}
+#items .scroll-pane li .text{margin-top: 8px;text-align: center;}
+#items .scroll-pane li .text em{color: #fff;font-size: 23px;}
+#items .scroll-pane li .text .red{color: #ff0000;font-size: 23px;margin-right: 5px;}
+#items .scroll-pane li .button{background-position: -21px -438px;width: 161px;height: 50px;}
+#items .get_button{height: 90px;}
+#items .get_button .btn{background-position: -438px -152px;width: 317px;height: 75px;display: block;margin-left: 320px;position: relative;top: 14px;cursor: pointer;}
+
+
+/*门票*/
+#tickets .scroll-pane{width:930px;height:416px;overflow:auto;}
+#tickets .content{padding: 6px;}
+#tickets .content .title{width: 935px;height: 42px;margin-right: 3px;color: #9ea5b1;font-size: 24px;background: url("/wpt/www/module/inventory/images/tickets_title_bg.png") no-repeat;margin-top: 3px;margin-left: 3px;}
+#tickets .content .title span{display: block;float: left;text-align: center;height: 41px;line-height: 41px;}
+#tickets .content .title .name{ width: 244px;}
+#tickets .content .title .amount{width: 244px;}
+#tickets .content .title .exp_date{ width: 360px;}
+#tickets .content .scroll-pane li{display: block;margin-right: 5px;font-size: 24px;color: #fff;margin-top: 5px;background: url("/wpt/www/module/inventory/images/tickets_bg_02.png") repeat-x;width: 100%;height: 65px;line-height: 65px;/* border: 2px; */border-radius: 8px;}
+#tickets .content .scroll-pane li span{display: block;float: left}
+#tickets .content .scroll-pane li .name{width: 244px;height: 65px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+#tickets .content .scroll-pane li .name em.btn{background-position: -266px -439px;width: 54px;height: 33px;display: block;margin-right: 10px;float: left;margin-top: 15px;margin-left: 12px;}
+#tickets .content .scroll-pane li .name a{}
+#tickets .content .scroll-pane li .amount{width: 244px;text-align: center;}
+#tickets .content .scroll-pane li .exp_date{width: 360px;text-align: center;}
+#tickets .get_button .btn{background-position: -440px -814px; cursor: pointer; float: right;}
+#tickets .get_button .btn:hover{background-position: -440px -885px; cursor: pointer;}
+#tickets .get_button .btn:active{background-position: -440px -955px; cursor: pointer;}
+#tickets .get_button .tourmode{background-position: -30px -885px; cursor: pointer; float: left;}
+#tickets .get_button .tourmode:hover{background-position: -30px -956px; cursor: pointer;}
+#tickets .get_button .tourmode:active{background-position: -30px -1025px; cursor: pointer;}
+
+/*礼物*/
+.charms_avatars{background: #000000;}
+.charms_avatars .scroll-pane{width:590px;height:505px;overflow:auto;padding-left: 20px;}
+.charms_avatars .left{float:left}
+.charms_avatars .left .corner_con{padding: 6px;}
+.charms_avatars .left .content{width: 328px;height: 447px;padding: 1px;}
+.charms_avatars .left .content .top{height: 394px;background: #07090d;}
+.charms_avatars .left .content .bottom{background: url("/wpt/www/module/inventory/images/avatars_bg_01.png") repeat-x;height: 54px;}
+.charms_avatars .left .content .top .items{width: 57px;height: 52px;text-align: center;margin: 0 auto;padding-top: 60px;}
+.charms_avatars .left .content .top .items img{width: 57px;height: 52px;}
+.charms_avatars .left .content .top .light{background: url("/wpt/www/module/inventory/images/light_bg.png") no-repeat;background-position-x: 62px;}
+.charms_avatars .left .content .top .light .avatars{ margin: 0 auto; width: 190px; height: 311px;   margin-top: 10px;}
+.charms_avatars .left .content .top .light .avatars img{width: 200px;height: 275px;margin-left: -6px;margin-top: 25px;}
+.charms_avatars .scroll-pane ul{padding-left: 17px;}
+.charms_avatars .scroll-pane li{float: left;width: 120px;height: 140px;display: block;margin-top: 25px;background-position: -439px -438px;margin-right: 14px;cursor: pointer;}
+.charms_avatars .scroll-pane li .img{width: 83px;height: 75px;display: block;margin: 0 auto;margin-top: 26px;}
+.charms_avatars .scroll-pane li .img img{width: 83px;height: 75px;}
+.charms_avatars .scroll-pane li .now{background: url("/wpt/www/module/inventory/images/avatars_select.png") no-repeat;width: 115px;height: 137px;display: block;margin-top: -124px;position: relative;z-index: 2;}
+.charms_avatars .scroll-pane li .hide{display: none}
+.charms_avatars .right{width: 605px;margin-left: 349px;}
+.charms_avatars .right .corner_con{padding: 6px}
+.charms_avatars .right .corner_con .title{height: 42px;line-height: 36px;color: #fff;font-size: 24px;text-align: center;font-weight: bold;}
+.charms_avatars .get_button{height: 83px; padding-top: 15px;}
+#charms .get_button .btn{background-position: -30px -380px;margin-left: 8px; cursor: pointer;}
+#charms .scrollBarContainer{right: 22px;top: 1px;position: relative;}
+#charms .scroll-pane li .now{margin-top: -103px;}
+
+
+.charms_avatars .left .content .top .light.zhaocaimao{background: url("/wpt/www/module/inventory/images/zhaocaimao.gif") no-repeat;    background-position-x: 62px;}
+.charms_avatars .left .content .top .light.tuzijiao{background: url("/wpt/www/module/inventory/images/tuzijiao.gif") no-repeat;    background-position-x: 62px;}
+.charms_avatars .left .content .top .light.siyecao{background: url("/wpt/www/module/inventory/images/siyecao.gif") no-repeat;    background-position-x: 62px;}
+.charms_avatars .left .content .top .light.yueya{background: url("/wpt/www/module/inventory/images/yueya.gif") no-repeat;    background-position-x: 62px;}
+.charms_avatars .left .content .top .light.heitao{background: url("/wpt/www/module/inventory/images/heitao.gif") no-repeat;    background-position-x: 62px;}
+
+
+
+/*表情*/
+#emojis .get_button .btn{background-position: -30px -697px;margin-left: 8px;cursor: pointer;}
+#emojis  .scroll-pane li{background: none}
+#emojis .scrollBarContainer{right: 22px;top: 1px;position: relative;}
+#emojis  .left .content .top .light .select_avatars{width: 137px;height: 139px;margin: 0 auto;position: relative;top: -257px;}
+#emojis  .left .content .top .light .select_avatars img{width: 290px;height: 290px;/* position: relative; */margin-left: -80px;margin-top: -90px;}
+#emojis  .right .corner_con .title{}
+#emojis  .right .corner_con .title .emojis_02{display: block;background-position: -336px -629px;width: 55px;height: 40px;float: left;}
+#emojis  .right .corner_con .title .emojis_01{display: block;background-position: -474px -629px;width: 55px;height: 40px;float: left;}
+#emojis  .right .corner_con .title .emojis_01.now{background-position: -329px -499px;position: relative;top: 2px;}
+#emojis  .right .corner_con .title .emojis_02.now{background-position: -329px -573px;position: relative;top: 2px;}
+#emojis  .scroll-pane ul{padding-left: 7px;padding-top: -21px;position: relative;top: -62px;left: -30px;}
+#emojis  .scroll-pane li{float: left;width: 74px;height: 76px;display: block;margin-top: 26px;background-position: -439px -438px;margin-right: 38px;}
+#emojis  .scroll-pane li .img{width: 74px;height: 83px;display: block;margin: 0 auto;margin-top: 26px;}
+#emojis .scroll-pane li .img img{width: 142px;height: 142px;}
+
+
+/*头像*/
+#avatars .get_button .btn{background-position: -30px -42px;margin-left: 8px;cursor: pointer;}
+#avatars .scrollBarContainer{right: 22px;top: 1px;position: relative;}
+#avatars .scroll-pane li .img{width: 72px;height: 116px;margin-left: 6px;margin-top: 9px;position: relative;z-index: 1;top: -6px;}
+#avatars .scroll-pane li .img img{width: 92px;height: 126px;margin-left: 7px;}

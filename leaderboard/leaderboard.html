@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>LeaderBoard</title>
+<link href="css/lboard.css" type="text/css" rel="stylesheet">
+<link href="../css/reset.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div class="lboard"><!--<a href="#" class="close"></a>-->
+     <div class="ld_t_bg"></div>
+     <div class="ld_c_bg">
+          <div class="widget-tabpanel clear" id="panel_personal">
+            <div class="clear top_div">
+              <ul class="tabs fll clear" id="boardTabs">
+                  <li class="tab" id="tab1" data-boardtype="2"></li>
+                  <li class="tab" id="tab2" data-boardtype="1"></li>
+                  <li class="tab" id="tab3" data-boardtype="3"></li>
+              </ul>
+              <div class="friends flr">
+                <div class="checkbox" id="checkbox"><a id="check_btn"></a></div>
+                <div class="frd"></div>
+                <a href="/leaderBoard_history.html" target="_blank" class="Leaderboard_History"></a>
+              </div><!--friends筛选 end/-->
+            </div>
+             <!--panel hands won-->
+             <div class="panel">
+               <div class="lb_title clear" id="lb_title">
+                 <a href="javascript:void(0);" class="tit_rank role changeRankData" data-boardtype="2" data-column="1" data-sorttype="1">Rank</a>
+                 <a href="javascript:void(0);" class="tit_player role changeRankData" data-boardtype="2" data-column="2" data-sorttype="0">Player</a>
+                 <a href="javascript:void(0);" class="tit_player changeRankData" data-boardtype="2" data-column="3" data-sortType="0">Hands Won</a>
+               </div>
+               <ul class="panelsul" id="scroll-2">
+               </ul>
+             </div>
+             <!--panel hands won end-->
+             <div class="panel">
+               <div class="lb_title clear">
+                 <a href="javascript:void(0);" class="tit_rank role changeRankData" data-boardType="1" data-Column="1" data-sortType="1">Rank</a>
+                 <a href="javascript:void(0);" class="tit_player role changeRankData" data-boardType="1" data-Column="2" data-sortType="0">Player</a>
+                 <a href="javascript:void(0);" class="tit_player changeRankData" data-boardType="1" data-Column="3" data-sortType="0">Biggest Pot</a>
+               </div>
+               <ul class="panelsul" id="scroll-1">
+                </ul>
+             </div>
+             <!-- panel Biggest Pot end -->
+             <div class="panel">
+               <div class="lb_title clear">
+                 <a href="javascript:void(0);" class="tit_rank role changeRankData" data-boardType="3" data-Column="1" data-sortType="1">Rank</a>
+                 <a href="javascript:void(0);" class="tit_player role changeRankData" data-boardType="3" data-Column="2" data-sortType="0">Player</a>
+                 <a href="javascript:void(0);" class="tit_player changeRankData" data-boardType="3" data-Column="3" data-sortType="0">Most Chips</a>
+               </div>
+               <ul class="panelsul" id="scroll-3">
+                </ul>
+             </div>
+             <!--panel Most Chips end-->
+          </div>
+       </div><!--ld_c_bg内容部分end/-->
+</div>
+<script type="text/javascript" src="../js/our.js"></script>
+<script type="text/javascript" src="../js/tabpanel.js"></script>
+<script type="text/javascript" src="js/leaderboard.js?v=2.2.7"></script>
+</body>
+</html>

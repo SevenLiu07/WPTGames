@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="Play free poker online with the PlayWPT casino game. The most authentic texas holdem poker play online!"/>
+<meta name="keywords" content="poker,texas holdem,online poker,online casino,free poker,poker games,free texas holdem,free online poker,play wpt, wpt"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=10">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10"/>
+<meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<title>PLAYWPT</title>
+<link href="/css/reset.css" rel="stylesheet" type="text/css"/>
+<link href="/css/main.css?v=2.2.7" rel="stylesheet" type="text/css"/>
+</head>
+<body id="gm_pic" class="game_poker" style="overflow-y: auto; overflow-x: auto;">
+<!--nav-->
+<div class="top_nav_scroll">
+  <div class="logo fll"><a href="/"></a></div>
+  <div class="top_btn flr">
+    <div class="log_out flr"><a href="javascript:void (0)" id="log_out_gm"></a></div>
+    <div class="flr"><p class="user_name" id="u_nm"></p></div>
+  </div>
+</div>
+<!--nav end/-->
+<div class="chose_game flr" id="change_bg">
+  <div class="left_nav">
+    <ul class="tabs" id="screen_height">
+      <li class="tab_poker tab_poker_hov"><a href="javascript:void(0)"></a></li>
+      <li class="tab_slot" id="game_slot"><a href="javascript:void(0)"></a></li>
+    </ul>
+    <div class="new_lobby" id="newLobby"><a href="/poker"></a></div>
+  </div>
+  <div class="panels_poker">
+    <div class="gm_part">
+      <div class="gm_con" style=" background: none;">
+        <div id="FlashInputDiv"></div>
+        <div id="gameSwf">
+            <script type="text/javascript">
+            var pageHost = ((document.location.protocol == "https:") ? "https://" : "http://");
+            document.write("<div class='flash_btn'><a href='http://www.adobe.com/go/getflashplayer'><img src='"
+            + pageHost + "www.adobe.com/images/shared/download_buttons/get_flash_player.gif' alt='Get Adobe Flash player' /></a><p>Adobe Flash player not installed</p></div>");
+            </script>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--footer-->
+<div class="footer">
+  <div class="fot_dis">
+    <p>The games are intended for an adult audience.</p>
+    <p>The games do not offer "real money gambling" or an opportunity to win real money or prizes.</p>
+    <p>Practice or success at social casino gaming does not imply future success at "real money gambling."</p>
+  </div>
+  <div class="links">
+    <span>PlayWPT ©2017 WPT Enterprises, Inc.</span>
+    <a target="_blank" href="/faqs">FAQs</a>
+    <a target="_blank" href="http://www.worldpokertour.com/privacy-policy/">Privacy Policy</a>
+    <a target="_blank" href="/terms">Terms and Conditions</a>
+  </div>
+</div>
+<div class="clear"></div>
+<div id="poker" class="widget-dialog small_shop" style="display: none;"><a href="javascript:void('close');" class="close" id="close" hidefocus style="margin-right: 8px; margin-top: -5px;"></a>
+  <iframe id="frame_shop" name="frame_shop" src="/shop/shop.html" width="642" height="571" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+</div>
+<div id="personal" class="widget-dialog open_personal" style="display: none;"><a href="javascript:void('close');" class="close" id="close_pers" hidefocus style="margin-right: 0;"></a>
+  <!--<iframe name="frame_personal" src="https://id.playwpt.com/" width="595" height="560" frameborder="0" scrolling="no" allowtransparency="true"></iframe>-->
+  <iframe name="frame_personal" src="/personal/index.html" width="595" height="560" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+</div>
+<div id="payment" class="widget-dialog small_shop" style="display: none;"><a href="javascript:void('close');" class="close" id="close_pay" hidefocus></a>
+  <iframe name="frame_pay" id="frame_pay" src="" width="642" height="571" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+</div>
+<div id="leaderboard" class="widget-dialog small_shop" style="display: none;"><a href="javascript:void('close');" class="close" id="close_lb" hidefocus style="margin-right: 18px; top:60px;"></a>
+  <iframe name="frame_lb" id="frame_lb" src="" width="646" height="571" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+</div>
+<!--change games-->
+<div id="dialog_game" class="widget-dialog" style="display: none;">
+  <div class="topbg"></div>
+  <a href="javascript:void('close');" class="close" hidefocus></a>
+  <div class="pop_bg">
+    <div class="blue">PlayWPT</div>
+    <div class="mail_info">
+      <p id="gm_poker_dis"></p>
+    </div>
+    <div class="btns">
+      <div class="btn_switch fll"><a href="javascript:void(0);" id="btn_switch"></a></div>
+      <div class="btn_cancle flr"><a href="javascript:void(0);" id="btn_cancle"></a></div>
+    </div>
+  </div>
+  <!--pop_bg end/-->
+  <div class="botbg"></div>
+</div>
+<!--change games end/-->
+<div id="dialog_flv" class="widget-dialog dialog_flv" style="display: none;"><!--flash版本提示窗口-->
+  <div class="topbg"></div>
+  <a href="javascript:void('close');" class="close close_btn" hidefocus></a>
+  <div class="pop_bg">
+    <div class="retry_con"><p id="flv_info"></p></div>
+    <div class="btn_retry" id="btn_retry"><a href="javascript:void (0)"></a></div>
+  </div>
+  <!--pop_bg end/-->
+  <div class="botbg"></div>
+</div>
+<!--loading-->
+<div id="loading" class="widget-dialog" style="display: none;">
+  <div class="ld_img">Loading...</div>
+</div>
+<script type="text/javascript" src="/js/our.js"></script>
+<script type="text/javascript" src="https://static.play-wpt.com/www/scripts/google_tg.js" defer></script>
+<!--google analytics-->
+<script type="text/javascript" src="/js/swfobject.js"></script>
+<script type="text/javascript" src="/js/game.js?version=2.2.7.3"></script>
+<script type="text/javascript" src="/js/dialog.js"></script>
+<script type="text/javascript" src="https://static.play-wpt.com/poker/client/scripts/flash.input.js"></script>
+<script type="text/javascript" src="https://static.play-wpt.com/poker/client/scripts/flash.mouse.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+  game_poker();
+};
+//switch to Slots
+$("#game_slot").on('click', function () {
+  $("#dialog_game").open();
+  $("#gm_poker_dis").innerHTML = 'Do you want to switch to Slots?';
+  $("#btn_switch").on('click', function () {
+    this.href = baseUrls + 'slots';
+  });
+});
+$("#btn_cancle").on('click', function () {
+  $("#dialog_game").close();
+});
+</script>
+</body>
+</html>

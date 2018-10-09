@@ -1,0 +1,91 @@
+/**
+ * 支付弹窗宽度670
+ */
+#billing_info{ display: none;}
+#complet_order{ display: none;}
+.title_payment{ background: url("/wpt/www/module/pay/images/purchase.png") 0 30px no-repeat; width:182px;}
+.step{ padding: 10px 0 20px 0; width: 610px; margin: 0 auto;}/*显示步骤*/
+.step_custom{ width: 535px; height: 37px; margin: 0 auto;}
+.step_one{ background:url(/wpt/www/module/pay/images/pay_icons.png) no-repeat 0 0;}
+.step_two{ background:url(/wpt/www/module/pay/images/pay_icons.png) no-repeat 0 -43px;}
+.step_three{ background:url(/wpt/www/module/pay/images/pay_icons.png) no-repeat 0 -87px;}
+.step p{ width: 190px; padding-left: 10px; height: 35px; float: left; line-height: 35px; font-size:16px; color: #fff;}
+
+.column_title{ font-size: 23px; line-height: 30px; height: 30px; padding-bottom: 4px; font-weight: bold; color: #fff;}
+.info_width{ width:auto; padding: 6px ; margin-bottom: 3px;}
+.pay_con{ padding: 15px 25px;}
+.add_info{ background: url(/wpt/www/module/pay/images/update.png) no-repeat; width:117px; height:70px; float:right; margin-left: 10px;}
+.reduce_info{ background: url(/wpt/www/module/pay/images/pay_reduce.png) no-repeat; width:117px; height:70px; float:right; margin-left: 10px;}
+.add_info a,.reduce_info a{ width:112px; height:62px; display: block;}
+/*pay内容区域公用input样式*/
+.pay_con input[type="text"]{ color: #333; font-size: 16px; height:37px; line-height: 37px; padding: 0 1%;}
+
+.pay_con input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ color: #979eaa; }
+.pay_con input::-moz-placeholder { /* Mozilla Firefox 19+ */ color: #979eaa; }
+.pay_con input:-ms-input-placeholder, .pay_con select:-ms-input-placeholder { color: #979eaa; }
+.pay_con input::-webkit-input-placeholder, .pay_con select::-webkit-input-placeholder { color: #979eaa; }
+
+.pay_image{ display: block; padding: 10px 0;}
+.pay_image img{ width:112px; height:62px; display:block; float:left; margin-right: 10px;}
+.pay_infos{ width:auto; padding: 14px 0;position:relative;}/*文本框样式*/
+.pay_input{ width:98%;}.pay_inputs{ width:47%;}.pay_input_city{ width:57%;}.pay_input_state{ width:35%;}
+.pay_input_name{ width:29%;}
+.txt_input_country{ width:22% !important;}
+.pay_infos select{ width:47%; color: #333; font-size: 16px; height:37px; line-height: 37px; padding: 0 1%;}
+
+.txt_short{ width: 45%; position:relative; padding: 10px 0;}
+.txt_short input{ padding:0 0 0 2% !important;}
+.pay_infos lable,.pay_infos lable{ position: absolute; z-index: 99; left: 0;}
+
+.doubt{ width: 29px; height: 29px; background:url(/wpt/www/module/pay/images/pay_icons.png) no-repeat -772px 0; position: absolute; right: 5px; margin-top: 5px;}
+.doubt a{ width: 29px; height: 29px; display: block;}
+.tips{ background:url(/wpt/www/module/pay/images/tips.png) center top no-repeat; width: 200px; height: 62px; position: absolute; right:0; margin-top: -56px; display: none;}
+.tips p{ padding: 4px 0 4px 8px !important; line-height: 18px; color: #fff;}
+
+.worn{ width: auto; height: 20px;}.worn p{ font-size: 14px; line-height: 20px; color: #ff0000;}/*错误提示信息*/
+/*支付商品信息*/
+.show_payinfo{ height:37px; margin: 10px 0 0 0; border-top: 2px dotted #2b2b2b; border-bottom: 2px dotted #2b2b2b; line-height: 37px; color: #8f8f8f;}
+.show_payinfo p{ color: #979eaa; font-size: 24px; line-height: 37px;}.show_payinfo span{ color: #fff985;}
+/*确认订单详情*/
+.payment_info{ display: block;}
+.payment_info li{ height: auto; min-height: 46px; line-height: 46px; padding: 0 25px; font-size: 18px; color: #9fa5b1;}
+.payment_info li p{ width: 50%; line-height: 46px;}
+.payment_info li span{ color: #fff985;}
+.payment_info li:nth-child(even){ background: #0c1017;}/*odd:奇数*/
+
+.marg_infos{ margin: 30px 25px 0 25px;}
+/*button*/
+.pay_button{ padding: 10px 80px;}
+.btn_cancle,.btn_buy,.btn_comp,.btn_ok,.btn_back,.btn_next,.btn_retry{ width: 219px; height: 68px;}
+.pay_button a{ background:url(/wpt/www/module/pay/images/pay_icons.png) no-repeat; width: 219px; height: 68px; display: block;}
+.btn_cancle a{ background-position: 0 -269px;}
+.btn_cancle a:hover{ background-position: -219px -269px;}
+.btn_cancle a:active{ background-position: -438px -266px;}
+.btn_next a{ background-position: 0 -346px;}
+.btn_next a:hover{ background-position: -219px -346px;}
+.btn_next a:active{ background-position: -438px -343px;}
+.btn_back a{ background-position: 0 -423px;}
+.btn_back a:hover{ background-position: -219px -423px;}
+.btn_back a:active{ background-position: -438px -420px;}
+.btn_confirm a{ background-position: 0 -501px;}
+.btn_confirm a:hover{ background-position: -219px -501px;}
+.btn_confirm a:active{ background-position: -438px -498px;}
+
+.btn_ok a{ background-position: 0 -580px;}
+.btn_ok a:hover{ background-position: -219px -580px;}
+.btn_ok a:active{ background-position: -438px -577px;}
+
+.btn_retry a{ background-position: 0 -658px;}
+.btn_retry a:hover{ background-position: -219px -658px;}
+.btn_retry a:active{ background-position: -438px -655px;}
+.con_min_h{ min-height: 350px;}
+/*pay公用样式*/
+.marg_right{ margin-right: 20px !important;}
+.marg_other{ margin-right: 15px !important;}
+.no_marg_bottom{ margin-bottom: 0 !important;}
+.marg_auto{ margin:0 auto;}
+.txt_left{ text-align: left;}
+.txt_center{ text-align: center;}
+.txt_right{ text-align: right;}.pad_bottom{ padding-bottom: 8px;}
+.pay_con_mh{ min-height: 270px;}.no_pad_bottom{ padding-bottom: 0;}
+/*支付弹框样式*/

@@ -1,0 +1,1898 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)https://www.playwpt.com/poker/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script class="$1508466933840" src="account-model-d3652d86e3.js"></script><script class="$1508466933840" src="promotion-model-ec1848e4bd.js"></script><script class="$1508466933840" src="leaderboard-model-ecb53e898e.js"></script><script class="$1508466933840" src="store-model-deb3b28fc7.js"></script><script class="$1508466933840" src="pay-model-ec8763b197.js"></script><script class="$1508466933840" src="personal-model-fb5ed8ebfc.js"></script><script class="$1508466933840" src="inventory-model-a60632d3c6.js"></script><script class="$1508466933840" src="lobby-model-31cc6448dc.js"></script><script class="$1508466933840" src="account-2d8cbfaf62.js"></script><script class="$1508466933840" src="goldStore-4abcc9f496.js"></script><script class="$1508466933840" src="lboard-63531528fe.js"></script><script class="$1508466933840" src="promotion-1e262e4a7d.js"></script><script class="$1508466933840" src="store-997f63a694.js"></script><script class="$1508466933840" src="payment-22161b50fe.js"></script><script class="$1508466933840" src="inventory-a71543984a.js"></script><script class="$1508466933840" src="personal-23ce3f397d.js"></script><script class="$1508466933840" src="account-common.js"></script><script class="$1508466933840" src="gamehall-aa5f30b363.js"></script><script class="$1508466933840" src="new_index-001.js"></script><script class="$1508466933840" src="scrollBar.js"></script><script class="$1508466933840" src="common-dufu-10961c5f98.js"></script><script class="$1508466933840" src="avalon.getModel.js"></script><script async="" src="analytics.js"></script><script class="$1508466933840" src="jquery1.10.2.js"></script><script class="$1508466933840" src="avalon.dialog.js"></script><avalon ms-skip="1" class="avalonHide">X<style id="avalonStyle">.avalonHide{ display: none!important }</style><header ms-if="showNav" avalonctrl="loginInfo">
+    <nav>
+        <div class="left_bg">
+            <div class="right_bg">
+                <div class="center_bg">
+                    <div class="logo fll"><img src="logo.png"> </div>
+                    <div>
+                        <!--status of not logged in-->
+                        <div class="login_before flr" ms-visible="loginBefore">
+                            <div class="sign flr"><a href="javascript:void (0)" onclick="showDialog(&#39;show_register&#39;)"></a></div>
+                            <div class="role flr"></div>
+                            <div class="login flr"><a href="javascript:void (0)" onclick="showDialog(&#39;show_login&#39;)"></a></div>
+                        </div>
+                        <!--status of logged in-->
+                        <div class="login_after flr" ms-visible="loginAfter">
+                            <div class="roles flr list_posit">
+                                <a href="javascript:void(0)" class="nav_list"></a><!--select list-->
+                                <div class="nav_dropdown" style="display: none;">
+                                    <div class="conner"></div>
+                                    <ul class="list_con">
+                                        <li class="QA_account"><a href="javascript:void(0)" onclick="showDialog(&#39;show_person&#39;)">My Account</a> </li>
+                                        <li class="QA_inventory"><a href="javascript:void(0)" onclick="showDialog(&#39;show_inventory&#39;,&#39;avatars&#39;)">My Inventory</a> </li>
+                                        <!--<li><a href="javascript:void(0)" onclick="openTourney()">My Tourney</a> </li>
+                                        <li><a href="javascript:void(0)" onclick="showDialog('show_leaderboard')">LeaderBoard</a> </li>-->
+                                        <li class="QA_settings" ms-if="settings"><a href="javascript:void(0)" onclick="openSettings()">Settings</a> </li>
+                                        <li class="QA_redeem"><a href="javascript:void(0)" onclick="showDialog(&#39;show_promotion&#39;)">Redeem</a> </li>
+                                        <li class="QA_logOut" ms-if="showLogOut"><a href="javascript:void(0)" ms-click="logOut()">Log Out</a> </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="roles flr">
+                                <p class="fll"><a href="javascript:void(0)" onclick="showDialog(&#39;show_person&#39;)">{{defaultName}}</a></p>
+                                <div class="head flr"><a href="javascript:void(0)" onclick="showDialog(&#39;show_inventory&#39;,&#39;avatars&#39;)"><img ms-src="userAvatar"></a></div>
+                            </div>
+                            <a href="javascript:void(0)" class="golds_info flr" onclick="showDialog(&#39;show_store&#39;,&#39;&#39;,&#39;gold&#39;)">
+                                <div class="silver_gold fll"></div>
+                                <p class="fll txt_shadow">{{goldCoin}}</p>
+                                <div class="btn_add flr"></div>
+                            </a>
+                            <a href="javascript:void(0)" onclick="openRewards()">
+                                <div class="golds_infos flr" ms-visible="rewardspoint">
+                                    <div class="rewards fll"></div>
+                                    <p class="fll txt_shadow">{{rewards}}</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header></avalon>
+    <meta charset="utf-8">
+    <title>PLAYWPT</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="full-screen" content="true">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="360-fullscreen" content="true">
+    <!--头部css-->
+	  <link rel="stylesheet" type="text/css" media="all" href="base.css">
+    <link rel="stylesheet" type="text/css" media="all" href="lobby-min.css">
+    <style>
+        html, body {
+            -ms-touch-action: none;
+            background: #000000;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;overflow: hidden;
+        }
+    </style>
+	<!-- Facebook Pixel Code -->
+    <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '660043590839998');
+    fbq('track', 'PageView');
+    </script>
+    <noscript>&lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=660043590839998&amp;ev=PageView&amp;noscript=1"/&gt;</noscript>
+    <!-- End Facebook Pixel Code -->
+</head>
+<body class="lobby_bg" style=""><div avalonctrl="gamehall">
+
+    <!--recharge popups-->
+    
+    <!--fb users login for first time to get free reminders popups-->
+    
+
+
+</div><!--ms-if-->
+    <!--这个标签为通过egret提供的第三方库的方式生成的 javascript 文件。删除 modules_files 标签后，库文件加载列表将不会变化，请谨慎操作！-->
+    <!--modules_files_start-->
+	<script egret="lib" src="egret.min.js"></script>
+	<script egret="lib" src="egret.web.min.js"></script>
+	<script egret="lib" src="game.min.js"></script>
+	<script egret="lib" src="game.web.min.js"></script>
+	<script egret="lib" src="res.min.js"></script>
+	<script egret="lib" src="eui.min.js"></script>
+	<script egret="lib" src="tween.min.js"></script>
+	<script egret="lib" src="socket.min.js"></script>
+	<script egret="lib" src="dragonBones.min.js"></script>
+	<script egret="lib" src="mouse.min.js"></script>
+	<script egret="lib" src="protobuf.min.js"></script>
+	<script egret="lib" src="encoding.min.js"></script>
+	<script egret="lib" src="des.min.js"></script>
+	<script egret="lib" src="particle.min.js"></script>
+	<!--modules_files_end-->
+
+    <!--这个标签为不通过egret提供的第三方库的方式使用的 javascript 文件，请将这些文件放在libs下，但不要放在modules下面。-->
+    <!--other_libs_files_start-->
+    <!--other_libs_files_end-->
+
+    <!--这个标签会被替换为项目中所有的 javascript 文件。删除 game_files 标签后，项目文件加载列表将不会变化，请谨慎操作！-->
+    <!--game_files_start-->
+	<script src="main.min.js"></script>
+	<!--game_files_end-->
+	<script egret="game" src="club.js"></script>
+
+	<!--go to index-->
+	<div id="homepage" class="home" style="display: block;"><a href="javascript:void(0)"></a></div>
+	<!--<div class="old_lobby" id="oldLobby"><a href="https://www.playwpt.com/game.html"></a></div>-->
+	
+    <div style="margin: auto; width: 100%; height: 100%; overflow: hidden; position: relative; transform: translateZ(0px);" class="egret-player" data-entry-class="Main" data-orientation="auto" data-scale-mode="showAll" data-frame-rate="60" data-content-width="1920" data-content-height="1080" data-show-paint-rect="false" data-multi-fingered="2" data-show-fps="false" data-show-log="false" data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9">
+    <canvas width="1920" height="1080" style="cursor: inherit; position: absolute; top: 135.5px; bottom: 0px; left: 0px; right: 0px; transform-origin: 0% 0% 0px; width: 842px; height: 474px; transform: rotate(0deg);"></canvas><div id="StageDelegateDiv" style="position: absolute; left: 0px; top: 135.5px; border: none; padding: 0px; transform: rotate(0deg); transform-origin: 0% 0% 0px;"><div style="position: absolute; left: 0px; top: -100px; border: none; padding: 0px; width: 0px; height: 0px; transform-origin: 0% 0% 0px;"><textarea id="egretTextarea" tabindex="-1" style="resize: none; width: 1px; height: 12px; position: absolute; left: 0px; top: 0px; border: none; padding: 0px; outline: thin; overflow: hidden; word-break: break-all; opacity: 0; background: none;"></textarea><input id="egretInput" type="text" tabindex="-1" style="width: 1px; height: 12px; position: absolute; left: 0px; top: 0px; border: none; padding: 0px; outline: thin; overflow: hidden; word-break: break-all; opacity: 0; background: none;"></div></div></div>
+	
+	<!--<div id="mailContent" width="300" height="300" style="margin: auto;width:100;height:300;position: absolute;top: 100px; left: 100px;">showAll,noScale-->
+	<div id="mailContent">
+	</div>
+ <div class="video_lobby" style="display: none;">
+    <iframe src="about:blank" id="iframe_video" frameborder="0" allowfullscreen=""></iframe>
+    <!--<a href="javascript:void(0)"></a>-->
+</div>
+    <script>
+	
+		window.changeVideoSrc = function(value){
+        // if(window.player.source == value) return
+        // window.player.src({
+        //        src: value,
+        //        type: 'application/x-mpegURL'
+        //    });
+    	}
+		
+        /**
+         * {
+         * "renderMode":, //引擎渲染模式，"canvas" 或者 "webgl"
+         * "audioType": "" //使用的音频类型，0:默认，1:qq audio，2:web audio，3:audio
+         * }
+         **/
+        var ua = navigator.userAgent.toString();
+		var mode = "";
+		if(ua.indexOf("Windows") != -1){
+			mode = "webgl";
+		}else{
+			mode = "canvas";
+		}
+        egret.runEgret({renderMode:mode, audioType:0});
+
+    </script>
+
+    <script type="text/javascript" src="avalon.js"></script>
+	<script type="text/javascript" src="lobby.js"></script>
+    <script type="text/javascript" src="poker.js"></script>
+    <!--打开弹窗相对应选项卡-->
+    <!--<a href="javascript:void(0)" onclick="show_dialog('show_store','avatars','items')">test</a>-->
+	<!-- Google Analytics -->
+	<script>
+		window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+		/*统计对象*/
+		window.conversionLabels = {
+			as:"iIUfCJqZ7G0QzISpnAM",//Avatar selected
+			ue:"QXcECK7C0m0QzISpnAM",//Username entered
+			fb:"BsikCKvC0m0QzISpnAM",//Registration w/ Facebook
+			em:"rvKdCMzw5m0QzISpnAM" //Registration w/ Email Address
+		};
+    if(location.href.indexOf("facebook") !== -1){
+      ga('send','event','fb_poker_lobby','view');
+    }else{
+      ga('send','event','poker_lobby','view');
+    }
+	</script>
+	<!-- End Google Analytics -->
+	<script type="text/javascript" src="google_tg.js" async=""></script><!--google统计-->
+	<script type="text/javascript" src="https://www.googleadservices.com/pagead/conversion_async.js" charset="utf-8" async=""></script>
+
+
+<div class="oni-dialog-mask" style="display: none; z-index: 12; height: 745px; width: 1035px; top: 0px; position: absolute;"></div>
+<div style="display: none; z-index: 12; height: 745px; width: 1035px; top: 0px; overflow: auto; position: absolute;"><div class="widget-dialog public_notice QA_notice oni-dialog" avalonctrl="public_notice" style="position: fixed; width: 530px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+    <div class="top_pop">
+        <div class="top_leftbg fll"></div>
+        <div class="top_centbg top_centbg_small fll">
+            <div class="title title_small">
+                <div class="title_leftbg">
+                    <div class="title_rightbg">
+                        <div class="title_name title_notice"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top_rightbg fll">
+            <div class="close_btns flr"><a href="javascript:void(0)"></a></div>
+        </div>
+    </div><!--/end top_pop弹窗头部-->
+    <div class="pop_con_rightbg">
+        <div class="pop_con">
+          <div class="text"></div>
+          <div class="pay_button clear">
+            <div class="btn_ok marg_auto"><a href="javascript:void (0)"></a> </div>
+          </div>
+        </div>
+    </div><!--/end pop_con_rightbg弹窗内容部分-->
+    <div class="bottom_pop">
+        <div class="bot_leftbg fll"></div>
+        <div class="bot_centbg bot_centbg_small fll"></div>
+        <div class="bot_rightbg fll"></div>
+    </div>
+</div></div><div class="widget-dialog advert_recharge oni-dialog" avalonctrl="show_rechargeBoot" style="position: fixed; width: 809px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+        <div class="close_btns flr"><a href="javascript:void(0)"></a></div>
+        <!--<img ms-src="rechargeUrl" ms-click="advert_recharge"/>-->
+        <div class="re_con">
+            <h1></h1>
+            <p>Get<span></span> for <br></p>
+            <div class="price"><span class="fll">________</span>$<span class="flr">________</span></div>
+            <div class="btn_buy"><a href="javascript:void (0)"></a> </div>
+        </div>
+    </div></div><div class="widget-dialog advert_recharge oni-dialog" avalonctrl="fbFirstLogin" style="position: fixed; width: 809px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+        <div class="close_btns flr"><a href="javascript:void(0)"></a></div>
+        <!--<img ms-src="rechargeUrl" ms-click="advert_recharge"/>-->
+        <div class="re_con">
+            <div class="fb_prompt">
+                <p>Gold</p>
+                <a href="javascript:void (0)"></a>
+            </div>
+        </div>
+    </div></div><div class="widget-dialog online_notice oni-dialog" avalonctrl="online_notice" style="position: fixed; width: 1060px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+    <div class="bg">
+        <a href="javascript:void(0)" class="close"></a>
+    </div>
+</div></div><div class="widget-dialog lboard-dialog oni-dialog" avalonctrl="leaderboard" style="position: fixed; width: 1016px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+<div class="top_pop">
+    <div class="top_leftbg fll"></div>
+    <div class="top_centbg fll">
+        <div class="title">
+            <div class="title_leftbg">
+                <div class="title_rightbg"><div class="title_name title_store"></div><!--样式保留title_name--></div>
+            </div>
+        </div>
+    </div>
+    <div class="top_rightbg fll">
+        <div class="close_btns flr"><a href="javascript:void(0)"></a></div>
+    </div>
+</div>
+<div class="pop_con_rightbg">
+    
+<div class="pop_con">
+  <!--leaderboard content-->
+  <div class="leaderboard">
+       <div class="top"></div>
+       <div class="top-bar leaderb_top"></div>
+       <div class="lb-con">
+         <div class="tabs clear">
+               <ul class="fll">
+                <!--repeat286545466632--><li>
+                  <a href="javascript:void(0)" class="sprites handswon"></a>
+                </li><!--repeat286545466632--><li>
+                  <a href="javascript:void(0)" class="sprites biggest"></a>
+                </li><!--repeat286545466632--><li>
+                  <a href="javascript:void(0)" class="sprites mostchips"></a>
+                </li><!--repeat286545466632--><!--repeat286545466632:end-->
+               </ul>
+           <!--<div class="friends flr">
+                  <div id="fdOnly" class="sprites fd-only"><a href="javascript:void(0)" ms-click="friendOnly"></a> </div>
+                  <div class="frd">Friends Only</div>
+                  <div class="sprites doubts"></div>
+                </div>--><!--friends筛选 end/-->
+         </div>
+         <div>
+                 <!--panel hands won-->
+                 <div id="handswon" class="panel">
+                   <div class="corner_bg">
+                     <div class="lb-title">
+                       <a class="tit-rank role"><span></span>Rank</a>
+                       <a class="tit-player role"><span></span>Player</a>
+                       <a class="tit-player"><span></span>Hands Won</a>
+                     </div>
+                     <!--leaderboard ME-->
+                     <div class="panel">
+                          <ul>
+                            <li>
+                              <div class="tit-rank sprites icon-me"></div>
+                              <span class=""></span>
+                              <div class="tit-player"></div>
+                              <div class="tit-player"><span class="sprites icon-poker"></span></div>
+                            </li>
+                          </ul>
+                     </div>
+                   </div><!-- end corner_bg marg-top-->
+                   <div class="corner_bg panels marg-top">
+                     <div class="scroll-pane">
+                     <ul>
+                       <!--repeat713556993753--><!--repeat713556993753:end-->
+                     </ul>
+                     </div>
+                   </div>
+                 </div><!--panel hands won end-->
+                   <!--panel biggest pot-->
+                   <div id="biggest" class="panel" style="display: none;">
+                     <div class="corner_bg">
+                       <div class="lb-title">
+                         <a class="tit-rank role">Rank</a>
+                         <a class="tit-player role">Player</a>
+                         <a class="tit-player">Biggest Pot</a>
+                       </div>
+                       <!--leaderboard ME-->
+                       <div class="panel">
+                            <ul>
+                              <li>
+                                <div class="tit-rank sprites icon-me"></div>
+                                <span class=""></span>
+                                <div class="tit-player"></div>
+                                <div class="tit-player"><span class="sprites icon-gold"></span></div>
+                              </li>
+                            </ul>
+                       </div>
+                     </div><!-- end corner_bg marg-top-->
+                     <div class="corner_bg panels marg-top">
+                       <div class="scroll-pane">
+                       <ul>
+                         <!--repeat510669872165--><!--repeat510669872165:end-->
+                       </ul>
+                       </div>
+                     </div>
+                   </div><!--panel biggest pot end-->
+                   <!--panel most chips-->
+                   <div id="mostchips" class="panel" style="display: none;">
+                     <div class="corner_bg">
+                       <div class="lb-title">
+                         <a class="tit-rank role">Rank</a>
+                         <a class="tit-player role">Player</a>
+                         <a class="tit-player">Most Chips</a>
+                       </div>
+                       <!--leaderboard ME-->
+                       <div class="panel">
+                            <ul>
+                              <li>
+                                <div class="tit-rank sprites icon-me"></div>
+                                <span class=""></span>
+                                <div class="tit-player"></div>
+                                <div class="tit-player"><span class="sprites icon-gold"></span></div>
+                              </li>
+                            </ul>
+                       </div>
+                     </div><!-- end corner_bg marg-top-->
+                     <div class="corner_bg panels marg-top">
+                       <div class="scroll-pane">
+                       <ul>
+                         <!--repeat463344156742--><!--repeat463344156742:end-->
+                       </ul>
+                       </div>
+                     </div>
+                   </div><!--panel hands won end-->
+         </div>
+       </div>
+  </div>
+  <!--end leaderboard content-->
+</div></div><div class="bottom_pop">
+    <div class="bot_leftbg fll"></div>
+    <div class="bot_centbg fll"></div>
+    <div class="bot_rightbg fll"></div>
+</div>
+<div class="gray_bg" id="loading" style="display: none; top: 0px;">
+    <div class="ld_shadow">
+        <div class="loading"><p>LOADING...</p><span class="image"></span></div>
+    </div>
+</div></div></div><div class="widget-dialog oni-dialog" avalonctrl="payment" style="position: fixed; width: 747px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+  <div class="top_pop">
+    <div class="top_leftbg fll"></div>
+    <div class="top_centbg top_centbg_small fll">
+      <div class="title title_small">
+        <div class="title_leftbg">
+          <div class="title_rightbg"><div class="title_name title_payment"></div><!--样式保留title_name--></div>
+        </div>
+      </div>
+    </div>
+    <div class="top_rightbg fll">
+      <div class="close_btns flr"><a href="javascript:void(0)"></a></div>
+    </div>
+  </div><!--/end top_pop弹窗头部-->
+  <div class="pop_con_rightbg">
+  <div class="pop_con">
+    <!--支付弹窗内容部分-->
+  <div id="pay_option">
+    <div class="step">
+      <div class="clear"><p>Payment options</p><p class="txt_center">Billing information</p><p class="txt_right">Complete order</p></div>
+      <div class="step_one step_custom"></div>
+    </div>
+    <div class="corner_bg">
+        <div class="corner_con info_width no_marg_bottom con_min_h">
+          <div class="column_title">Credit Card</div>
+          <div class="column_con pay_con clear pay_con_mh"><!--pay_con_mh height:270px-->
+            <div class="pay_image clear">
+                 <img src="visa-801a5c31db.png">
+                 <img src="masterCard-9ddd6d6e88.png">
+                 <img src="discover-c308c217df.png">
+                 <div class="add_info" id="show_infos"><a href="javascript:void(0)"></a> </div>
+            </div>
+            <div class="pay_infos">
+                 <input type="text" class="pay_input" maxlength="16" name="card_num" placeholder="Credit Card" value="">
+            </div>
+            <div class="txt_short fll">
+                 <input type="text" class="pay_input" maxlength="4" name="ex_date" placeholder="Expiration date: MMYY" value="">
+            </div>
+            <div class="txt_short flr">
+                 <div class="doubt"><a href="javascript:void(0);"></a></div>
+                 <div class="tips" id="tips"><p>CVV is the 3 or 4 digit number on the back of your credit card</p></div>
+                 <input type="text" class="pay_input" maxlength="4" name="ccv" placeholder="CVV" value="">
+            </div><div class="clear"></div>
+            <div class="worn"><p></p></div>
+            <div class="show_payinfo">
+                 <p class="fll">Buy: <span></span></p><p class="flr">Pay: <span></span></p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="pay_button clear">
+         <div class="btn_cancle fll"><a href="javascript:void (0)"></a> </div>
+         <div class="btn_next flr"> <a href="javascript:void (0)"></a></div>
+    </div>
+  </div><!--Payment options-->
+  <div id="billing_info" style="display: none;">
+      <div class="step">
+        <div class="clear"><p>Payment options</p><p class="txt_center">Billing information</p><p class="txt_right">Complete order</p></div>
+        <div class="step_two step_custom"></div>
+      </div>
+      <div class="corner_bg">
+          <div class="corner_con info_width no_marg_bottom con_min_h">
+            <div class="column_title">Billing Information</div>
+            <div class="column_con pay_con clear pay_con_mh"><!--pay_con_mh height:270px-->
+              <div class="pay_infos clear">
+                <input type="text" class="pay_input_name marg_right fll" maxlength="20" name="firstname" placeholder="First Name" value="">
+                <input type="text" class="pay_input_name fll" maxlength="20" name="middlename" placeholder="Middle Name" value="">
+                <input type="text" class="pay_input_name flr" maxlength="20" name="lastname" placeholder="Last Name" value="">
+              </div>
+              <div class="pay_infos">
+                   <input type="text" class="pay_input" maxlength="35" name="street" placeholder="Street" value="">
+              </div>
+              <div class="pay_infos clear">
+                <input type="text" class="pay_input_city fll" maxlength="20" name="pay_city" id="pay_city" placeholder="City" value="">
+                <input type="text" class="pay_input_state flr" maxlength="20" name="pay_state" id="pay_state" placeholder="State" value="">
+              </div>
+              <div class="pay_infos clear pad_bottom">
+                   <input type="text" class="pay_inputs fll" maxlength="6" name="postalCode" placeholder="Postal Code" value="">
+                   <select class="flr" id="country">
+                     <option value="USA">United States of America</option>
+                     <option value="GB">United Kingdom</option>
+                     <option value="CA">Canada</option>
+                     <option value="AL">Albania</option>
+                     <option value="DZ">Algeria</option>
+                     <option value="AS">American Samoa</option>
+                     <option value="AD">Andorra</option>
+                     <option value="AO">Angola</option>
+                     <option value="AI">Anguilla</option><option value="AQ">Antarctica</option><option value="AG">Antigua and Barbuda</option><option value="AR">Argentina</option><option value="AM">Armenia</option><option value="AW">Aruba</option><option value="AU">Australia</option><option value="AT">Austria</option><option value="AZ">Azerbaijan</option><option value="BS">Bahamas</option><option value="BH">Bahrain</option><option value="BD">Bangladesh</option><option value="BB">Barbados</option><option value="BY">Belarus</option><option value="BE">Belgium</option><option value="BZ">Belize</option><option value="BJ">Benin</option><option value="BM">Bermuda</option><option value="BT">Bhutan</option><option value="BA">Bosnia and Herzegovina</option><option value="BW">Botswana</option><option value="BV">Bouvet Island</option><option value="BR">Brazil</option><option value="IO">British Indian Ocean Territory</option><option value="BN">Brunei Darussalam</option><option value="BG">Bulgaria</option><option value="BF">Burkina Faso</option><option value="BI">Burundi</option><option value="KH">Cambodia</option><option value="CM">Cameroon</option><option value="KY">Cayman Islands</option><option value="CF">Central African Republic</option><option value="TD">Chad</option><option value="CL">Chile</option><option value="CN">China</option><option value="CX">Christmas Island</option><option value="CC">Cocos (Keeling) Islands</option><option value="CO">Colombia</option><option value="KM">Comoros</option><option value="CG">Congo</option><option value="CK">Cook Islands</option><option value="CR">Costa Rica</option><option value="HR">Croatia</option><option value="CU">Cuba</option><option value="CY">Cyprus</option><option value="CZ">Czech Republic</option><option value="DK">Denmark</option><option value="DJ">Djibouti</option><option value="DM">Dominica</option><option value="EC">Ecuador</option><option value="EG">Egypt</option><option value="SV">El Salvador</option><option value="GQ">Equatorial Guinea</option><option value="ER">Eritrea</option><option value="EE">Estonia</option><option value="ET">Ethiopia</option><option value="FK">Falkland Islands (Malvinas)</option><option value="FO">Faroe Islands</option><option value="FJ">Fiji</option><option value="FI">Finland</option><option value="FR">France</option><option value="GF">French Guiana</option><option value="PF">French Polynesia</option><option value="TF">French Southern Territories</option><option value="GA">Gabon</option><option value="GM">Gambia</option><option value="GE">Georgia</option><option value="DE">Germany</option><option value="GH">Ghana</option><option value="GI">Gibraltar</option><option value="GR">Greece</option><option value="GL">Greenland</option><option value="GD">Grenada</option><option value="GP">Guadeloupe</option><option value="GU">Guam</option><option value="GT">Guatemala</option><option value="GN">Guinea</option><option value="GY">Guyana</option><option value="HT">Haiti</option><option value="HM">Heard Island and McDonald Islands</option><option value="VA">Holy See</option><option value="HN">Honduras</option><option value="HK">Hong Kong</option><option value="HU">Hungary</option><option value="IS">Iceland</option><option value="IN">India</option><option value="ID">Indonesia</option><option value="IQ">Iraq</option><option value="IE">Ireland</option><option value="IL">Israel</option><option value="IT">Italy</option><option value="JM">Jamaica</option><option value="JP">Japan</option><option value="JO">Jordan</option><option value="KZ">Kazakhstan</option><option value="KE">Kenya</option><option value="KI">Kiribati</option><option value="KW">Kuwait</option><option value="KG">Kyrgyzstan</option><option value="LA">Lao People's Democratic Republic</option><option value="LV">Latvia</option><option value="LB">Lebanon</option><option value="LS">Lesotho</option><option value="LR">Liberia</option><option value="LY">Libya</option><option value="LI">Liechtenstein</option><option value="LT">Lithuania</option><option value="LU">Luxembourg</option><option value="MO">Macao</option><option value="MG">Madagascar</option><option value="MW">Malawi</option><option value="MY">Malaysia</option><option value="MV">Maldives</option><option value="ML">Mali</option><option value="MT">Malta</option><option value="MH">Marshall Islands</option><option value="MQ">Martinique</option><option value="MR">Mauritania</option><option value="MU">Mauritius</option><option value="YT">Mayotte</option><option value="MX">Mexico</option><option value="MC">Monaco</option><option value="MN">Mongolia</option><option value="ME">Montenegro</option><option value="MS">Montserrat</option><option value="MA">Morocco</option><option value="MZ">Mozambique</option><option value="MM">Myanmar</option><option value="NA">Namibia</option><option value="NR">Nauru</option><option value="NP">Nepal</option><option value="NL">Netherlands</option><option value="NC">New Caledonia</option><option value="NZ">New Zealand</option><option value="NI">Nicaragua</option><option value="NE">Niger</option><option value="NU">Niue</option><option value="NF">Norfolk Island</option><option value="MP">Northern Mariana Islands</option><option value="NO">Norway</option><option value="OM">Oman</option><option value="PK">Pakistan</option><option value="PW">Palau</option><option value="PA">Panama</option><option value="PY">Paraguay</option><option value="PE">Peru</option><option value="PH">Philippines</option><option value="PN">Pitcairn</option><option value="PL">Poland</option><option value="PT">Portugal</option><option value="PR">Puerto Rico</option><option value="QA">Qatar</option><option value="RU">Russian Federation</option><option value="RW">Rwanda</option><option value="KN">Saint Kitts and Nevis</option><option value="LC">Saint Lucia</option><option value="PM">Saint Pierre and Miquelon</option><option value="VC">Saint Vincent and the Grenadines</option><option value="WS">Samoa</option><option value="SM">San Marino</option><option value="ST">Sao Tome and Principe</option><option value="SA">Saudi Arabia</option><option value="SN">Senegal</option><option value="SC">Seychelles</option><option value="SL">Sierra Leone</option><option value="SG">Singapore</option><option value="SK">Slovakia</option><option value="SI">Slovenia</option><option value="SB">Solomon Islands</option><option value="ZA">South Africa</option><option value="ES">Spain</option><option value="LK">Sri Lanka</option><option value="SD">Sudan</option><option value="SR">Suriname</option><option value="SJ">Svalbard and Jan Mayen</option><option value="SZ">Swaziland</option><option value="SE">Sweden</option><option value="CH">Switzerland</option><option value="SY">Syrian Arab Republic</option><option value="TJ">Tajikistan</option><option value="TZ">Tanzania, United Republic of</option><option value="TH">Thailand</option><option value="TL">Timor-Leste</option><option value="TG">Togo</option><option value="TK">Tokelau</option><option value="TO">Tonga</option><option value="TT">Trinidad and Tobago</option><option value="TN">Tunisia</option><option value="TR">Turkey</option><option value="TM">Turkmenistan</option><option value="TC">Turks and Caicos Islands</option><option value="TV">Tuvalu</option><option value="UG">Uganda</option><option value="UA">Ukraine</option><option value="AE">United Arab Emirates</option><option value="UM">United States Minor Outlying Islands</option><option value="UY">Uruguay</option><option value="UZ">Uzbekistan</option><option value="VU">Vanuatu</option><option value="VN">Viet Nam</option><option value="WF">Wallis and Futuna</option><option value="EH">Western Sahara</option><option value="YE">Yemen</option><option value="ZM">Zambia</option><option value="ZW">Zimbabwe</option>
+                   </select>
+              </div>
+              <div class="worn"><p></p></div>
+            </div>
+          </div>
+      </div>
+      <div class="pay_button clear">
+           <div class="btn_back fll"><a href="javascript:void (0)"></a> </div>
+           <div class="btn_next flr"> <a href="javascript:void (0)"></a></div>
+      </div>
+    </div><!--Billing information-->
+  <div id="complet_order" style="display: none;">
+          <div class="step">
+            <div class="clear"><p>Payment options</p><p class="txt_center">Billing information</p><p class="txt_right">Complete order</p></div>
+            <div class="step_three step_custom"></div>
+          </div>
+          <div class="corner_bg">
+              <div class="corner_con info_width no_marg_bottom con_min_h">
+                <div class="column_title">Confirmation</div>
+                <div class="column_con clear pay_con_mh"><!--pay_con_mh height:270px-->
+                  <ul class="payment_info">
+                    <li>Name:&nbsp;&nbsp;<span></span></li>
+                    <li>Address:&nbsp;&nbsp;<span></span></li>
+                    <li><p class="fll">City:&nbsp;&nbsp;<span></span></p><p class="fll">State:&nbsp;&nbsp;<span></span></p></li>
+                    <li><p class="fll">Postal Code:&nbsp;&nbsp;<span></span></p><p class="fll">Country:&nbsp;&nbsp;<span></span></p></li>
+                  </ul>
+                  <div class="show_payinfo marg_infos">
+                    <p class="fll">Buy: <span></span></p><p class="flr">Pay: <span></span></p>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="pay_button clear">
+               <div class="btn_back fll"><a href="javascript:void (0)"></a> </div>
+               <div class="btn_confirm flr"> <a href="javascript:void (0)"></a></div>
+          </div>
+        </div><!--Billing information-->
+  </div>
+    <!--notice popups-->
+    <!--/end notice popups-->
+    <div class="gray_bg" id="pay_loading">
+      <div class="ld_shadow">
+        <div class="loading "><p>Your purchase is being processed. Please do not refresh your browser.</p><img src="loading.gif"></div>
+      </div>
+    </div><!--/end loading-->
+  </div><!--/end pop_con_rightbg弹窗内容部分-->
+  <div class="bottom_pop">
+    <div class="bot_leftbg fll"></div>
+    <div class="bot_centbg bot_centbg_small fll"></div>
+    <div class="bot_rightbg fll"></div>
+  </div>
+</div></div><div class="widget-dialog public_notice oni-dialog" avalonctrl="show_notice" style="position: fixed; width: 530px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+        <div class="top_pop">
+            <div class="top_leftbg fll"></div>
+            <div class="top_centbg top_centbg_small fll">
+                <div class="title title_small">
+                    <div class="title_leftbg">
+                        <div class="title_rightbg">
+                            <div class="title_name title_notice"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top_rightbg fll">
+                <div class="close_btns flr"><a href="javascript:void(0)"></a></div>
+            </div>
+        </div><!--/end top_pop弹窗头部-->
+        <div class="pop_con_rightbg">
+            <div class="pop_con">
+                 <div class="text"></div>
+              <div class="pay_button clear" style="display: none;">
+                <div class="btn_ok marg_auto"><a href="javascript:void (0)"></a> </div>
+              </div>
+              <div class="pay_button clear" style="display: none;"><!--fail 关闭支付-->
+                <div class="btn_ok marg_auto"><a href="javascript:void (0)"></a> </div>
+              </div>
+              <div class="pay_button clear" style="display: none;">
+                <div class="btn_retry fll"><a href="javascript:void (0)"></a></div>
+                <div class="btn_cancle flr"><a href="javascript:void (0)"></a> </div>
+              </div>
+            </div>
+        </div><!--/end pop_con_rightbg弹窗内容部分-->
+        <div class="bottom_pop">
+            <div class="bot_leftbg fll"></div>
+            <div class="bot_centbg bot_centbg_small fll"></div>
+            <div class="bot_rightbg fll"></div>
+        </div>
+    </div></div><div class="widget-dialog inventory QA_myInventory oni-dialog" avalonctrl="inventory" style="position: fixed; width: 1016px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+<div class="top_pop">
+    <div class="top_leftbg fll"></div>
+    <div class="top_centbg fll">
+        <div class="title">
+            <div class="title_leftbg">
+                <div class="title_rightbg"><div class="title_name title_inventory"></div><!--样式保留title_name--></div>
+            </div>
+        </div>
+    </div>
+    <div class="top_rightbg fll">
+        <div class="close_btns flr"><a href="javascript:void(0)"></a></div>
+    </div>
+</div>
+<div class="pop_con_rightbg">
+    
+<div class="pop_con">
+    <!--nav-->
+    <div class="nav">
+        <ul>
+            <!--repeat8936802074313--><li>
+                <span class="inventory_01 avatars"></span>
+            </li><!--repeat8936802074313--><li>
+                <span class="inventory_01 charms"></span>
+            </li><!--repeat8936802074313--><li>
+                <span class="inventory_01 emojis"></span>
+            </li><!--repeat8936802074313--><li>
+                <span class="inventory_01 tickets"></span>
+            </li><!--repeat8936802074313--><!--repeat8936802074313:end-->
+        </ul>
+    </div>
+    <!--main-->
+    <div class="clear"></div>
+    <!--items-->
+    <!-- <div id="items" class="corner_bg content" ms-visible="items">
+          <div class="corner_con">
+              <div class="column_con">
+                  <div class="scroll-pane">
+                      <ul>
+                          <li ms-repeat="itemsData" >
+                              <img ms-src="el.url">
+                              <span class="text"><em class="red">{{el.number}}</em><em>{{el.name}}</em></span>
+                              <span class="inventory_01 button"></span>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="get_button">
+                  <span class="inventory_02 btn" ms-click="showStore('other')"></span>
+              </div>
+          </div>
+      </div>-->
+    <!--tickets-->
+    <div id="tickets" class="corner_bg" style="display: none;">
+        <div class="content corner_con">
+            <div class="column_con">
+                <div class="title">
+                    <span class="name">Name</span>
+                    <span class="amount">Amount</span>
+                    <span class="exp_date">Expiration date</span>
+                </div>
+                <div class="scroll-pane">
+                    <ul>
+                        <!--repeat118079096079--><!--repeat118079096079:end-->
+                    </ul>
+                </div>
+            </div>
+            <div class="get_button btn_padding">
+                <span class="inventory_02 tourmode"></span>
+                <span class="inventory_02 btn"></span>
+            </div>
+        </div>
+    </div>
+    <!--emojis-->
+    <div id="emojis" class="corner_bg charms_avatars" style="display: none;">
+        <div class="left">
+            <div class="corner_con">
+                <div class="content column_con">
+                    <div class="top">
+                        <div class="light">
+                            <div class="items">
+                                <img src="">
+                            </div>
+                            <div class="avatars">
+                                <img src="">
+                            </div>
+                            <div class="select_avatars">
+                                <img src="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom"></div>
+                </div>
+                <div class="get_button">
+                    <span class="inventory_02 btn"></span>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="corner_con">
+                <div class="title">
+                    <a href="javascript:void(0)" class="inventory_01 emojis_01 now"></a>
+                    <a href="javascript:void(0)" class="inventory_01 emojis_02" style="display: none;"></a>
+                </div>
+                <div class="column_con">
+                    <div class="scroll-pane">
+                        <ul>
+                            <!--repeat169667646289--><!--repeat169667646289:end-->
+                        </ul>
+                        <ul style="display: none;">
+                            <!--repeat227743245661--><!--repeat227743245661:end-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--charms-->
+    <div id="charms" class="corner_bg charms_avatars" style="display: none;">
+        <div class="left">
+            <div class="corner_con">
+                <div class="content column_con">
+                    <div class="top">
+                        <div class="light">
+                            <div class="items">
+                                <img src="">
+                            </div>
+                            <div class="avatars">
+                                <img src="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom"></div>
+                </div>
+                <div class="get_button">
+                    <span class="inventory_02 btn"></span>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="corner_con">
+                <div class="title">PLEASE SELECT A CHARM</div>
+                <div class="column_con">
+                    <div class="scroll-pane">
+                        <ul>
+                            <!--repeat993804350495--><!--repeat993804350495:end-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--avatars-->
+    <div id="avatars" class="corner_bg charms_avatars">
+        <div class="left">
+            <div class="corner_con">
+                <div class="content column_con">
+                    <div class="top">
+                        <div class="light">
+                            <div class="items">
+                                <img src="">
+                            </div>
+                            <div class="avatars">
+                                <img src="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom"></div>
+                </div>
+                <div class="get_button">
+                    <span class="inventory_02 btn"></span>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="corner_con">
+                <div class="title">PLEASE SELECT AN AVATAR</div>
+                <div class="column_con">
+                    <div class="scroll-pane">
+                        <ul>
+                            <!--repeat104077138007--><!--repeat104077138007:end-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></div><div class="bottom_pop">
+    <div class="bot_leftbg fll"></div>
+    <div class="bot_centbg fll"></div>
+    <div class="bot_rightbg fll"></div>
+</div>
+<div class="gray_bg" id="loading">
+    <div class="ld_shadow">
+        <div class="loading"><p>LOADING...</p><span class="image"></span></div>
+    </div>
+</div></div></div><div class="widget-dialog QA_myAccount oni-dialog" avalonctrl="personal" style="position: fixed; width: 1016px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+<div class="top_pop">
+    <div class="top_leftbg fll"></div>
+    <div class="top_centbg fll">
+        <div class="title">
+            <div class="title_leftbg">
+                <div class="title_rightbg"><div class="title_name title_account"></div><!--样式保留title_name--></div>
+            </div>
+        </div>
+    </div>
+    <div class="top_rightbg fll">
+        <div class="close_btns flr"><a href="javascript:void(0)"></a></div>
+    </div>
+</div>
+<div class="pop_con_rightbg">
+    
+<div class="pop_con">
+  <!--content-->
+  <div class="corner_bg scroll_con" avalonctrl="personal"><!--scroll_con height:619px-->
+    <div class="corner_con info_width QA_userInfo">
+      <div class="column_title"></div>
+      <div class="column_con show_infos">
+        <ul>
+          <li class="clear"><p class="fll">Email</p><div class="infos fll"></div><a href="javascript:void(0)">Validate</a> </li>
+          <li class="clear"><p class="fll">Password</p><div class="infos fll">******</div><a href="javascript:void(0)">Change Password</a></li>
+        </ul>
+        <!--change password popups-->
+        
+        <!--change password popups end-->
+      </div>
+    </div><!--personal info end/-->
+    <div id="each_edit">
+    <div class="corner_con info_width QA_cardInfo"><!--credit card info/-->
+    <div class="column_title">Credit Card</div>
+    <div class="column_con show_infos">
+      <ul>
+        <li class="clear">
+          <p class="fll">Credit Card Number</p>
+          <div class="infos fll"></div>
+          <input id="txt_cardnum" name="card" maxlength="16" type="text" class="change_input fll" style="display: none;">
+          <a href="javascript:void(0)">Edit</a><div class="clear"></div>
+          <div class="erro"></div>
+        </li>
+        <li class="clear">
+          <p class="fll">Expiration Date</p>
+          <div class="infos fll"></div>
+          <input id="txt_date" name="date" placeholder="MMYY" maxlength="4" type="text" class="change_input fll" style="display: none;">
+          <a href="javascript:void(0)">Edit</a><div class="clear"></div>
+          <div class="erro"></div>
+        </li>
+      </ul>
+    </div>
+    </div><!--credit card info end/-->
+    <div class="corner_con info_width no_margin QA_billingInfo"><!--billing info/-->
+          <div class="column_title">Billing Information</div>
+          <div class="column_con show_infos">
+            <ul>
+              <li class="clear">
+                <p class="fll">Name</p>
+                <div class="infos fll"></div>
+                <input id="txt_name" name="name" maxlength="30" type="text" class="change_input fll" style="display: none;">
+                <a href="javascript:void(0)">Edit</a><div class="clear"></div>
+                <div class="erro"></div>
+              </li>
+              <li class="clear">
+                <p class="fll">Address</p>
+                <div class="infos fll"></div>
+                <input id="txt_addr" name="address" maxlength="50" type="text" class="change_input fll" style="display: none;">
+                <a href="javascript:void(0)">Edit</a><div class="clear"></div>
+                <div class="erro"></div>
+              </li>
+              <li class="clear">
+                <p class="fll">Country</p>
+                <div class="infos fll"></div>
+                <select id="sel_country" name="" class="sel_country fll" style="display: none;">
+                  <option value="USA">United States of America</option>
+                  <option value="GB">United Kingdom</option>
+                  <option value="CA">Canada</option>
+                  <option value="AU">Australia</option>
+                  <option value="FR">France</option>
+                  <option value="0">Other</option>
+                 </select>
+                <input id="txt_country" name="name" maxlength="20" type="text" class="input_other fll" style="display: none;">
+                <a href="javascript:void(0)">Edit</a><div class="clear"></div>
+                <div class="erro"></div>
+              </li>
+              <li class="clear">
+                <p class="fll">City</p>
+                <div class="infos fll"></div>
+                <input id="txt_city" name="city" maxlength="20" type="text" class="change_input fll" style="display: none;">
+                <a href="javascript:void(0)">Edit</a><div class="clear"></div>
+                <div class="erro"></div>
+              </li>
+              <li class="clear">
+                <p class="fll">State</p>
+                <div class="infos fll"></div>
+                <input id="txt_state" name="state" maxlength="20" type="text" class="change_input fll" style="display: none;">
+                <a href="javascript:void(0)">Edit</a><div class="clear"></div>
+                <div class="erro"></div>
+              </li>
+              <li class="clear">
+                <p class="fll">Postal Code</p>
+                <div class="infos fll"></div>
+                <input id="txt_postal" name="postal" maxlength="6" type="text" class="change_input fll" style="display: none;">
+                <a href="javascript:void(0)">Edit</a><div class="clear"></div>
+                <div class="erro"></div>
+              </li>
+            </ul>
+          </div>
+    </div><!--billing info end/-->
+    </div><!--each_edit end/-->
+  </div>
+  <!--content end-->
+</div></div><div class="bottom_pop">
+    <div class="bot_leftbg fll"></div>
+    <div class="bot_centbg fll"></div>
+    <div class="bot_rightbg fll"></div>
+</div>
+<div class="gray_bg" id="loading">
+    <div class="ld_shadow">
+        <div class="loading"><p>LOADING...</p><span class="image"></span></div>
+    </div>
+</div></div></div><div class="widget-dialog popup popup_small oni-dialog" style="display: none; position: fixed; width: 747px; transform: scale(0.7);" avalonctrl="show_validate"><div class="oni-dialog-inner">
+          <div class="top_pop">
+            <div class="top_leftbg fll"></div>
+            <div class="top_centbg top_centbg_small fll">
+              <div class="title title_small">
+                <div class="title_leftbg">
+                  <div class="title_rightbg"><div class="title_name title_pwd" id="popup_titles"></div><!--样式保留title_name--></div>
+                </div>
+              </div>
+            </div>
+            <div class="top_rightbg fll">
+              <div class="close_btns flr"><a href="javascript:void(0)"></a></div>
+            </div>
+          </div><!--/end top_pop弹窗头部-->
+          <div class="pop_con_rightbg">
+          <div class="pop_con">
+            <!--con-->
+            <div>
+              <div class="corner_bg small_pop_con">
+                <p class="pads"></p>
+              </div>
+              <div class="btn_validate"><a href="javascript:void(0)"></a> </div>
+            </div><!--show_validate-->
+            <div avalonctrl="pwd" style="display: none;">
+              <div class="corner_bg small_pop_con">
+                <form id="change_pwd" name="change_pwd" action="" method="post">
+                <div class="show_txt clear">
+                  <p class="fll">Old Password:</p>
+                  <input oncut="return false;" oncopy="return false;" onpaste="return false;" id="oldpwd" name="" maxlength="16" type="password" class="change_input flr">
+                </div>
+                <div class="show_txt clear">
+                  <p class="fll">New Password:</p>
+                  <input oncut="return false;" oncopy="return false;" onpaste="return false;" id="password" name="" maxlength="16" type="password" class="change_input flr">
+                </div>
+                <div class="show_txt clear">
+                  <p class="fll">Confirm Password:</p>
+                  <input oncut="return false;" oncopy="return false;" onpaste="return false;" id="cpassword" name="" maxlength="16" type="password" class="change_input flr">
+                </div>
+                <div class="erro"></div>
+                </form>
+              </div>
+              <div class="btn_pwd"><a href="javascript:void(0)"></a></div><!--_close-->
+              <input type="hidden" name="sub_cg_pwd" id="sub_cg_pwd" value="0">
+            </div><!--show_changepwd-->
+          </div>
+          </div><!--/end pop_con_rightbg弹窗内容部分-->
+          <div class="bottom_pop">
+            <div class="bot_leftbg fll"></div>
+            <div class="bot_centbg bot_centbg_small fll"></div>
+            <div class="bot_rightbg fll"></div>
+          </div>
+        </div></div><div class="widget-dialog show_account oni-dialog" avalonctrl="register" style="position: fixed; width: 968px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+        <div class="register QA_regist">
+            <!--header-->
+            <div class="top">
+                <a class="account_01" href="javascript:void(0)"></a>
+            </div>
+            <!--content of regist-->
+            <div class="content">
+                <div class="title">Create a WPT Account</div>
+                <div class="email">
+                    <!--<span class="name">Email</span>-->
+                    <input id="registerEmail" type="text" maxlength="45" placeholder="Email">
+                </div>
+                <div class="password">
+                    <!--<span class="name">Password</span>-->
+                    <input oncut="return false;" oncopy="return false;" onpaste="return false;" type="password" maxlength="16" placeholder="Password">
+                </div>
+                <div class="captcha" style="display: none;">
+                    <input type="text" placeholder="Captcha">
+                    <img src="">
+                    <span class="refresh">Refresh</span>
+                 </div>
+                <div class="descr">
+                    <em>By signing up, you agree to WPT's </em>
+                    <em><a href="https://www.playwpt.com/terms" target="_blank">Terms and Conditions</a> and <a href="http://www.worldpokertour.com/privacy-policy/" target="_blank">Privacy Policy</a>.</em>
+                </div>
+                <div class="errorInfo" style="display: none;"></div>
+                <div class="account_01 account_btn" id="btn_regist">Sign up</div>
+                <a class="account_01 account_facebook_btn" href="javascript:void(0)">Sign up using Facebook</a>
+                <div class="border"></div>
+                <div class="login_text">
+                    <em> Already have an account?</em><a href="javascript:void(0)">Log in</a>
+                </div>
+            </div>
+        </div>
+        <!--create username-->
+        
+        <!--select avatar-->
+        
+        <!--validate email-->
+        
+        <!--validate email expired-->
+        
+
+        <!--validate email successfully-->
+        
+        <!--public message popups-->
+        
+        <!--public message popups-->
+    </div></div><div class="widget-dialog  show_account oni-dialog" avalonctrl="show_createUsername" style="position: fixed; width: 833px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+            <div class="create_username">
+                <div class="top">
+                    <!--<a class="account_01" ms-click="_close" href="javascript:void(0)"></a>-->
+                </div>
+                <div class="content">
+                    <div class="title">Create a username</div>
+                    <input type="text" class="input_username" placeholder="Enter username" maxlength="20">
+                    <div class="errorInfo" style="display: none;"></div>
+                    <div class="account_01 button">Go select an avatar</div>
+                </div>
+            </div>
+        </div></div><div class="widget-dialog  show_account oni-dialog" avalonctrl="show_selectAvatar" style="position: fixed; width: 833px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+            <div class="select_avatar">
+                <div class="top">
+                    <!--<a class="account_01" ms-click="_close" href="javascript:void(0)"></a>-->
+                </div>
+                <div class="content">
+                    <div class="title">Select an avatar</div>
+                    <div class="avatar">
+                        <div class="left">
+                            <img src="woman-d1f69e9da2.png">
+                        </div>
+                        <div class="right select">
+                            <img src="man-931e9676ea.png">
+                        </div>
+                    </div>
+                    <div class="account_01 button">Play Now</div>
+                </div>
+            </div>
+        </div></div><div class="widget-dialog  show_account oni-dialog" avalonctrl="show_validateEmail" style="position: fixed; width: 903px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+            <div class="validate_email">
+                <div class="top">
+                    <a class="account_01" href="javascript:void(0)"></a>
+                </div>
+                <div class="content">
+                    <div class="title">
+                        <span class="text omit">Hi&nbsp;&nbsp;</span>
+                        <!--<span class="username">{{inputUsername}}</span>-->
+                    </div>
+                    <div class="descr_validate">Be sure to check your spam or junk folder and add PlayWPT to your safe sender list to ensure tips and free gold offers make it to your inbox.</div>
+                    <div class="button">
+                        <a target="_blank" href="javascript:void(0)">please check your inbox</a>
+                    </div>
+                    <div class="border"></div>
+                    <div class="resend_email">
+                        <span class="btn">Resend Email</span>
+                        <span class="count_down" style="display: none;">120</span>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="widget-dialog  show_account oni-dialog" avalonctrl="show_validateEmailError" style="position: fixed; width: 833px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+            <div class="validateEmail_suc validateEmail_error">
+                <div class="top">
+                    <a class="account_01" href="javascript:void(0)"></a>
+                </div>
+                <div class="content">
+                    <div class="title"></div>
+                    <div class="text"></div>
+                    <div class="account_01 button" style="display: none;">
+                        <span>Validate Email</span>
+                        <em style="display: none;">120</em>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="widget-dialog  show_account oni-dialog" avalonctrl="show_validateEmailSuc" style="position: fixed; width: 833px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+            <div class="validateEmail_suc">
+                <div class="top">
+                    <a class="account_01" href="javascript:void(0)"></a>
+                </div>
+                <div class="content">
+                    <div class="title"></div>
+                    <div class="text"></div>
+                    <!--<div class="account_01 button" ms-click="_confirm">Play Games</div>-->
+                    <div class="account_01 button_red">Play Games</div>
+                </div>
+            </div>
+        </div></div><div class="widget-dialog  show_account oni-dialog" avalonctrl="show_publicMessage" style="position: fixed; width: 833px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+            <div class="validateEmail_suc">
+                <div class="top">
+                    <a class="account_01" href="javascript:void(0)"></a>
+                </div>
+                <div class="content">
+                    <div class="title"></div>
+                    <div class="text"></div>
+                    <div class="account_01 button" style="display: none;">Play Games</div>
+                </div>
+            </div>
+        </div></div><div class="widget-dialog QA_redeem oni-dialog" avalonctrl="promotion" style="position: fixed; width: 747px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+    <div class="popup popup_small">
+        <div class="top_pop">
+            <div class="top_leftbg fll"></div>
+            <div class="top_centbg top_centbg_small fll">
+                <div class="title title_small">
+                    <div class="title_leftbg">
+                        <div class="title_rightbg">
+                            <div class="title_name title_code"></div>
+                            <!--样式保留title_name-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top_rightbg fll">
+                <div class="close_btns flr"><a href="javascript:void(0)"></a></div>
+            </div>
+        </div><!--/end top_pop弹窗头部-->
+        <div class="pop_con_rightbg">
+            <div class="pop_con">
+                <!--exchange promotion code popups-->
+                <div class="cont">
+                            <div class="tip_cont">
+                                <div class="tip">Enter Your Code</div>
+                                <div class="ipt_code">
+                                    <input id="code_num" type="text">
+                                </div>
+                            </div>
+                </div>
+                <div class="btn_code">
+                    <a href="javascript:void(0);"></a>
+                </div>
+                <div class="btn_collect" style="display: none;">
+                    <a href="javascript:void(0);"></a>
+                </div>
+                <!--促销倒计时福利-->
+            </div>
+        </div>
+    </div><!--/end pop_con_rightbg弹窗内容部分-->
+    <div class="bottom_pop">
+        <div class="bot_leftbg fll"></div>
+        <div class="bot_centbg bot_centbg_small fll"></div>
+        <div class="bot_rightbg fll"></div>
+    </div>
+    <!-- exchange promotion code successful popups-->
+    
+  <!--error popups-->
+    
+    <!--limited time promotion-->
+    
+    <!--limited time promotion 2-->
+    
+    <!--limited time promotion 3-->
+    
+    <!--limited time promotion 4 -->
+    
+    <!--limited time promotion 5 -->
+    
+    <!--successful purchase-->
+    
+    <!--upgrade promotion-->
+    
+</div></div><div id="show-area" class="widget-dialog oni-dialog" avalonctrl="show_reddommSuc" style="position: fixed; width: 747px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+        <div class="popup popup_small">
+            <div class="top_pop">
+                <div class="top_leftbg fll"></div>
+                <div class="top_centbg top_centbg_small fll">
+                    <div class="title title_small">
+                        <div class="title_leftbg">
+                            <div class="title_rightbg">
+                                <div class="title_name title_success"></div>
+                                <!--样式保留title_name-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="top_rightbg fll">
+                    <div class="close_btns flr"><a href="javascript:void(0)"></a></div>
+                </div>
+            </div><!--/end top_pop弹窗头部-->
+            <div class="pop_con_rightbg">
+                <div class="pop_con">
+                        <div id="button-left"></div>
+                        <div id="button-right"></div>
+                        <div class="slider-main ">
+                            <ul id="width_ul">
+                                <!--gold-->
+                                <!--repeat941032681614--><!--repeat941032681614:end-->
+                                <!--ticket-->
+                                <!--repeat298471584916--><!--repeat298471584916:end-->
+                                <!--avatar-->
+                                <!--repeat77840423584--><!--repeat77840423584:end-->
+                            </ul>
+                        </div>
+                    <div class="btn_collect"><a href="javascript:void(0);"></a></div>
+                </div>
+            </div>
+        </div><!--/end pop_con_rightbg弹窗内容部分-->
+        <div class="bottom_pop">
+            <div class="bot_leftbg fll"></div>
+            <div class="bot_centbg bot_centbg_small fll"></div>
+            <div class="bot_rightbg fll"></div>
+        </div>
+    </div></div><div id="show-area" class="widget-dialog oni-dialog" avalonctrl="show_reddommNotice" style="position: fixed; width: 747px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+        <div class="popup popup_small">
+            <div class="top_pop">
+                <div class="top_leftbg fll"></div>
+                <div class="top_centbg top_centbg_small fll">
+                    <div class="title title_small">
+                        <div class="title_leftbg">
+                            <div class="title_rightbg">
+                                <div class="title_name title_notice"></div>
+                                <!--样式保留title_name-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="top_rightbg fll">
+                    <div class="close_btns flr"><a href="javascript:void(0)"></a></div>
+                </div>
+            </div><!--/end top_pop弹窗头部-->
+            <div class="pop_con_rightbg">
+                <div class="pop_con">
+                    <div class="slider-notice"></div>
+                </div>
+            </div>
+        </div><!--/end pop_con_rightbg弹窗内容部分-->
+        <div class="bottom_pop">
+            <div class="bot_leftbg fll"></div>
+            <div class="bot_centbg bot_centbg_small fll"></div>
+            <div class="bot_rightbg fll"></div>
+        </div>
+    </div></div><div class="widget-dialog oni-dialog" avalonctrl="show_timedPromotion" style="position: fixed; width: 809px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+        <div class="timed_promotion timed_promotion_buy">
+            <div class="close_btn"></div>
+            <div class="content" style="display: none;">
+                <div class="timed_promotion_icon title"></div>
+                <div class="message"></div>
+                <div class="price">
+                    <span class="border"></span> <em>$</em> <span class="border"></span>
+                </div>
+                <div class="timed_promotion_icon btn buy_red"></div>
+            </div>
+            <img src="8cdc3ddb-5e2e-463c-9c71-f75f6ec7821a.png">
+            <div class="time">
+                <span class="hour">00</span>
+                <span class="min">00</span>
+            </div>
+        </div>
+        <div class="gray_bg" id="loadingPromotion">
+            <div class="ld_shadow">
+                <div class="loading"><p>LOADING...</p><span class="image"></span></div>
+            </div>
+        </div>
+    </div></div><div class="widget-dialog oni-dialog" avalonctrl="show_timedPromotion_02" style="position: fixed; width: 809px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+        <div class="timed_promotion timed_promotion_buy_02">
+            <div class="close_btn close_btn_02"></div>
+            <img src="8cdc3ddb-5e2e-463c-9c71-f75f6ec7821a.png">
+            <div class="time" style="display: none;">
+                <span class="hour">00</span>
+                <span class="min">00</span>
+            </div>
+        </div>
+    </div></div><div class="widget-dialog oni-dialog" avalonctrl="show_timedPromotion_03" style="position: fixed; width: 1094px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+        <div class="timed_promotion timed_promotion_buy_03">
+            <a class="timer_pro_icon close_btn close_btn_03" href="javascript:void(0)"></a>
+            <img src="8cdc3ddb-5e2e-463c-9c71-f75f6ec7821a.png">
+            <a class="btn" href="javascript:void(0)"></a>
+        </div>
+    </div></div><div class="widget-dialog oni-dialog" avalonctrl="show_timedPromotion_04" style="position: fixed; width: 1073px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+        <div class="timed_promotion timed_promotion_buy_04">
+            <a class="close_btn close_btn_04" href="javascript:void(0)"></a>
+            <img src="8cdc3ddb-5e2e-463c-9c71-f75f6ec7821a.png">
+        </div>
+    </div></div><div class="widget-dialog oni-dialog" avalonctrl="show_timedPromotion_05" style="position: absolute; width: 1048px; display: none; z-index: 13; left: 0px; top: 12.5px; transform: scale(0.7);"><div class="oni-dialog-inner">
+        <div class="timed_promotion timed_promotion_buy_05">
+            <a class="close_btn close_btn_05" href="javascript:void(0)"></a>
+            <img src="8cdc3ddb-5e2e-463c-9c71-f75f6ec7821a.png">
+        </div>
+    </div></div><div class="widget-dialog oni-dialog" avalonctrl="show_timedPromotionSuc" style="position: fixed; width: 809px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+        <div class="timed_promotion">
+            <div class="close_btn"></div>
+            <div class="content">
+                <div class="timed_promotion_icon title"></div>
+                <div class="message">
+                    <span>You have aleady taken this promotion</span>
+                </div>
+                <div class="timed_promotion_icon btn store_blue"></div>
+            </div>
+        </div>
+        <div class="gray_bg" id="loadingPromotion">
+            <div class="ld_shadow">
+                <div class="loading"><p>LOADING...</p><span class="image"></span></div>
+            </div>
+        </div>
+    </div></div><div class="widget-dialog oni-dialog" avalonctrl="show_timedPromotionUpGame" style="position: fixed; width: 809px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+        <div class="timed_promotion">
+            <div class="close_btn"></div>
+            <div class="content">
+                <div class="timed_promotion_icon title upGame"></div>
+                <div class="message"></div>
+                <div class="price">
+                    <span class="border"></span> <em>$</em> <span class="border"></span>
+                </div>
+                <div class="timed_promotion_icon btn buy_red"></div>
+            </div>
+        </div>
+        <div class="gray_bg" id="loadingPromotion">
+            <div class="ld_shadow">
+                <div class="loading"><p>LOADING...</p><span class="image"></span></div>
+            </div>
+        </div>
+    </div></div><div class="widget-dialog show_account oni-dialog" avalonctrl="login" style="position: fixed; width: 968px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+    <div class="register QA_login">
+        <!--header-->
+        <div class="top">
+            <a class="account_01" href="javascript:void(0)"></a>
+        </div>
+        <!--content of login-->
+        <div class="content">
+            <div class="title">Login using WPT Account</div>
+            <div class="email">
+                <input type="text" maxlength="45" id="loginEmail" placeholder="Email">
+            </div>
+            <div class="password clear">
+                <input style="width: 280px; float: left" maxlength="16" oncut="return false;" oncopy="return false;" onpaste="return false;" type="password" placeholder="Password">
+                <a href="javascript:void(0)" class="link_color" style="width: 50px; float: right" onclick="showDialog(&#39;show_sendemail&#39;)">Forgot?</a>
+            </div>
+            <div class="captcha" style="display: none;">
+                <input type="text" placeholder="Captcha">
+                <img src="">
+                <span class="refresh">Refresh</span>
+             </div>
+            <div class="checkbox clear">
+                 <input name="" type="checkbox" value="" checked="checked" id="check_rem"><p>Remember me</p><!--Keep me logged in-->
+            </div>
+            <div class="errorInfo" style="display: none;"></div>
+            <div class="account_01 account_btn" id="btn_login">Login</div>
+            <a class="account_01 account_facebook_btn" href="javascript:void(0)">Login using Facebook</a>
+            <div class="border"></div>
+            <div class="login_text">
+                <em>Don’t have an account?</em><a href="javascript:void(0)">Sign Up</a>
+            </div>
+        </div>
+    </div>
+    <!--forgot password popups-->
+    
+    <!--forgot password popups end-->
+    <!--resend email popups-->
+    
+    <!--resend email popups end-->
+    <!--public message popups-->
+    
+   <!--public message popups end-->
+</div></div><div class="widget-dialog show_account forget_pwd oni-dialog" avalonctrl="show_sendemail" style="position: fixed; width: 903px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+        <div class="forget_pwd QA_changePassword">
+            <div class="top">
+                <a class="account_01" href="javascript:void(0)"></a>
+            </div>
+            <!--sendEmail-->
+            <div class="content QA_sendEmail">
+                <div class="title">Change Password</div>
+                <p class="discription">To reset your password, enter the email address you used to log in to PlayWPT.</p>
+                <div class="email">
+                     <input type="text" placeholder="Please enter your email" id="enterEmail">
+                </div>
+                <div class="errorInfoPwd" style="display: none;"></div>
+                <div class="account_01 account_btn">Send Email</div>
+            </div>
+            <!--send email infos-->
+            <div class="content QA_sendStatus" style="display: none;">
+                <div class="title">Change Password</div>
+                <div class="discript_con">
+                    <p></p>
+                </div>
+                <div class="account_01 account_btn">Close</div>
+            </div>
+            <!--changeEmail-->
+            <div class="content" style="display: none;">
+                <div class="title"></div>
+                <p class="discription font_blue">Current Email:<span></span></p>
+                <div class="pad_pwd">
+                    <div class="txtarea">
+                        <input type="password" oncut="return false;" oncopy="return false;" onpaste="return false;" placeholder="New Password">
+                    </div>
+                    <div class="txtarea">
+                         <input type="password" oncut="return false;" oncopy="return false;" onpaste="return false;" placeholder="Confirm new password">
+                    </div>
+                    <div class="errorInfoPwd"></div>
+                </div>
+                <div class="account_01 account_btn">Save</div>
+            </div>
+        </div>
+    </div></div><div class="widget-dialog show_account forget_pwd oni-dialog" avalonctrl="show_resendemail" style="position: fixed; width: 903px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+        <div class="forget_pwd">
+            <div class="top">
+                <a class="account_01" href="javascript:void(0)"></a>
+            </div>
+            <div class="content">
+                <div class="title">Change Password</div>
+                <div class="discript_con">
+                    <p></p>
+                </div>
+                <div class="account_01 account_btn">Forgot password</div>
+            </div>
+        </div>
+    </div></div><div class="widget-dialog show_account oni-dialog" avalonctrl="show_publicMessage" style="position: fixed; width: 903px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+       <div class="validateEmail_suc">
+           <div class="top">
+               <a class="account_01" href="javascript:void(0)"></a>
+           </div>
+           <div class="content">
+               <div class="title"></div>
+               <div class="text"></div>
+               <div class="account_01 button">
+                   <span>Validate Email</span>
+                   <em style="display: none;">120</em>
+               </div>
+           </div>
+       </div>
+   </div></div><div class="widget-dialog store_dialog oni-dialog" avalonctrl="goldStore" style="position: absolute; width: 1016px; display: none; z-index: 13; left: 9.5px; top: 0px; transform: scale(0.7);"><div class="oni-dialog-inner">
+<div class="top_pop">
+    <div class="top_leftbg fll"></div>
+    <div class="top_centbg fll">
+        <div class="title">
+            <div class="title_leftbg">
+                <div class="title_rightbg"><div class="title_name title_store"></div><!--样式保留title_name--></div>
+            </div>
+        </div>
+    </div>
+    <div class="top_rightbg fll">
+        <div class="close_btns flr"><a href="javascript:void(0)"></a></div>
+    </div>
+</div>
+<div class="pop_con_rightbg">
+    
+<div class="pop_con">
+    <div class="store gold_store">
+        <div class="top"></div>
+        <div class="top_bar goldstitle_bg">
+            <div class="store_04 gstore"></div>
+        </div>
+        <!--主体内容-->
+        <div class="clear"></div>
+        <!--glodStore-->
+        <div id="goldStore" class="corner_bg" style="height:600px;overflow: hidden">
+            <!--repeat784692000598--><div class="gold_store_item">
+                <div class="showItem">
+                    <div class="store_04 most_popular" ms-visible="el.showMostPopular" style="display: none;"></div>
+                    <div class="store_04 best_value" style="display: block;"></div>
+                    <div class="store_04 gold_icon"></div>
+                    <div class="text_01 before_coin">5,000,000 Gold</div>
+                    <div class="text_01 sign">x</div>
+                    <div class="text_01 bonus color_01">300%</div>
+                    <div class="text_01 equal">=</div>
+                    <div class="store_04 gold_icon"></div>
+                    <div class="text_02">15,000,000 Gold</div>
+                    <div class="store_04 btn">
+                        <div class="text_03">99.99</div>
+                    </div>
+                </div>
+            </div><!--repeat784692000598--><div class="gold_store_item">
+                <div class="showItem">
+                    <div class="store_04 most_popular" style="display: none;"></div>
+                    <div class="store_04 best_value" style="display: none;"></div>
+                    <div class="store_04 gold_icon"></div>
+                    <div class="text_01 before_coin">2,500,000 Gold</div>
+                    <div class="text_01 sign">x</div>
+                    <div class="text_01 bonus color_02">240%</div>
+                    <div class="text_01 equal">=</div>
+                    <div class="store_04 gold_icon"></div>
+                    <div class="text_02">6,000,000 Gold</div>
+                    <div class="store_04 btn">
+                        <div class="text_03">49.99</div>
+                    </div>
+                </div>
+            </div><!--repeat784692000598--><div class="gold_store_item">
+                <div class="showItem">
+                    <div class="store_04 most_popular" style="display: none;"></div>
+                    <div class="store_04 best_value" style="display: none;"></div>
+                    <div class="store_04 gold_icon"></div>
+                    <div class="text_01 before_coin">1,250,000 Gold</div>
+                    <div class="text_01 sign">x</div>
+                    <div class="text_01 bonus color_03">200%</div>
+                    <div class="text_01 equal">=</div>
+                    <div class="store_04 gold_icon"></div>
+                    <div class="text_02">2,500,000 Gold</div>
+                    <div class="store_04 btn">
+                        <div class="text_03">24.99</div>
+                    </div>
+                </div>
+            </div><!--repeat784692000598--><div class="gold_store_item">
+                <div class="showItem">
+                    <div class="store_04 most_popular" style="display: block;"></div>
+                    <div class="store_04 best_value" ms-visible="el.showBestValue" style="display: none;"></div>
+                    <div class="store_04 gold_icon"></div>
+                    <div class="text_01 before_coin">500,000 Gold</div>
+                    <div class="text_01 sign">x</div>
+                    <div class="text_01 bonus color_04">160%</div>
+                    <div class="text_01 equal">=</div>
+                    <div class="store_04 gold_icon"></div>
+                    <div class="text_02">800,000 Gold</div>
+                    <div class="store_04 btn">
+                        <div class="text_03">9.99</div>
+                    </div>
+                </div>
+            </div><!--repeat784692000598--><div class="gold_store_item">
+                <div class="showItem">
+                    <div class="store_04 most_popular" style="display: none;"></div>
+                    <div class="store_04 best_value" style="display: none;"></div>
+                    <div class="store_04 gold_icon"></div>
+                    <div class="text_01 before_coin">2,500,000 Gold</div>
+                    <div class="text_01 sign">x</div>
+                    <div class="text_01 bonus color_05">120%</div>
+                    <div class="text_01 equal">=</div>
+                    <div class="store_04 gold_icon"></div>
+                    <div class="text_02">300,000 Gold</div>
+                    <div class="store_04 btn">
+                        <div class="text_03">4.99</div>
+                    </div>
+                </div>
+            </div><!--repeat784692000598--><div class="gold_store_item">
+                <div class="showItem">
+                    <div class="store_04 most_popular" style="display: none;"></div>
+                    <div class="store_04 best_value" style="display: none;"></div>
+                    <div class="store_04 gold_icon"></div>
+                    <div class="text_01 before_coin">100,000 Gold</div>
+                    <div class="text_01 sign">x</div>
+                    <div class="text_01 bonus color_06">100%</div>
+                    <div class="text_01 equal">=</div>
+                    <div class="store_04 gold_icon"></div>
+                    <div class="text_02">100,000 Gold</div>
+                    <div class="store_04 btn">
+                        <div class="text_03">1.99</div>
+                    </div>
+                </div>
+            </div><!--repeat784692000598--><!--repeat784692000598:end-->
+        </div>
+    </div>
+</div></div><div class="bottom_pop">
+    <div class="bot_leftbg fll"></div>
+    <div class="bot_centbg fll"></div>
+    <div class="bot_rightbg fll"></div>
+</div>
+<div class="gray_bg" id="loading">
+    <div class="ld_shadow">
+        <div class="loading"><p>LOADING...</p><span class="image"></span></div>
+    </div>
+</div></div></div><div class="widget-dialog store_dialog big_store_dialog oni-dialog" avalonctrl="store" style="position: fixed; width: 1016px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+<div class="top_pop">
+    <div class="top_leftbg fll"></div>
+    <div class="top_centbg fll">
+        <div class="title">
+            <div class="title_leftbg">
+                <div class="title_rightbg"><div class="title_name title_store"></div><!--样式保留title_name--></div>
+            </div>
+        </div>
+    </div>
+    <div class="top_rightbg fll">
+        <div class="close_btns flr"><a href="javascript:void(0)"></a></div>
+    </div>
+</div>
+<div class="pop_con_rightbg">
+    
+<div class="pop_con">
+          <div class="store">
+              <div class="top"></div>
+              <div class="top_bar goldtitle_bg">
+                  <!--<div class="store_04 title_store"></div>-->
+              </div>
+              <!--nav-->
+              <div class="nav">
+                  <ul>
+                      <!--repeat698779050261--><li>
+                          <span class="store_01 gold"></span>
+                      </li><!--repeat698779050261--><li>
+                          <span class="store_01 store_02 masterPoint"></span>
+                      </li><!--repeat698779050261--><li>
+                          <span class="store_01 items"></span>
+                      </li><!--repeat698779050261--><!--repeat698779050261:end-->
+                  </ul>
+              </div>
+              <!--content-->
+              <div class="clear"></div>
+              <!--glod-->
+              <div id="gold" class="corner_bg" avalonctrl="gold" style="display: none;">
+                   <div class="corner_con">
+                         <div class="scroll_pane">
+                               <!--gold 信息-->
+                               <div class="store_gold wide" id="store_gold">
+                                   <div class="column_con">
+                                       <!--repeat294027458876--><!--repeat294027458876:end-->
+                                   </div>
+                               </div>
+                          </div>
+                   </div>
+              </div>
+              <!--master point-->
+              <div id="masterPoint" class="corner_bg" avalonctrl="masterPoint" style="display: none;">
+                  <div class="corner_con">
+                      <div class="scroll_pane">
+                          <!--master point 信息-->
+                          <div class="store_gold wide" id="store_masterPoint">
+                              <div class="column_con">
+                                  <!--repeat72151466459--><!--repeat72151466459:end-->
+                              </div>
+                           </div>
+                      </div>
+                  </div>
+              </div>
+              <!--silver-->
+              <!-- <div id="silver" class="corner_bg" ms-visible="silver">
+                  <div style="height: 500px;"></div>
+              </div>-->
+              <!--items-->
+              <div id="items" class="corner_bg" avalonctrl="items">
+                  <div class="corner_con">
+                      <!--submenu-->
+                      <ul class="nav2">
+                          <!--repeat17001247406--><li class="now">
+                              <span class="store_01 avatars"></span>
+                          </li><!--repeat17001247406--><li>
+                              <span class="store_01 charms"></span>
+                          </li><!--repeat17001247406--><li>
+                              <span class="store_01 emojis"></span>
+                          </li><!--repeat17001247406--><!--repeat17001247406:end-->
+                      </ul>
+                      <div class="scroll_pane">
+                              <!--avatars-->
+                              <div class="store_avatars wide" id="store_avatars">
+                                  <div class="column_con">
+                                      <!--repeat874524306506--><!--repeat874524306506:end-->
+                                  </div>
+                              </div>
+                              <!--charms-->
+                              <div class="store_charms wide" id="store_charms" style="display: none;">
+                                  <div class="column_con">
+                                      <!--repeat042960479856--><!--repeat042960479856:end-->
+                                  </div>
+                              </div>
+                               <!--emojis-->
+                               <div class="store_emojis wide" id="store_emojis" style="display: none;">
+                                          <div class="column_con">
+                                              <!--repeat632060356438--><!--repeat632060356438:end-->
+                                          </div>
+                                </div>
+                               <!--other-->
+                              <!-- <div  class="store_other  wide"  ms-visible="other" id="store_other">
+                                  <div class="column_con">
+                                      <div class="clear item" ms-repeat="otherData">
+                                          <div class="title">{{el.GoodsInfo.Name}}</div>
+                                          <div class="img" ms-click="showBuy('show_single_buy',el.GoodsInfo,'other')">
+                                              <img ms-src="{{el.GoodsInfo.PicPath}}">
+                                          </div>
+                                          <div class="text_01" ms-html="el.GoodsInfo.Descr">{{el.GoodsInfo.Descr}}</div>
+                                          <div class="price_02">
+                                              <div class="store_01 btn" ></div>
+                                              <div class="text">{{el.GoodsInfo.Price}}</div>
+                                          </div>
+                                          <div class="hover_bg" ms-click="showBuy('show_single_buy',el.GoodsInfo,'other')"></div>
+                                      </div>
+                                  </div>
+                              </div>-->
+                          </div>
+                  </div>
+              </div>
+              <div class="h_height" style="height: 58px;"></div>
+              <!--charms-->
+              <div class="store_charms_dialog left" style="display: none;">
+                  <div class="top_pop">
+                      <div class="top_leftbg fll"></div>
+                      <div class="top_centbg top_centbg_small fll">
+                          <div class="store_01 store_text"></div>
+                      </div>
+                      <div class="top_rightbg fll">
+                          <div class="close_btns flr"><a href="javascript:void(0)"></a></div>
+                      </div>
+                  </div>
+                  <div class="pop_con_rightbg">
+                      <div class="pop_con store_show_charms">
+                          <div class="column_con2 left">
+                              <div class="content_top">
+                                  <div class="light">
+                                      <div class="items">
+                                          <img src="">
+                                      </div>
+                                      <div class="avatars">
+                                          <img src="">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="bottom"></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="bottom_pop">
+                      <div class="bot_leftbg fll"></div>
+                      <div class="bot_centbg bot_centbg_small fll"></div>
+                      <div class="bot_rightbg fll"></div>
+                  </div>
+              </div>
+              <!--emojis-->
+              
+              <!--change skin popups-->
+              
+              <!--single buy popups-->
+              
+              <!--public message popups-->
+              
+              <!--batch purchase popups-->
+              
+          </div>
+  </div></div><div class="bottom_pop">
+    <div class="bot_leftbg fll"></div>
+    <div class="bot_centbg fll"></div>
+    <div class="bot_rightbg fll"></div>
+</div>
+<div class="gray_bg" id="loading">
+    <div class="ld_shadow">
+        <div class="loading"><p>LOADING...</p><span class="image"></span></div>
+    </div>
+</div></div></div><div class="widget-dialog oni-dialog" avalonctrl="show_emojis" style="position: fixed; width: 747px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+                  <div class="top_pop">
+                      <div class="top_leftbg fll"></div>
+                      <div class="top_centbg top_centbg_small fll">
+                          <div class="store_01 store_text"></div>
+                      </div>
+                      <div class="top_rightbg fll">
+                          <div class="close_btns flr"><a href="javascript:void(0)"></a></div>
+                      </div>
+                  </div>
+                  <div class="pop_con_rightbg">
+                      <div class="pop_con store_show_emojis">
+                          <div class="column_con left">
+                              <div class="top">
+                                  <div class="light">
+                                      <div class="items">
+                                          <img src="">
+                                      </div>
+                                      <div class="avatars">
+                                          <img src="">
+                                      </div>
+                                      <div class="select_avatars">
+                                          <img src="">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="bottom"></div>
+                          </div>
+                          <div class="column_con right">
+                              <div class="scroll-pane">
+                                  <ul>
+                                      <!--repeat684500861913--><!--repeat684500861913:end-->
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="bottom_pop">
+                      <div class="bot_leftbg fll"></div>
+                      <div class="bot_centbg bot_centbg_small fll"></div>
+                      <div class="bot_rightbg fll"></div>
+                  </div>
+              </div></div><div class="widget-dialog show_changeClothes oni-dialog" avalonctrl="show_changeClothes" style="position: fixed; width: 747px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+                  <div class="top_pop">
+                      <div class="top_leftbg fll"></div>
+                      <div class="top_centbg top_centbg_small fll">
+                          <div class="title_text">CUSTOMIZE</div>
+                      </div>
+                      <div class="top_rightbg fll">
+                          <div class="close_btns flr"><a href="javascript:void(0)"></a></div>
+                      </div>
+                  </div>
+                  <div class="pop_con_rightbg">
+                      <div class="pop_con store_show_emojis store_show_changeClothes">
+                          <div class="left">
+                              <div class="top">
+                                  <img src="">
+                                  <div class="price_01">
+                                      <div class="store_01 btn"></div>
+                                      <div class="text"></div>
+                                  </div>
+                              </div>
+                              <div class="button"></div>
+                          </div>
+                          <div class="column_con right">
+                              <div class="scroll-pane">
+                                  <ul>
+                                      <!--repeat590099323541--><!--repeat590099323541:end-->
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="bottom_pop">
+                      <div class="bot_leftbg fll"></div>
+                      <div class="bot_centbg bot_centbg_small fll"></div>
+                      <div class="bot_rightbg fll"></div>
+                  </div>
+              </div></div><div class="widget-dialog show_single_buy oni-dialog" avalonctrl="show_single_buy" style="position: fixed; width: 530px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+                  <div class="top_pop">
+                      <div class="top_leftbg fll"></div>
+                      <div class="top_centbg top_centbg_small fll">
+                          <div class="title title_small">
+                              <div class="title_leftbg">
+                                  <div class="title_rightbg">
+                                      <div class="title_name" id="popup_title">
+                                          <div class="store_02 title_single_buy"></div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="top_rightbg fll">
+                          <div class="close_btns flr"><a href="javascript:void(0)"></a></div>
+                      </div>
+                  </div><!--/end top_pop弹窗头部-->
+                  <div class="pop_con_rightbg">
+                      <div class="pop_con">
+                          <div class="corner_bg">
+                              <div class="left">
+                                  <div class="img">
+                                      <img src="">
+                                  </div>
+                                  <div class="title"></div>
+                              </div>
+                              <div class="right">
+                                  <div class="text"></div>
+                                  <div class="price_01">
+                                      <div class="store_01 btn"></div>
+                                      <div class="text"></div>
+                                  </div>
+                                  <div class="price_01" style="display: none;">
+                                      <div class="text owned">OWNED</div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="store_02 confirm"></div>
+                      </div>
+                  </div><!--/end pop_con_rightbg弹窗内容部分-->
+                  <div class="bottom_pop">
+                      <div class="bot_leftbg fll"></div>
+                      <div class="bot_centbg bot_centbg_small fll"></div>
+                      <div class="bot_rightbg fll"></div>
+                  </div>
+                  <div class="gray_bg" id="loadingBuy">
+                      <div class="ld_shadow">
+                          <div class="loading"><p>LOADING...</p><span class="image"></span></div>
+                      </div>
+                  </div>
+              </div></div><div class="widget-dialog show_single_buy oni-dialog" avalonctrl="show_info" style="position: fixed; width: 530px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+                  <div class="top_pop">
+                      <div class="top_leftbg fll"></div>
+                      <div class="top_centbg top_centbg_small fll">
+                          <div class="title title_small">
+                              <div class="title_leftbg">
+                                  <div class="title_rightbg">
+                                      <div class="title_name" id="popup_title">
+                                          <div class="store_02 title_single_buy"></div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="top_rightbg fll">
+                          <div class="close_btns flr"><a href="javascript:void(0)"></a></div>
+                      </div>
+                  </div><!--/end top_pop弹窗头部-->
+                  <div class="pop_con_rightbg">
+                      <div class="pop_con show_info">
+                          <div class="corner_bg">
+                              <div class="text"></div>
+                              <div class="go_person" style="display: none;">Go To My Inventory</div>
+                           </div>
+                          <div class="store_02 confirm"></div>
+                      </div>
+                  </div><!--/end pop_con_rightbg弹窗内容部分-->
+                  <div class="bottom_pop">
+                      <div class="bot_leftbg fll"></div>
+                      <div class="bot_centbg bot_centbg_small fll"></div>
+                      <div class="bot_rightbg fll"></div>
+                  </div>
+              </div></div><div class="widget-dialog show_single_buy show_batch_buy oni-dialog" avalonctrl="show_batch_buy" style="position: fixed; width: 530px; display: none; transform: scale(0.7);"><div class="oni-dialog-inner">
+                  <div class="top_pop">
+                      <div class="top_leftbg fll"></div>
+                      <div class="top_centbg top_centbg_small fll">
+                          <div class="title title_small">
+                              <div class="title_leftbg">
+                                  <div class="title_rightbg">
+                                      <div class="title_name" id="popup_title">
+                                          <div class="store_02 title_single_buy"></div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="top_rightbg fll">
+                          <div class="close_btns flr"><a href="javascript:void(0)"></a></div>
+                      </div>
+                  </div><!--/end top_pop弹窗头部-->
+                  <div class="pop_con_rightbg">
+                      <div class="pop_con">
+                          <div class="corner_bg">
+                              <div class="left">
+                                  <div class="img">
+                                      <img src="">
+                                  </div>
+                                  <a class="descr" title=""></a>
+                                  <div class="title"></div>
+                              </div>
+                              <div class="right">
+                                  <div class="unit_price">$</div>
+                                  <div class="number">
+                                      <div class="store_01 minus"></div>
+                                      <input class="store_01" type="text">
+                                      <div class="store_01 add"></div>
+                                  </div>
+                                  <div class="price_02">
+                                      <div class="store_01 btn"></div>
+                                      <div class="text total_price">0</div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="store_02 confirm"></div>
+                      </div>
+                  </div><!--/end pop_con_rightbg弹窗内容部分-->
+                  <div class="bottom_pop">
+                      <div class="bot_leftbg fll"></div>
+                      <div class="bot_centbg bot_centbg_small fll"></div>
+                      <div class="bot_rightbg fll"></div>
+                  </div>
+                  <div class="gray_bg" id="loadingBatchBuy">
+                      <div class="ld_shadow">
+                          <div class="loading"><p>LOADING...</p><span class="image"></span></div>
+                      </div>
+                  </div>
+              </div></div></div></body></html>

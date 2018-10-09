@@ -1,0 +1,111 @@
+<div ms-controller="login"  class="widget-dialog ms-controller show_account" ms-widget="dialog,show_login,$login">
+    <div class="register QA_login">
+        <!--header-->
+        <div class="top">
+            <a class="account_01" ms-click="_close" href="javascript:void(0)"></a>
+        </div>
+        <!--content of login-->
+        <div class="content">
+            <div class="title">Login using WPT Account</div>
+            <div class="email">
+                <input type="text" maxlength="45" id="loginEmail" placeholder="Email"  ms-duplex-string="email" ms-focus="emailFocus"  ms-blur="emailBlur" />
+            </div>
+            <div class="password clear">
+                <input style="width: 280px; float: left" maxlength="16" oncut="return false;" oncopy="return false;" onpaste="return false;" type="password"  placeholder="Password" ms-duplex-string="pwd"  ms-focus="passwordFocus"  ms-blur="passwordBlur" />
+                <a href="javascript:void(0)" class="link_color" style="width: 50px; float: right" onclick="showDialog('show_sendemail')">Forgot?</a>
+            </div>
+            <div class="captcha"  ms-visible="showCaptcha">
+                <input type="text" ms-duplex-string="catpchaCode" placeholder="Captcha" ms-blur="catpchaBlur"  ms-focus="captchaFocus"/>
+                <img ms-src="captchaSrc" ms-click="reloadCaptcha">
+                <span class="refresh" ms-click="reloadCaptcha">Refresh</span>
+             </div>
+            <div class="checkbox clear">
+                 <input name="" type="checkbox" value="" checked="checked" id="check_rem"><p>Remember me</p><!--Keep me logged in-->
+            </div>
+            <div class="errorInfo" ms-visible="showErrorMsg">{{errorMsg}}</div>
+            <div class="account_01 account_btn" id="btn_login" ms-click="userLogin">Login</div>
+            <a class="account_01 account_facebook_btn" ms-href="facebookLoginHref" ms-click="facebookLoginClick" >Login using Facebook</a>
+            <div class="border"></div>
+            <div class="login_text">
+                <em>Don’t have an account?</em><a href="javascript:void(0)" ms-click="logRegToggle('register','login')">Sign Up</a>
+            </div>
+        </div>
+    </div>
+    <!--forgot password popups-->
+    <div class="widget-dialog show_account forget_pwd" ms-widget="dialog,show_sendemail,$pwd">
+        <div class="forget_pwd QA_changePassword">
+            <div class="top">
+                <a class="account_01" ms-click="_close" href="javascript:void(0)"></a>
+            </div>
+            <!--sendEmail-->
+            <div class="content QA_sendEmail" ms-visible="send_mail">
+                <div class="title">Change Password</div>
+                <p class="discription">To reset your password, enter the email address you used to log in to PlayWPT.</p>
+                <div class="email">
+                     <input type="text" placeholder="Please enter your email" id="enterEmail"  ms-duplex-string="user_email" ms-focus="pwdFocus('useremail')"  ms-blur="pwdBlur('useremail')" />
+                </div>
+                <div class="errorInfoPwd" ms-visible="showEmailMsg">{{errorMsgEmail}}</div>
+                <div class="account_01 account_btn" ms-click="sendEmail">Send Email</div>
+            </div>
+            <!--send email infos-->
+            <div class="content QA_sendStatus" ms-visible="send_mail_info">
+                <div class="title">Change Password</div>
+                <div class="discript_con">
+                    <p ms-html="pwdMsg"></p>
+                </div>
+                <div class="account_01 account_btn" ms-click="cpwd_success">Close</div>
+            </div>
+            <!--changeEmail-->
+            <div class="content" ms-visible="change_pwd">
+                <div class="title">{{change_pwd_title}}</div>
+                <p class="discription font_blue">Current Email:<span>{{current_email}}</span></p>
+                <div class="pad_pwd">
+                    <div class="txtarea">
+                        <input type="password" oncut="return false;" oncopy="return false;" onpaste="return false;" placeholder="New Password" ms-duplex-string="newpwd" ms-focus="pwdFocus('newpwd')"  ms-blur="pwdBlur('newpwd')" />
+                    </div>
+                    <div class="txtarea">
+                         <input type="password" oncut="return false;" oncopy="return false;" onpaste="return false;" placeholder="Confirm new password"  ms-duplex-string="confirm_newpwd" ms-focus="pwdFocus('confirm_newpwd')"  ms-blur="pwdBlur('confirm_newpwd')" />
+                    </div>
+                    <div class="errorInfoPwd" ms-visible="showPwdMsg">{{errorMsgPwd}}</div>
+                </div>
+                <div class="account_01 account_btn" ms-click="change_email">Save</div>
+            </div>
+        </div>
+    </div>
+    <!--forgot password popups end-->
+    <!--resend email popups-->
+    <div class="widget-dialog show_account forget_pwd" ms-widget="dialog,show_resendemail,$pwd">
+        <div class="forget_pwd">
+            <div class="top">
+                <a class="account_01" ms-click="_close" href="javascript:void(0)"></a>
+            </div>
+            <div class="content">
+                <div class="title">Change Password</div>
+                <div class="discript_con">
+                    <p>{{outTimeMsg}}</p>
+                </div>
+                <div class="account_01 account_btn" ms-click="toForgetPwd">Forgot password</div>
+            </div>
+        </div>
+    </div>
+    <!--resend email popups end-->
+    <!--public message popups-->
+    <div class="widget-dialog show_account" ms-widget="dialog,show_publicMessage,$pwd">
+       <div class="validateEmail_suc">
+           <div class="top">
+               <a class="account_01" ms-click="_close" href="javascript:void(0)"></a>
+           </div>
+           <div class="content">
+               <div class="title">{{publicMessageTitle}}</div>
+               <div class="text" ms-html="publicMessageCon">
+                   {{publicMessageCon}}
+               </div>
+               <div class="account_01 button" ms-class="account_btn_gray:showTime===true"  ms-click="resendEmail">
+                   <span>Validate Email</span>
+                   <em ms-visible="showTime" ms-duplex-string="time">{{time}}</em>
+               </div>
+           </div>
+       </div>
+   </div>
+   <!--public message popups end-->
+</div>

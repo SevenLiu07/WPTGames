@@ -1,0 +1,151 @@
+    <div ms-controller="register" class="widget-dialog ms-controller show_account" ms-widget="dialog,show_register,openRegisterDialog">
+        <div class="register QA_regist">
+            <!--header-->
+            <div class="top">
+                <a class="account_01" ms-click="_close" href="javascript:void(0)"></a>
+            </div>
+            <!--content of regist-->
+            <div class="content">
+                <div class="title">Create a WPT Account</div>
+                <div class="email">
+                    <!--<span class="name">Email</span>-->
+                    <input id="registerEmail" type="text" maxlength="45" placeholder="Email"  ms-duplex-string="email" ms-focus="inputFocus('Email')"  ms-blur="emailBlur" />
+                </div>
+                <div class="password">
+                    <!--<span class="name">Password</span>-->
+                    <input oncut="return false;" oncopy="return false;" onpaste="return false;" type="password" maxlength="16"  placeholder="Password" ms-duplex-string="password"  ms-focus="inputFocus('Password')"   ms-blur="passwordBlur" />
+                </div>
+                <div class="captcha"  ms-visible="showCaptcha">
+                    <input type="text" ms-duplex-string="captchaVal"  placeholder="Captcha" ms-focus="inputFocus('Captcha')"  ms-blur="captchaBlur"/>
+                    <img ms-src="captchaSrc">
+                    <span class="refresh" ms-click="reloadCaptcha">Refresh</span>
+                 </div>
+                <div class="descr">
+                    <em>By signing up, you agree to WPT's </em>
+                    <em><a href="/terms" target="_blank">Terms and Conditions</a> and <a href="http://www.worldpokertour.com/privacy-policy/" target="_blank">Privacy Policy</a>.</em>
+                </div>
+                <div class="errorInfo" ms-visible="showErrorMsg">{{errorMsg}}</div>
+                <div class="account_01 account_btn" id="btn_regist" ms-click="webRegister">Sign up</div>
+                <a class="account_01 account_facebook_btn" ms-href="facebookRegisterHref" ms-click="facebookRegisterClick()">Sign up using Facebook</a>
+                <div class="border"></div>
+                <div class="login_text">
+                    <em> Already have an account?</em><a href="javascript:void(0)" ms-click="logRegToggle('login','register')">Log in</a>
+                </div>
+            </div>
+        </div>
+        <!--create username-->
+        <div   class="widget-dialog  show_account" ms-widget="dialog,show_createUsername,openCreateUsernameDialog"   >
+            <div class="create_username">
+                <div class="top">
+                    <!--<a class="account_01" ms-click="_close" href="javascript:void(0)"></a>-->
+                </div>
+                <div class="content">
+                    <div class="title">Create a username</div>
+                    <input type="text"  class="input_username" ms-duplex-string="inputUsername" placeholder="Enter username" maxlength="20"  ms-focus="inputUsernameFocus" ms-blur="inputUsernameBlur" />
+                    <div class="errorInfo" ms-visible="showErrorMsg" ms-html="errorMsg">{{errorMsg}}</div>
+                    <div class="account_01 button" ms-click="selectAvatar">Go select an avatar</div>
+                </div>
+            </div>
+        </div>
+        <!--select avatar-->
+        <div   class="widget-dialog  show_account" ms-widget="dialog,show_selectAvatar,openSelectAvatarDialog"  >
+            <div class="select_avatar">
+                <div class="top">
+                    <!--<a class="account_01" ms-click="_close" href="javascript:void(0)"></a>-->
+                </div>
+                <div class="content">
+                    <div class="title">Select an avatar</div>
+                    <div class="avatar">
+                        <div class="left"  ms-class="select:sex===2"  ms-click="selectSex(2)">
+                            <img src="/wpt/www/module/account/images/woman.png"/>
+                        </div>
+                        <div class="right" ms-class="select:sex===1"  ms-click="selectSex(1)">
+                            <img src="/wpt/www/module/account/images/man.png"/>
+                        </div>
+                    </div>
+                    <div class="account_01 button" ms-click="_confirm">Play Now</div>
+                </div>
+            </div>
+        </div>
+        <!--validate email-->
+        <div class="widget-dialog  show_account" ms-widget="dialog,show_validateEmail,openValidateEmailDialog"   >
+            <div class="validate_email">
+                <div class="top">
+                    <a class="account_01" ms-click="_close" href="javascript:void(0)"></a>
+                </div>
+                <div class="content">
+                    <div class="title">
+                        <span class="text omit">Hi&nbsp;&nbsp;{{inputUsername}}</span>
+                        <!--<span class="username">{{inputUsername}}</span>-->
+                    </div>
+                    <div class="descr_validate" ms-html="validateEmailMessage"><!--descr_validate--></div>
+                    <div class="button" ms-class-1="gmail:currentEmailClass==='gmail'" ms-class-2="outlook:currentEmailClass==='outlook'" ms-class-3="hotmail:currentEmailClass==='hotmail'"  ms-class-4="yahoo:currentEmailClass==='yahoo'">
+                        <a  target="_blank" ms-href="currentEmailHref">please check your inbox</a>
+                    </div>
+                    <div class="border"></div>
+                    <div class="resend_email">
+                        <span class="btn" ms-click="resendEmail">Resend Email</span>
+                        <span class="count_down" ms-visible="showTime" ms-duplex-string="time">{{time}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--validate email expired-->
+        <div  class="widget-dialog  show_account" ms-widget="dialog,show_validateEmailError,openValidateEmailErrorDialog">
+            <div class="validateEmail_suc validateEmail_error">
+                <div class="top">
+                    <a class="account_01" ms-click="_close" href="javascript:void(0)"></a>
+                </div>
+                <div class="content">
+                    <div class="title">{{publicMessageTitle}}</div>
+                    <div class="text" ms-html="publicMessageCon">
+                        {{publicMessageCon}}
+                    </div>
+                    <div class="account_01 button" ms-class="account_btn_gray:showTime===true" ms-visible="showPlayGamesBtn"  ms-click="resendEmail">
+                        <span>Validate Email</span>
+                        <em ms-visible="showTime" ms-duplex-string="time">{{time}}</em>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--validate email successfully-->
+        <div   class="widget-dialog  show_account" ms-widget="dialog,show_validateEmailSuc,openValidateEmailSucDialog">
+            <div class="validateEmail_suc">
+                <div class="top">
+                    <a class="account_01" ms-click="_close" href="javascript:void(0)"></a>
+                </div>
+                <div class="content">
+                    <div class="title">{{publicMessageTitle}}</div>
+                    <div class="text" ms-html="publicMessageCon">
+                        {{publicMessageCon}}
+                    </div>
+                    <!--<div class="account_01 button" ms-click="_confirm">Play Games</div>-->
+                    <div class="account_01 button_red" ms-click="_confirm">Play Games</div>
+                </div>
+            </div>
+        </div>
+        <!--public message popups-->
+        <div   class="widget-dialog  show_account" ms-widget="dialog,show_publicMessage,openPublicMessageDialog">
+            <div class="validateEmail_suc">
+                <div class="top">
+                    <a class="account_01" ms-click="_close" href="javascript:void(0)"></a>
+                </div>
+                <div class="content">
+                    <div class="title">{{publicMessageTitle}}</div>
+                    <div class="text" ms-html="publicMessageCon">
+                        {{publicMessageCon}}
+                    </div>
+                    <div class="account_01 button"  ms-visible="showPlayGamesBtn"  ms-click="_confirm">Play Games</div>
+                </div>
+            </div>
+        </div>
+        <!--public message popups-->
+    </div>
+
+
+
+
+
+
+

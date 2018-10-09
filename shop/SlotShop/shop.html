@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Shop</title>
+<link href="../../css/reset.css" rel="stylesheet" type="text/css">
+<link href="css/shop.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="shop">
+     <div class="shop_t_bg"></div>
+     <div class="shop_c_bg">
+          <div class="widget-tabpanel" id="panel_shop">
+            <ul class="tabs">
+              <li class="tab" id="tab1"></li><!--icons-->
+              <li class="tab" id="tab2"></li><!--gold-->
+              <li class="tab" id="tab4"></li><!--avatar-->
+            </ul>
+            <div class="panels">
+              <div class="panel" id="icons">
+                <ul class="scroll_bar one_product" id="icons_list">
+                  </ul>
+              </div>
+              <div class="panel" id="gold">
+                   <ul class="scroll_bar one_product" id="gold_list">
+                   </ul>
+              </div>
+              <div class="panel" id="avatar">
+                <div class="scroll_bar">
+                <ul class="one_avatar clear" id="avatar_list"></ul>
+                </div>
+              </div>
+            </div>
+            <!--loading-->
+            <div id="loading" class="widget-dialog">
+              <div class="ld_img">Loading...</div>
+            </div>
+            <!--widget-dialog Gold-->
+            <div id="dialog" class="widget-dialog">
+                 <a href="javascript:void('close');" class="close" hidefocus style=" margin: -6px -6px 0 0"></a>
+                 <div class="product_pic fll"><img src="image/golds_01.png" id="gold_pic"></div>
+                 <div class=" product_info flr pro_pad">
+                   <div class="prices" id="gold_price"></div>
+                   <div class="confirm"><a href="javascript:void(0);" id="order"></a> </div>
+                 </div>
+            </div><!--widget-dialog Gold end/-->
+            <!--widget-dialog --------------------------------------------------------------------------ICONS-->
+            <div id="dialog_icons" class="widget-dialog">
+                 <a href="javascript:void('close');" class="close" hidefocus style=" margin: -6px -6px 0 0"></a>
+                 <div class="title" id="coins_tit"></div>
+                 <div class="product_pic marg_lr">
+                      <img src="image/avatar_01.png" id="coin_pic">
+                 </div>
+                 <div class="money_ratio" id="ratio"></div>
+                 <div class=" icons_info">
+                   <div class="" id="ex_coins"></div>
+                   <div class="confirm"><a href="javascript:void(0);" id="order_coins"></a> </div>
+                 </div>
+                 <div class="notic">NOTE:you can buy  coins using gold, but you cannot buy gold
+                          with coins,coins can only be used on slots play.
+                 </div>
+            </div><!--widget-dialog ---------------------------------------------------------------ICONS end/-->
+            <!--widget-dialog avatars-->
+            <div id="dialog_avat" class="widget-dialog">
+                 <a href="javascript:void('close');" class="close" hidefocus style=" margin: -6px -6px 0 0"></a>
+              <div class="product_pics fll">
+                  <img src="image/avatar_01.png" id="avatar_pic">
+              </div>
+              <div class=" product_info flr pro_pad">
+                <div class="charms" id="avatar_price"></div>
+                <div class="confirm"><a href="javascript:void(0);" id="order_avatar"></a> </div>
+              </div>
+             </div><!--widget-dialog avatars end/-->
+             <!--widget-dialog worn显示提示信息-->
+             <div id="show_infos" class="widget-dialog">
+                 <a href="javascript:void('close');" class="close" hidefocus style=" margin: -6px -6px 0 0"></a>
+                 <div class="show_info"><p id="worn_info"></p></div>
+                 <div class="confirm" id="btn_cfirm"><a href="javascript:void(0);" id="btn_confirm"></a> </div>
+             </div><!--widget-dialog worn显示提示信息 end/-->
+            <!--widget-dialog worn显示提示信息-->
+            <div id="show_pay_info" class="widget-dialog">
+                <a href="javascript:void('close');" class="close" hidefocus style=" margin: -6px -6px 0 0"></a>
+                <div class="show_info"><p id="worn_pay_info"></p></div>
+                <div class="store" id="btn_store"><a href="javascript:void(0);" id="btn_buy"></a> </div>
+                <p id="links" style="display: none"></p>
+            </div><!--widget-dialog worn显示提示信息 end/-->
+          </div>
+     </div>
+     <div class="shop_b_bg"></div>
+</div>
+<script type="text/javascript" src="../../js/our.js"></script>
+<script type="text/javascript" src="../../js/tabpanel.js"></script>
+<script type="text/javascript" src="../../js/dialog.js"></script>
+<script type="text/javascript" src="js/shop.js?v=2.2.7.1"></script>
+</body>
+</html>

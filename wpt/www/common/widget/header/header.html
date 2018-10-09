@@ -1,0 +1,51 @@
+<header ms-controller="loginInfo" ms-if="showNav">
+    <nav>
+        <div class="left_bg">
+            <div class="right_bg">
+                <div class="center_bg">
+                    <div class="logo fll"><a href="https://www.playwpt.com/"><img src="/wpt/common/images/logo.png" /></a></div>
+                    <div>
+                        <!--status of not logged in-->
+                        <div class="login_before flr" ms-visible="loginBefore">
+                            <div class="sign flr"><a href="javascript:void(0)"></a></div>
+                            <div class="role flr"></div>
+                            <div class="login flr"><a href="javascript:void(0)"></a></div>
+                        </div>
+                        <!--status of logged in-->
+                        <div class="login_after flr" ms-visible="loginAfter">
+                            <div class="roles flr list_posit">
+                                <a href="javascript:void(0)" class="nav_list"></a><!--select list-->
+                                <div class="nav_dropdown">
+                                    <div class="conner"></div>
+                                    <ul class="list_con">
+                                        <li class="QA_account"><a href="javascript:void(0)" onclick="showDialog('show_person')">My Account</a> </li>
+                                        <!--<li class="QA_inventory"><a href="javascript:void(0)" onclick="showDialog('show_inventory','avatars')">My Inventory</a> </li>-->
+                                        <li class="QA_settings" ms-if="settings"><a href="javascript:void(0)" onclick="openSettings()">Settings</a> </li>
+                                        <!--<li class="QA_redeem"><a href="javascript:void(0)" onclick="showDialog('show_promotion')">Redeem</a> </li>-->
+                                        <li class="QA_logOut" ms-if="showLogOut"><a href="javascript:void(0)" ms-click="logOut()" >Log Out</a> </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="roles flr">
+                                <p class="fll" style="padding-left: 0;"><a href="javascript:void(0)" onclick="showDialog('show_person')">{{defaultName}}</a></p>
+                                <!--<div class="head flr"><a href="javascript:void(0)" onclick="showDialog('show_inventory','avatars')"><img ms-src="userAvatar" /></a></div>-->
+                            </div>
+                            <!--
+                            <a href="javascript:void(0)" class="golds_info flr" onclick="showDialog('show_store','','gold')">
+                                <div class="silver_gold fll"></div>
+                                <p class="fll txt_shadow">{{goldCoin}}</p>
+                                <div class="btn_add flr"></div>
+                            </a>-->
+                            <a href="javascript:void(0)" onclick="openRewards()">
+                                <div class="golds_infos flr" ms-visible="rewardspoint">
+                                    <div class="rewards fll"></div>
+                                    <p class="fll txt_shadow">{{rewards}}</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

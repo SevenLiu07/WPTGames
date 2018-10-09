@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="m/css/base/m-base.css"/>
+    <script type="text/javascript" src="m/js/m-reactive.js"></script>
+    <link rel="stylesheet" type="text/css" href="m/css/mobile.css"/>
+</head>
+<body>
+<!--维护页面-->
+<div class="play-layout play_msg_02" id="layout">
+    <img src="m/images/index/logo.png" class="logo_img">
+    <img src="m/images/index/font.png" class="font_img">
+    <a class="app_down_btn" href="javascript:void(0)" id="appDownBtn">
+        <img src="m/images/app_down_btn.png">
+    </a>
+</div>
+
+
+
+<script>
+    function appDown(){
+        setTimeout(
+                function(){
+                    window.location="itms-apps://itunes.apple.com/us/app/world-poker-tour-playwpt-texas/id1144458302";
+                },
+           30);
+    }
+    var appDownBtn = document.getElementById("appDownBtn");
+    if (appDownBtn.addEventListener){
+        appDownBtn.addEventListener("click", appDown);
+    } else if (appDownBtn.attachEvent) {
+        appDownBtn.attachEvent("onclick", appDown);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Play free poker online with the PlayWPT casino game. The most authentic texas holdem poker play online!" />
+    <meta name="keywords" content="poker,texas holdem,online poker,online casino,free poker,poker games,free texas holdem,free online poker,play wpt, wpt" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>PLAYWPT</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../../common/css/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../common/css/base.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../module/facebook/css/video_vote.css" />
+   <script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js" ></script>
+</head>
+<body ms-controller="videoVote">
+
+<header>
+    <div class="logo">
+        <img src="https://www.playwpt.com/wpt/www/common/images/logo.png">
+    </div>
+</header>
+
+
+<div class="content video_share">
+    <div class="info">
+        <div class="left">
+            <img ms-src="{{videoAuthorAvatarURL}}">
+        </div>
+        <div class="center">
+            <div class="name">{{videoAuthorName}}</div>
+            <div class="introduction">
+                {{videoDescription}}
+            </div>
+        </div>
+        <div class="right" ms-visible="showInfo">
+            <div class="top">
+                <span class="vote vote2 number"></span>
+                <span class="text">{{currentVoteCount}}</span>
+                <a href="javascript:void(0)" ms-click="result" >
+                    <span class="vote result"></span>
+                    <span class="text">Results</span>
+                </a>
+            </div>
+            <div class="bottom" ms-click="share">
+                <a href="javascript:void(0)" class="vote vote2"></a>
+            </div>
+        </div>
+    </div>
+    <div class="video">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" ms-repeat="voteVideoData">
+                    <iframe ms-src="{{el.VideoURL}}" id="iframe_video1" frameborder="0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination swiper-pagination-white"></div>
+            <!-- Add Navigation -->
+            <div class="swiper-button-prev swiper-button-white" ms-click="swiperClickPrev"></div>
+            <div class="swiper-button-next swiper-button-white" ms-click="swiperClickNext"></div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="footer">
+    <div class="links">
+        <a target="_blank" href="https://www.playwpt.com/terms.html">Terms and Conditions</a>
+        <a target="_blank" href="http://www.worldpokertour.com/privacy-policy/">Privacy Policy</a>
+        <a target="_blank" href="https://www.playwpt.com/faq.html">FAQs</a>
+    </div>
+    <div class="fot_dis">
+        <span>PlayWPT ©2017 WPT Enterprises, Inc.</span>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="../../common/widget/avalon.js"></script>
+<script type="text/javascript" src="../../common/js/play-common.js"></script>
+<script type="text/javascript" src="../../common/js/swiper.min.js"></script>
+<script type="text/javascript" src="../../module/facebook/js/videoVote.js" ></script>
+<script>
+   /* var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        parallax: true,
+        speed: 600
+    });*/
+</script>
+</body>
+</html>

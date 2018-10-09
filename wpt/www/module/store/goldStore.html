@@ -1,0 +1,29 @@
+<div ms-controller="goldStore"  class="widget-dialog ms-controller store_dialog" ms-widget="dialog,show_goldStore,openDialog">
+    <div class="store gold_store">
+        <div class="top"></div>
+        <div class="top_bar goldstitle_bg">
+            <div class="store_04 gstore"></div>
+        </div>
+        <!--主体内容-->
+        <div class="clear"></div>
+        <!--glodStore-->
+        <div id="goldStore" class="corner_bg"  style="height:600px;overflow: hidden">
+            <div class="gold_store_item" ms-repeat="goldData">
+                <div class="showItem" ms-visible="el.showItem">
+                    <div class="store_04 most_popular" ms-visible="el.showMostPopular"></div>
+                    <div class="store_04 best_value"   ms-visible="el.showBestValue"></div>
+                    <div class="store_04 gold_icon"></div>
+                    <div class="text_01 before_coin">{{el.GoodsInfo.salesGoldName}}</div>
+                    <div class="text_01 sign">x</div>
+                    <div class="text_01 bonus" ms-class="{{el.GoodsInfo.colorClass}}">{{el.GoodsInfo.bonusPercent}}%</div>
+                    <div class="text_01 equal">=</div>
+                    <div class="store_04 gold_icon"></div>
+                    <div class="text_02">{{el.GoodsInfo.Name}}</div>
+                    <div class="store_04 btn" ms-click="showBatchBuy(el.GoodsInfo)">
+                        <div class="text_03">{{el.GoodsInfo.Price}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

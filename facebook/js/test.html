@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
+    <link href="../../css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+fvfvf
+   <!-- <object width="500" height="500" id="gameSwf" data="http://static.playwpt.com/poker/client/Common.swf?dt=1479809354148" type="application/x-shockwave-flash" style="visibility: visible;">
+        <param name="quality" value="high">
+        <param name="wmode" value="Opaque">
+        <param name="menu" value="false">
+        <param name="id" value="Template">
+        <param name="allowScriptAccess" value="always">
+        <param name="allowFullScreen" value="true">
+        <param name="name" value="Template">
+        <param name="base" value=".">
+        <param name="FlashVars" value="undefined">
+    </object>-->
+<div id="gameSwf"></div>
+<!--<script type="text/javascript" src="../../js/test.js"></script>-->
+<script>
+  /*  function openFlash(_flashVars) {
+        console.log(111)
+        var flashvars = {};
+        var params = {};
+        params.quality = 'high';
+        params.wmode = 'Opaque';
+        params.menu = 'false';
+        params.id = 'Template';
+        params.allowScriptAccess = 'always';
+        params.allowFullScreen = 'true';
+        params.name = 'Template';
+        params.base = '.';
+        params.FlashVars = _flashVars;
+        var attributes = {};
+        console.log(swfobject)
+        //swfobject.embedSWF('http://static.playwpt.com/poker/client/Common.swf?dt=' + (new Date()).valueOf(), 'gameSwf', '100%', '100%', '7', '', flashvars, params, attributes);
+        swfobject.embedSWF('https://static.playwpt.com/poker/client/Common.swf?dt=' + (new Date()).valueOf(), 'gameSwf', '500', '500', '7', '', flashvars, params, attributes);
+
+    }
+    var _flashVars = "userName=13649&ticket=MTQ3OTY1ODM4OSZGNUNBMTM4NDAxQUI5NERFMDc5Rjk1MDY5MzMwQkZCQUJGOTkzMjc0RkEzQzdFMDJDNUE1NzJDQ0Q5NEIwRTIwJkQ0IDU2IENGIDUwIDEwIEE0IDE2IDc0IENBIDYxIDg3IDcwIDJCIDM2IDYxIEYwIA==&isNewPlayer=1&isVisitor=0&ip=202.108.36.125&isWatched=0&channelID=365&allTotal=100000&weekTotal=10000&newPlayerGold=100000&CMStatus=1&isTicket=0&TicketNumber=100&isYaoji=0&isLZ=0&IDCertificate=Q0FFUWxaZkh3UVVhQVRBaXdBSUFhVEt5eCtHcUE5V1Q2MjFiaXhhcVNUUWxPem5kOHB6d3hBRWFrbDBqaVhKTUtVWktxbFFMLy9SRWRwQjVZVG1vZk1KMlQrbGNtMml0MzdYRDhmWTVWd3RWYU9GU0p6S2tQMXJGN3VCMVNIbTh4cjF5M2xMTkhVSUg5QkpydXVnQk5NTzNJam0zTFNtblNvVWEwSjZ2eG9NSG5aaUlmTllNbmNIdVhzcjh2WnZmc3Qzam1YWjVudXdNQTc2WmxqTnRLTkY3RE13aTlIZmYrbzNWdG0xN0doQzllaHovcm52b01FRVkzUGdWQkp0OUtOdDRub3lxc2czaWR0TVV4SmNqWFBNN29CcHFLS2NaT1JaSjhOcWJPTjc3U0RpUUt5QnVMUFg1UmZjNS9UaERJb2pCRzFxVmxhR2dkZE9icHVEVmNLSXR2a0ZBQXcyaTRaY24rem1DbTkreTNlT1pkbm1iMzdMZDQ1bDJlV3VZSnY0NUZiMWltOSt5M2VPWmRua2VyNk9UUzk5TERGa3VTbG80N25zVktxd2psZVNOR1B1RXdJdENJY3JSY3c9PQ==&masterFirstState=1&DisplayName=shiwz&OurGameID=w~8526217625428402&Rolename=shiwz&&language=en&ShowGame=100000&MoreOpen=1&Sink=&defaultGame=&sessionID=339e417d-cc65-4d15-8d02-f2cf5ba77286&requestinterval=30&isValidatedEmail=0&avatarCode=1001&avatarSmlUrl=https://image.playwpt.com/group1/M00/3F/BA/wKgCyVcv8_itZgXOAABXA28T8Bo752.png&avatarBigUrl=https://image.playwpt.com/group1/M00/3F/34/wKgCyVcYqmeWaIvCAAD6Mf1V_tM615.png";
+   // openFlash()*/
+    var http_type=location.protocol+'//';
+    var baseUrl=http_type+"www.playwpt.com/WebAPI/";
+    function sendWriteLog(){
+        var parametes = {"logMsg":""};
+        parametes.logMsg = "Flash player plugin is required for PlayWPT games.";
+        var curUrl=baseUrl+"WebAPI/Utility/WriteLog";
+        new Request(curUrl, {method: "POST"})
+                .on('complete', function (e) {
+                }).send(parametes);
+    }
+    sendWriteLog()
+</script>
+</body>
+</html>

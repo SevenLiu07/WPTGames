@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>WPT Stories</title>
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" type="text/css" media="all" href="/wpt/common/css/swiper.min.css" />
+    <link rel="stylesheet" href="/wpt/module/facebook/css/new_vote.css">
+    <script type="text/javascript" src="/wpt/common/js/m-reactive.js"></script>
+</head>
+<body ms-controller="videoVote">
+
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div class="header">
+    <a href="javascript:void(0)" ms-click="clickHeader" class="logo"><img src="/wpt/common/images/logo.png"></a>
+</div>
+<div class="content_wrapper">
+    <div class="top_content">
+        <div class="left_story">
+            <div class="avatar"> <img ms-src="{{videoAuthorAvatarURL}}"></div>
+            <div class="title">{{videoTitle}}</div>
+            <span class="vote first"></span>
+<!--
+            <span class="vote" ms-class="first:currentVoteRank===1"  ms-class-1="two:currentVoteRank===2" ms-class-2="three:currentVoteRank===3"></span>
+-->
+        </div>
+    </div>
+
+    <div class="video">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide stop-swiping" >
+                    <iframe ms-src="{{currentVoteUrl}}"  id="iframeVideo" class="iframe" frameborder="0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination swiper-pagination-white"></div>
+            <!-- Add Navigation -->
+        </div>
+    </div>
+   <!-- <div class="gen">
+        <a href="javascript:void(0)" ms-click="addVote" class="gen_button vote_button" ms-class="gray:voteFinished===true"><span class="gen_button_text">{{voteBtnText}}</span></a>
+    </div>-->
+</div>
+<div class="footer">
+    <div class="copyright">&copy; 2017 WPT Enterprises, Inc.</div>
+</div>
+
+<!--create username && select avatar-->
+<script type="text/template" id="select-avatar">
+    <div class="modal_inner">
+        <div class="modal_text">
+            <span style="font-size: 25px; font-weight: 200;">Thanks for Voting!</span>
+        </div>
+        <div class="modal_avatar">
+            <ul>
+                <li class="select-avatar">
+                    <img src="https://image.playwpt.com/group1/M00/00/01/CgcBl1gF-PGAX1kWAAEObi_mbxI041.png"/>
+                </li>
+                <li class="select-avatar">
+                    <img src="https://image.playwpt.com/group1/M00/00/01/CgcBl1gF-PGAX1kWAAEObi_mbxI041.png"/>
+                </li>
+            </ul>
+        </div>
+        <form>
+            <input class="modal_username" type="text" name="username" placeholder="Enter username">
+        </form>
+        <div class="submit_button">Submit</div>
+    </div>
+</script>
+<!--facebook-login-->
+<script type="text/template" id="facebook-login">
+    <div class="modal_inner">
+        <div class="modal_text">
+            <span style="font-size: 25px; font-weight: 200;">Cast Your Vote!</span>
+        </div>
+        <div class="modal_instructions">
+            You must <span class="red">log in</span> with Facebook <br/>
+            To view <span class="red">all the videos</span> and <span class="red">VOTE</span>
+        </div>
+        <a class="facebook_login" id="facebookLoginBtn" href="javascript:void(0)">Log in with Facebook</a>
+    </div>
+</script>
+<!--play now-->
+<script type="text/template" id="play">
+    <div class="modal_inner">
+        <div class="modal_text">
+            <span style="font-size: 25px; font-weight: 200;">Thanks for Voting!</span>
+        </div>
+        <div class="modal_instructions">
+            Join the <span class="red">Poker Action</span> at PlayWPT <br/>
+            What are you waiting for? Play now!
+        </div>
+        <a class="submit_button" id="playNowBtn" href="javascript:void(0)">Play Now</a>
+    </div>
+</script>
+
+
+<script type="text/javascript" src="/wpt/common/widget/avalon.js"></script>
+<script type="text/javascript" src="/wpt/common/js/zepto/zepto-common.js"></script>
+<script type="text/javascript" src="/wpt/common/js/zepto/iscroll.js"></script>
+<script type="text/javascript" src="/wpt/common/js/zepto/fx_methods.js"></script>
+<script type="text/javascript" src="/wpt/common/js/common.js"></script>
+<script type="text/javascript" src="/wpt/common/js/swiper.js"></script>
+<script type="text/javascript" src="/wpt/module/facebook/js/voteEnd.js" ></script>
+<script>
+</script>
+</body>
+</html>

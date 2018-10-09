@@ -1,0 +1,131 @@
+/*兑换码*/
+.title_code{background: url(/wpt/www/module/promotion/images/promotion.png)-137px 31px no-repeat;width: 163px;}
+.title_success{background: url(/wpt/www/module/promotion/images/promotion.png) 0 -144px no-repeat;width: 300px;}
+.title_notice{background: url(/wpt/www/module/promotion/images/promotion.png) -306px 31px no-repeat;width: 130px;}
+.cont{width: 692px;height: 285px;background: #010106;border-bottom: 1px solid #424558;border-radius: 5px;}
+
+.cont .tip_cont{width: 545px; margin: 0 auto; padding-top: 80px;}
+.cont .tip_cont .tip{text-align: center; font-size: 32px; line-height:40px; color:#aab3ed;}
+.cont .tip_cont .ipt_code{width: 545px;height: 47px;margin-top: 10px;background-color: #ffffff;
+    border-radius: 5px; -ms-border-radius:5px; -o-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;}
+.cont .tip_cont .ipt_code input{width: 98%; height: 45px; line-height: 45px; font-size: 32px; border: none;}
+.cont .tip_cont .ipt_code input:focus{outline-style: none;}
+.btn_code {width: 219px;height: 68px; margin: 20px auto 0 auto;}
+.btn_code a {width: 219px;height: 68px;background: url(/wpt/www/module/promotion/images/icons.png) no-repeat 0 -70px;display: block}
+.btn_code a:hover{background-position: -219px -70px;}
+.btn_code a:active{background-position: -440px -70px;}
+/*错误提示框*/
+.slider-notice{height: 295px;background: #07090d no-repeat center;border-radius: 5px;overflow: hidden;padding:10px;font-family:"Microsoft Sans Serif Regular";font-size: 31.42px;color:#aab3ed;}
+/*兑换码的成功福利*/
+a {text-decoration: none;}
+ul {list-style: outside none none;}
+.slider-extra {position: relative;width: 100%;height: 100%;}
+#button-left{;background:url("/wpt/www/module/promotion/images/icons.png") no-repeat -3px -350px;position: absolute;width: 31px;height: 88px;top: 100px;z-index: 9;cursor: pointer;}
+.slider-nav {margin-left: -38px;position: absolute;left: 50%;bottom: 6px;}
+.slider-nav{width: 77px;height: 25px;background:url("/wpt/www/module/promotion/images/icons.png") no-repeat -590px -203px;color: #fff;font-family: "Microsoft Sans Serif Regular";}
+.slider-nav .slider-item{width: 77px;height: 25px;line-height: 28px;background:url("/wpt/www/module/promotion/images/icons.png") no-repeat -590px -203px;font-size: 20px;}
+#button-right {margin-left: -14px;background:url("/wpt/www/module/promotion/images/icons.png") no-repeat -42px -351px;position: absolute;width: 31px;height: 88px;top: 100px;left: 691px; z-index: 9;cursor: pointer;}
+/*点击collection按钮*/
+.btn_collect{width: 219px;height: 68px;margin: 15px auto 0;}
+.btn_collect a {width: 219px;height: 68px;background: url(/wpt/www/module/promotion/images/icons.png) no-repeat 0 -70px;display: block}
+.btn_collect a:hover{background-position: -219px -70px;}
+.btn_collect a:active{background-position: -440px -70px;}
+.slider-main {height: 295px;background: url(/wpt/www/module/promotion/images/bj.png) #07090d no-repeat center;border-radius: 5px;overflow: hidden;}
+.slider-main li{float: left;width: 690px;position: relative;height: 295px;}
+.nav_comment{width: 530px;height: 52px;background: url("/wpt/www/module/promotion/images/icons.png") 0 -577px;position: absolute;left: 77px;}
+.nav_comment3{width: 530px;height: 52px;background: url("/wpt/www/module/promotion/images/icons.png") 0 -577px;position: absolute;left: 77px;}
+.con_commom .one_img img{width: 100%;height: 100%;position: absolute;top: 25px;left: 195px;}
+.con_commom .one_img{width: 160px;height: 160px; position: relative;}
+.con_commom3 .one_img3{width: 160px;height: 180px; margin: 77px auto 0 auto;}
+.con_commom3 .one_img3 img{width:auto;height: 180px; position: relative;}
+.stand_comm{width: 404px;height: 92px;background:url("/wpt/www/module/promotion/images/icons.png") no-repeat 0 -453px;position: absolute;top: 202px;left: 72px;}
+.stand_comm img {width:100%;height:100%;}
+.stand_comm3{width: 690px;height:39px;background:url("/wpt/www/module/promotion/images/icons.png") no-repeat 0 -677px;position: absolute;top: 256px;}
+.stand_comm3 img {width:100%;height:100%;position: absolute;left: 145px;top: -28px;}
+.tital_con {font-size: 20px;text-align: center;line-height: 54px;font-family: Tahoma;font-weight: bold;color: #959ED7}
+.tital_con .txt_gold{color: #ecd23c;z-index: 999;}
+.slider-extra .nav_comment1{width: 530px;height: 51px;background: url("/wpt/www/module/promotion/images/aa.png"); margin:0 auto;}
+#coun_number{width: 30px;height: 20px;display: inline-block;text-indent: 24px;}
+
+/*限时促销*/
+.timed_promotion_icon{background: url("/wpt/www/module/promotion/images/timed_promotion_icon.png") no-repeat;}
+.timed_promotion {background: url("/wpt/www/module/promotion/images/timed_promotion_bg.png") no-repeat;width: 868px;height: 550px;position: relative;}
+.timed_promotion_buy{background: url("/wpt/www/module/promotion/images/timed_promotion_bg2.png") no-repeat;width: 790px;height: 530px;}
+.timed_promotion_buy img{position: absolute;z-index: 22;top: -11px;right: 48px;cursor: pointer;width: 782px;height: 516px;}
+.timed_promotion_buy .close_btn{background: url(../../../common/images/icons.png) no-repeat -1px 0;width: 47px !important;height: 56px;display: block;cursor: pointer;z-index: 9999;position: relative;left: 721px;top: 31px !important;}
+
+.timed_promotion  .close_btn{position: absolute;width: 60px;height: 60px;right: 66px;top: 38px;cursor: pointer;}
+.timed_promotion .content{ position: absolute; right: 122px;  top: 123px;}
+.timed_promotion .content .title{width: 345px;height: 107px;background-position: 0 0;}
+.timed_promotion .content .title.one_day_sale{width: 345px;height: 107px;background-position: 0 -131px;}
+.timed_promotion .content .title.up_your_game{width: 345px;height: 107px;background-position: 0 -255px;}
+.timed_promotion .content .message{margin-top: 10px;width: 340px;font-size: 62px;min-height: 40px;word-wrap: break-word;line-height: 36px;}
+.timed_promotion .content .message span{font-size: 30px;color: #ffffff;}
+.timed_promotion .content .message em{font-weight: bold;font-size: 46px;color: #edb834;margin-right: 5px;font-family: "Microsoft Sans Serif";margin-left: 7px;}
+.timed_promotion .content .up_game_msg{line-height: 30px;width: 323px;}
+.timed_promotion .content .up_game_msg em{  font-size: 30px;margin-left: 10px;}
+.timed_promotion .content .price{margin-top: 35px;/* display: none; */width: 352px;/* margin: 0 auto; */}
+.timed_promotion .content .price em{font-size: 65px;color: #edb834;font-weight: bold;display: inline-block;margin-left: 11px;margin-right: 6px;}
+.timed_promotion .content .price .border{height: 1px;width: 22%;display: inline-block;background: #fff;position: relative;top: -17px;}
+.timed_promotion .content .btn{margin-top: 25px;cursor: pointer;}
+.timed_promotion .content .btn.buy_red{width: 338px;height: 72px;background-position: -462px -79px;}
+.timed_promotion .content .btn.buy_green{width: 338px;height: 72px;background-position: -462px 0;}
+.timed_promotion .content .btn.store_red{width: 338px;height: 72px;background-position: -462px -230px;}
+.timed_promotion .content .btn.store_blue{width: 338px;height: 72px;background-position: -462px -154px;margin-top: 65px;}
+.timed_promotion .content .btn.store_orange{width: 338px;height: 72px;background-position: -462px -308px;}
+
+
+
+/*限时促销2*/
+.timed_promotion  .close_btn_02{right: 134px;top: 0px;width: 78px;height: 73px;}
+.timed_promotion_buy_02{width: 809px;height: 742px;background: none}
+.timed_promotion_buy_02 .time{bottom: 125px;left: 289px;position: absolute;}
+.timed_promotion_buy_02 .time span{font-size: 18px;color: #ff0000;}
+.timed_promotion_buy_02 .time .hour{}
+.timed_promotion_buy_02 .time .min{margin-left: 10px;}
+.timed_promotion_buy_02 img{width: 809px;height: 742px;}
+
+
+
+/*限时促销3*/
+.timed_promotion_buy_03 .timer_pro_icon{background: url("/wpt/www/module/promotion/images/timer_pro_icon.png") no-repeat;}
+.timed_promotion  a.close_btn_03{display:block;right: -52px;top: 56px;width: 97px;height: 97px;background-position: -56px -45px;}
+.timed_promotion  a.close_btn_03:hover{background-position: -247px -45px;}
+.timed_promotion_buy_03{width: 1094px;height: 827px;background: none}
+.timed_promotion_buy_03 img{width: 1094px;height: 827px;}
+.timed_promotion_buy_03 a.btn{display:block;;background: url("/wpt/www/module/promotion/images/promotion_btn_01.png") no-repeat;width: 378px;height: 113px;position: absolute;bottom: 54px;left: 163px;}
+.timed_promotion_buy_03 a.btn:hover{background: url("/wpt/www/module/promotion/images/promotion_btn_02.png") no-repeat;}
+
+
+/*限时促销4*/
+.timed_promotion  a.close_btn_04{display:block;right: 260px;top: 179px;width: 74px;height: 77px;}
+.timed_promotion_buy_04{width: 1073px;height: 862px;background: none; }
+.timed_promotion_buy_04 img{width: 1073px;height: 862px;}
+.timed_promotion_buy_04 a.btn{display:block;width: 378px;height: 113px;position: absolute;bottom: 54px;left: 163px;}
+
+
+/*限时促销5*/
+.timed_promotion  a.close_btn_05{display:block;right: 118px;top: 148px;width: 74px;height: 77px;}
+.timed_promotion_buy_05{width: 1048px;height: 720px;;background: none; }
+.timed_promotion_buy_05 img{width: 1048px;height: 720px;;}
+.timed_promotion_buy_05 a.btn{display:block;width: 378px;height: 113px;position: absolute;bottom: 54px;left: 163px;}
+
+
+@media  (max-width: 1445px) {
+    .timed_promotion_buy_02 img{ transform:scale(0.73);  -ms-transform:scale(0.73);  -moz-transform:scale(0.73);    -webkit-transform:scale(0.73);  -o-transform:scale(0.73);  }
+    .timed_promotion_buy_02 .time{bottom: 189px;left: 313px;}
+    .timed_promotion .close_btn_02{right: 200px;top: 92px;z-index: 9999;width: 68px;height: 67px;}
+    .timed_promotion_buy_02 .time span{font-size: 18px;}
+
+
+    /*限时促销4*/
+    .timed_promotion  a.close_btn_04{display:block;right: 288px;top: 199px;width: 64px;height: 80px;z-index: 9999;}
+    .timed_promotion_buy_04{width: 1073px;height: 862px;background: none;transform:scale(0.90); }
+    .timed_promotion_buy_04 img{width: 1073px;height: 862px;transform:scale(0.90);-webkit-transform:scale(0.90); }
+
+
+    /*限时促销5*/
+    .timed_promotion  a.close_btn_05{display:block;right: 155px;top: 166px;width: 74px;height: 77px;z-index: 9999;}
+    .timed_promotion_buy_05{width: 1048px;height: 720px;background: none; transform:scale(0.90);-webkit-transform:scale(0.90);}
+    .timed_promotion_buy_05 img{width: 1048px;height: 720px;;transform:scale(0.90);-webkit-transform:scale(0.90); }
+}

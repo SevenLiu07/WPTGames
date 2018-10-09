@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Play free poker online with the PlayWPT casino game. The most authentic texas holdem poker play online!" />
+    <meta name="keywords" content="poker,texas holdem,online poker,online casino,free poker,poker games,free texas holdem,free online poker,play wpt, wpt" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PLAYWPT</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../../common/css/base.css?v=2.1.8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../module/promotion/css/promotion.css?v=2.1.8" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/landingPage.css?v=2.1.8" />
+</head>
+<body>
+<!--header-->
+<header>
+    <nav>
+        <div class="left_bg">
+            <div class="right_bg">
+                <div class="center_bg">
+                    <div class="logo fll"><img src="https://www.playwpt.com/wpt/www/common/images/logo.png?v=2.1.8" /> </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<!--content-->
+<div class="bg" ms-controller="landingPage">
+   <div class="landing_page">
+       <div class="left">
+           <img ms-class="big_height:showCaptcha===true" src="images/landingPage_01.png">
+       </div>
+       <div class="right">
+           <div class="title"></div>
+           <div class="small_title">Sign Up Now !</div>
+           <div class="email">
+               <input id="registerEmail" type="text" maxlength="45" placeholder="Email"  ms-duplex-string="email" ms-focus="inputFocus('Email')"  ms-blur="emailBlur" />
+           </div>
+           <div class="errorInfo" ms-visible="showErrorEmailMsg">{{errorEmailMsg}}</div>
+           <div class="password">
+               <input oncut="return false;" oncopy="return false;" onpaste="return false;" type="password" maxlength="16"  placeholder="Password" ms-duplex-string="password"  ms-focus="inputFocus('Password')"   ms-blur="passwordBlur" />
+           </div>
+           <div class="errorInfo errorPasswordInfo" ms-visible="showErrorPasswordMsg">{{errorPasswordMsg}}</div>
+           <div class="captcha"  ms-visible="showCaptcha">
+               <input type="text" ms-duplex-string="captchaVal" placeholder="Captcha" ms-focus="inputFocus('Captcha')"  ms-blur="captchaBlur"/>
+               <img ms-src="captchaSrc">
+               <span class="refresh" ms-click="reloadCaptcha">Refresh</span>
+           </div>
+           <div class="play_now" ms-click="webRegister"></div>
+           <div class="or">or</div>
+           <a class="account_01 account_facebook_btn" ms-href="facebookRegisterHref" ms-click="facebookRegisterClick()"></a>
+           <div class="descr">
+               <em>By signing up, you agree to WPT's </em>
+               <em><a href="https://www.playwpt.com/terms.html?v=2.1.8" target="_blank">Terms and Conditions</a> and <a href="https://www.playwpt.com/privacy-policy.html?v=2.1.8" target="_blank">Privacy Policy</a>.</em>
+           </div>
+           <div class="line"></div>
+           <!--<div class="errorInfo" ms-visible="showErrorMsg">{{errorMsg}}</div>-->
+       </div>
+   </div>
+</div>
+<script type="text/javascript" src="../../common/widget/avalon.js"></script>
+<script type="text/javascript" src="../../common/js/jquery1.10.2.js" ></script>
+<script type="text/javascript" src="../../common/js/common.js?v=2.1.8"   ></script>
+<script type="text/javascript" src="../../common/js/scrollBar.js?v=2.1.8" ></script>
+<script type="text/javascript" src="../../common/js/account-common.js?v=2.1.8"   ></script>
+<script type="text/javascript" src="js/landingPage.js?v=2.1.8"></script>
+</body>
+</html>

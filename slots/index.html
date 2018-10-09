@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=10">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10"/>
+<meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="P3P" content="CP=CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"/>
+<title>PLAYWPT</title>
+<link href="/css/reset.css" rel="stylesheet" type="text/css"/>
+<link href="/css/main.css?v=2.2.7" rel="stylesheet" type="text/css"/>
+</head>
+<body id="gm_pic" class="game_slot" style="overflow-y: auto; overflow-x: auto;">
+<!--nav-->
+<div class="top_nav_scroll">
+  <div class="logo fll"><a href="/"></a></div>
+  <div class="top_btn flr">
+    <div class="log_out flr"><a href="javascript:void (0)" id="log_out_gm"></a></div>
+    <div class="flr"><p class="user_name" id="u_nm"></p></div>
+  </div>
+</div>
+<!--nav end/-->
+<div class="chose_game flr" id="change_bg">
+  <div class="left_nav">
+    <ul class="tabs">
+      <li class="tab_poker" id="game_poker"><a href="javascript:void(0)"></a></li>
+      <li class="tab_slot tab_slot_hov"><a href="javascript:void(0)"></a></li>
+    </ul>
+  </div>
+  <div class="panels_poker">
+    <div class="gm_slot_part">
+      <div class="top_bg">
+        <div class="gm_lt_bg fll"></div>
+        <div class="slot_c_bg fll"></div>
+        <div class="gm_rt_bg flr"></div>
+      </div>
+      <div class="gm_slot_con">
+        <div id="gameSwf_slot">
+          <script type="text/javascript">
+          var pageHost = ((document.location.protocol == "https:") ? "https://" : "http://");
+          document.write("<div class='flash_btn'><a href='http://www.adobe.com/go/getflashplayer'><img src='"
+          + pageHost + "www.adobe.com/images/shared/download_buttons/get_flash_player.gif' alt='Get Adobe Flash player' /></a><p>Adobe Flash player not installed</p></div>");
+          </script>
+        </div>
+      </div>
+      <div class="bot_bg">
+        <div class="gm_lb_bg fll"></div>
+        <div class="slot_cbot_bg fll"></div>
+        <div class="gm_rb_bg flr"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--footer-->
+<div class="footer" style="height: 50px;">
+  <div class="fot_dis">
+    <p>PlayWPT Slots ©2017 Junfu Limited.</p>
+  </div>
+</div>
+<div class="clear"></div>
+<div id="slot" class="widget-dialog small_shop" style="display: none;"><a href="javascript:void('close');" class="close" id="close_slot" hidefocus></a>
+  <iframe name="frame_slot_shop" src="/shop/SlotShop/shop.html" width="642" height="571" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+</div>
+<div id="payment_slot" class="widget-dialog small_shop" style="display: none;"><a href="javascript:void('close');" class="close" id="close_pay" hidefocus></a>
+  <iframe name="frame_pay" id="frame_pay_slot" src="" width="642" height="571" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+</div>
+<!--change games-->
+<div id="dialog_slot_gm" class="widget-dialog" style="display: none;">
+  <div class="topbg"></div>
+  <a href="javascript:void('close');" class="close" hidefocus></a>
+  <div class="pop_bg">
+    <div class="blue">PlayWPT</div>
+    <div class="mail_info">
+      <p id="gm_slot_dis"></p>
+    </div>
+    <div class="btns">
+      <div class="btn_switch fll"><a href="javascript:void(0);" id="btn_switch"></a></div>
+      <div class="btn_cancle flr"><a href="javascript:void(0);" id="btn_cancle"></a></div>
+    </div>
+  </div>
+  <!--pop_bg end/-->
+  <div class="botbg"></div>
+</div>
+<script type="text/javascript" src="/js/our.js"></script>
+<script type="text/javascript" src="/js/swfobject.js"></script>
+<script type="text/javascript" src="/js/game.js?version=2.2.7.3"></script>
+<script type="text/javascript" src="/js/dialog.js"></script>
+<script type="text/javascript" src="https://static.play-wpt.com/www/scripts/google_tg.js" defer></script>
+<!--google统计-->
+<script type="text/javascript">
+window.onload = function () {
+  game_slot();
+};
+//点击slot图标弹出切换提示弹窗
+$("#game_poker").on('click', function () {
+  $("#dialog_slot_gm").open();
+  $("#gm_slot_dis").innerHTML = 'Do you want to switch to Poker?';
+  $("#btn_switch").on('click', function () {
+    this.href = baseUrls + 'poker';
+  });
+});
+
+$("#btn_cancle").on('click', function () {
+  $("#dialog_slot_gm").close();
+});
+</script>
+</body>
+</html>

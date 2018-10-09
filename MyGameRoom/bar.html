@@ -1,0 +1,119 @@
+
+<!-- saved from url=(0135)https://mpl.tunegenie.com/bar.html?b=wxbm&tgv=v2100.14121911558322608&cdn=https://mpl.tunegenie.com/&api=https://api.tunegenie.com/&t=1 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="show_companion_ad.js"></script><script async="" type="text/javascript" src="gpt.js"></script><script async="" src="analytics.js"></script><script type="application/javascript">
+
+    var params = {};location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){params[k]=decodeURIComponent(v)});
+
+    var tgv = params['tgv'];
+    var b = params['b'];
+    var t = params['t'];
+    window.tgmpcdn = params['cdn'];
+    window.tgmpapi = params['api'];
+
+    function loadCSS(url) {
+        var css = document.createElement('link');
+        css.setAttribute('rel', 'stylesheet');
+        css.setAttribute('type', 'text/css');
+        css.setAttribute('href', url);
+        document.head.appendChild(css);
+    }
+    loadCSS(window.tgmpcdn+'css/tgmp.css?tgv='+tgv)
+
+</script><link rel="stylesheet" type="text/css" href="tgmp.css">
+<style class="vjs-styles-defaults">
+.video-js {
+width: 300px;
+height: 150px;
+}
+
+.vjs-fluid {
+padding-top: 56.25%
+}
+</style><style class="vjs-styles-dimensions">
+.vjs-player-dimensions {
+width: 300px;
+height: 168.75px;
+}
+
+.vjs-player-dimensions.vjs-fluid {
+padding-top: 56.25%;
+}
+
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>TuneGenie Media Player</title>
+<meta class="foundation-data-attribute-namespace">
+<meta class="foundation-mq-xxlarge"><meta class="foundation-mq-xlarge">
+<meta class="foundation-mq-large"><meta class="foundation-mq-medium">
+<meta class="foundation-mq-small">
+</head>
+<body marginwidth="0" marginheight="0">
+    <div id="contents"><div style="padding:20px">Loading...</div></div>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-7150119-1', 'auto');ga('send', 'pageview');
+    </script>
+    <script src="pubads_impl_138.js" async=""></script>
+
+    <script src="show_companion_ad.js"></script>
+    <script type="text/javascript" id="www-widgetapi-script" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflyiGtkL/www-widgetapi.js" async=""></script>
+    <script async="" type="text/javascript" src="gpt.js"></script>
+    <script async="" src="analytics.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://w.soundcloud.com/player/api.js"></script>
+    <script type="text/javascript" src="hammer.min.js"></script>
+    <script type="text/javascript" src="ggcmb400.js"></script>
+    <script type="text/javascript" src="ima3.js"></script>
+    <script>
+
+        var topTGMP;
+
+        (function() {
+
+            'use strict';
+
+            function loadJSs(urls, func) {
+                var url = urls.shift();
+                if (!url) {
+                    func()
+                } else {
+                    var js = document.createElement('script');
+                    js.setAttribute('type', 'text/javascript');
+                    js.setAttribute('src', url);
+                    js.setAttribute('async', 'true');
+                    js.onload = function() {
+                        loadJSs(urls, func);
+                    }
+                    document.body.appendChild(js);
+                }
+            }
+
+            function initBar() {
+                topTGMP = new TGMPCommSender(top, 'TGMP_OBJ_CACHE.ref',
+                    ['_getOptions', '_setBarHeight']
+                );
+                topTGMP._getOptions().success(function(options) {
+                    googletag_go();
+                    m2g_bar.init(options);
+                    loadJSs(['https://www.youtube.com/iframe_api'], function() {});
+                });
+            }
+
+            if (t) {
+                var urls = [window.tgmpcdn+'js/tgstandalone_triton.min.js?tgv='+tgv,
+                        '//sdk.listenlive.co/web/2.9/td-sdk.min.js'];
+            } else {
+                var urls = [window.tgmpcdn+'js/tgstandalone.min.js?tgv='+tgv];
+            }
+
+            urls.push(window.tgmpapi+'appconfig.js?b='+b);
+            loadJSs(urls, initBar);
+
+        })();
+    </script><script type="text/javascript" src="tgstandalone_triton.min.js" async="true"></script>
+
+
+
+<script type="text/javascript" src="td-sdk.min.js" async="true"></script><script type="text/javascript" src="appconfig.js" async="true"></script></body></html>

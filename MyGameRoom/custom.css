@@ -1,0 +1,70 @@
+.mobile-header {
+	display: none;
+}
+
+.mobile-header a {
+    display: inline-block;
+    float: left;
+}
+
+@media screen and (max-width: 1200px) {
+	.container-fluid.vertical-ad {
+		display: none;
+	}
+	
+	.container-fluid.section-iframe {
+		width: 100%;
+	}
+	
+	div#sidebar-wrapper {
+	    display: none;
+	}
+	
+	#wrapper.toggled {
+	    padding-left: 0;
+	}
+	
+	.mobile-header {
+    	display: inline-block;
+	}
+	
+	.container-fluid.mobile-header .station-logo {
+	    width: 150px;
+	    float: left;
+	    padding-right: 0;
+	}
+	
+	.mobile-header h1 {
+	    background: white;
+	    display: inline-block;
+	    font-size: 1.5em;
+	    text-transform: uppercase;
+	    color: black;
+	    padding: 5px 10px;
+	    letter-spacing: 4px;
+	}
+	
+	.container-fluid.mobile-header {
+	    margin: 0 0 20px;
+	}
+	
+	.mobile-right-group {
+	    padding-top: 10px;
+	}
+}
+
+@media screen and (max-width: 935px) {
+	.mobile-right-group img {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 430px) {
+	.container-fluid.mobile-header {
+	    text-align: center;
+	}
+	
+	.mobile-header a {
+	    float: none;
+	}
+}

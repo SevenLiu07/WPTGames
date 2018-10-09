@@ -1,0 +1,49 @@
+.gm_part_fb{ width: 960px; height: 655px; margin: 0 auto;}
+/*登陆弹窗*/
+.widget-dialog{width: 511px; font: 12px/30px Verdana, Helvetica, Arial, "Microsoft YaHei", SimSun, sans-serif;}
+.widget-dialog .close{position: absolute; right: 0; top: 0; width: 48px; height: 46px; background:url(../../image/icons.png) no-repeat -328px -1px;}
+.widget-dialog .close:hover{color: #00AADD;}
+.widget-dialog .close:active{color: #00CCFF;}.widget-dialog p{ text-align: left; color: #8e8e8e; line-height: 20px;}
+.widget-dialog .topbg{ background:url(../../image/pop_top.png) no-repeat; width: 511px; height: 19px;}
+.widget-dialog .pop_bg{ background:url(../../image/pop_bg.gif) left bottom repeat-x #ffffff; padding: 20px 60px 0 60px;}
+.widget-dialog .botbg{ background:url(../../image/pop_bot.png) no-repeat; width: 511px; height: 58px;}
+
+.start_gm,.next_btn{ width:378px; height:52px; margin:5px 0 0 0;}
+/*选择游戏角色头像*/
+.chose_head{ width: 378px; margin: 0 auto; padding-top: 10px;}/* padding-top: 20px; width: 310px;*/ .chose_con{ width: auto; margin: 0 auto;}
+.ch_default{ width: 144px; height: 172px; display: block; background:url(../../image/head_bg.png) no-repeat -161px 0; position: relative;}
+.chose_head a img{ position: absolute; width: 142px; height: 170px;}
+.active_head{ width: 144px; height: 172px; display: block; background:url(../../image/head_bg.png) no-repeat 0 0;}
+.active_icon{width: 41px; height: 41px;  background:url(../../image/icons.png) no-repeat -558px -213px; position: absolute; z-index: 99; bottom: 3px; right: 3px;}/**/
+.chose_head input{ width: 360px; height:44px; line-height:44px; padding:0 6px; margin: 10px auto; border:1px solid #d8d8d8; text-align: center; color:#8f8f8f;}
+.start_gm input{ width:378px; height:52px; background:url(../../image/icon.png) no-repeat 0 -83px; display:block; border:none; cursor:pointer; margin: 10px 0 0 0;}
+.next_btn input{ width:378px; height:52px; background:url(../../image/btn_next.png) no-repeat; display:block; border:none; cursor:pointer; margin: 10px 0 0 0;}
+/*IP*/
+.ip_worn{ width: 360px; height: 55px; background:url(../../image/ip.png) no-repeat; margin-bottom: 10px;}
+
+
+/*购买成功提示信息弹窗*/
+.widget-dialog .close{position: absolute; right: 0; top: 0; width: 45px; height: 45px; background:url(https://pay.playwpt.com/image/icons.png) no-repeat -600px 1px;}
+.widget-dialog .close:hover{ background:url(https://pay.playwpt.com/image/icons.png) no-repeat -600px -42px;}
+.widget-dialog .close:active{ background:url(https://pay.playwpt.com/image/icons.png) no-repeat -600px -85px;}
+.widget-dialog{width: 480px; font: 12px/30px Verdana, Helvetica, Arial, "Microsoft YaHei", SimSun, sans-serif;}
+.widget-dialog p{ text-align: left; color: #8e8e8e; line-height: 20px;}
+   .widget-dialog .topbgs{ background:url(https://pay.playwpt.com/image/tips_t_bg.png) center top no-repeat; width: 480px; height: 57px;}
+   .widget-dialog .pop_bgs{ background:url(https://pay.playwpt.com/image/tips_c_bg.png) center top repeat-y; padding: 10px 15px;}
+   .widget-dialog .botbgs{ background:url(https://pay.playwpt.com/image/tips_b_bg.png) center top no-repeat; width: 480px; height: 26px;}
+.notice_title{ background:url(https://pay.playwpt.com/image/notice.png) no-repeat 200px 20px; height: 44px; }
+.vali_con{filter:alpha(opacity=95); opacity:.95; padding: 10px; border: 1px solid #236ba5; border-radius: 5px; background: #0a4a8b;}
+.vali_con p{filter:alpha(opacity=95); opacity:.95; color: #c5ecff; line-height: 26px; font-size: 20px;}
+.btns_pop{ padding:20px 70px 6px 70px;}.btns_pop a{ width:123px; height:50px; display: block;}
+/*flash加载提示*/
+.dialog_flv{width: 480px; font: 12px/30px Verdana, Helvetica, Arial, "Microsoft YaHei", SimSun, sans-serif;}
+.dialog_flv p{ text-align: left; color: #8e8e8e; line-height: 20px;}
+.dialog_flv .topbg{ background:url(../../image/tips_t_bg.png) center top no-repeat; width: 480px; height: 57px;}
+.dialog_flv .pop_bg{ background:url(../../image/tips_c_bg.png) center top repeat-y; padding: 10px 15px;}
+.dialog_flv .botbg{ background:url(../../image/tips_b_bg.png) center top no-repeat; width: 480px; height: 26px;}
+.dialog_flv .close_btn{position: absolute; right: 0; top: 0; margin-right:0; width: 45px; height: 45px; background:url(../../image/close.png) 0 1px no-repeat;}
+.dialog_flv .close_btn:hover{ background:url(../../image/close.png) no-repeat 0 -44px;}
+.retry_con{ padding: 40px 20px; border:1px solid #135695; border-radius: 8px; background: #084985; margin-bottom: 10px;}
+.retry_con p{ font-size: 22px; color: #fff !important;}
+.btn_retry{ background:url(../../image/retry.png) no-repeat 0 0; width: 122px; height: 52px; margin: 0 auto;}
+.btn_retry a{ width: 122px; height: 52px; display: block;}

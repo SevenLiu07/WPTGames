@@ -1,0 +1,33 @@
+<div ms-controller="newNotice">
+    <!--public notice popups-->
+    <div  id="show-area"  class="widget-dialog" ms-widget="dialog,new_publicNotice,$newNotice" >
+        <div class="popup popup_small">
+            <div class="top_pop">
+                <div class="top_leftbg fll"></div>
+                <div class="top_centbg top_centbg_small fll">
+                    <div class="title title_small">
+                        <div class="title_leftbg">
+                            <div class="title_rightbg">
+                                <div class="title_name title_notice"></div>
+                                <!--样式保留title_name-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="top_rightbg fll">
+                    <div class="close_btns flr" ms-click="_close"><a href="javascript:void(0)"></a></div>
+                </div>
+            </div><!--end top_pop弹窗头部-->
+            <div class="pop_con_rightbg">
+                <div class="pop_con">
+                    <div class="slider-notice">{{publicMsg}}</div>
+                </div>
+            </div>
+        </div><!--end pop_con_rightbg弹窗内容部分-->
+        <div class="bottom_pop">
+            <div class="bot_leftbg fll"></div>
+            <div class="bot_centbg bot_centbg_small fll"></div>
+            <div class="bot_rightbg fll"></div>
+        </div>
+    </div>
+</div>

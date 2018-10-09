@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Shop</title>
+<link href="../css/reset.css" rel="stylesheet" type="text/css">
+<link href="css/shop.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="shop">
+     <div class="shop_t_bg"></div>
+     <div class="shop_c_bg">
+          <div class="widget-tabpanel" id="panel_shop">
+          <ul class="tabs">
+            <li class="tab" id="tab1"></li>
+            <li class="tab" id="tab2"></li>
+            <li class="tab" id="tab3"></li>
+            <li class="tab" id="tab4"></li>
+            <li class="tab" id="tab5"></li>
+          </ul>
+          <div class="panels">
+            <div class="panel" id="gold">
+                 <ul class="scroll_bar one_product clear" id="gold_list">
+                 </ul>
+            </div>
+            <div class="panel" id="avatar">
+              <div class="scroll_bar">
+              <ul class="one_avatar clear" id="avatar_list"></ul>
+              </div>
+            </div>
+            <div class="panel" id="charm">
+              <ul class="scroll_bar one_charm clear" id="charm_list">
+                </ul>
+            </div>
+            <div class="panel" id="emojis">
+                          <ul class="scroll_bar one_product clear" id="emojis_list">
+                            </ul>
+            </div>
+            <div class="panel" id="master">
+              <ul class="scroll_bar one_product clear" id="master_list">
+                </ul>
+            </div>
+          </div>
+            <!--loading-->
+            <div id="loading" class="widget-dialog">
+              <div class="ld_img">Loading...</div>
+            </div>
+            <!--widget-dialog Gold-->
+            <div id="dialog" class="widget-dialog">
+                 <a href="javascript:void('close');" class="close" hidefocus style=" margin: -6px -6px 0 0"></a>
+                 <div class="product_pic fll"><img src="image/golds_01.png" id="gold_pic"></div>
+                 <div class=" product_info flr">
+                   <div class="charm_dis charm_dis_pop" id="gold_nm"></div><!--名称-->
+                   <div class="prices" id="gold_price"></div>
+                   <!--金币批量购买-->
+                   <div class="buy_more clear">
+                     <div class="fll"><a href="#" class="mul_btn" id="mul_btn"></a> </div>
+                     <input type="text" value="1" class="number fll" maxlength="1" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" id="gold_num"/>
+                     <div class="fll"><a href="#" class="add_btn" id="add_btn"></a> </div>
+                   </div>
+                   <div class="confirm"><a href="javascript:void(0);" id="order"></a> </div>
+                 </div>
+            </div><!--widget-dialog Gold end/-->
+            <!--widget-dialog Master points-->
+            <div id="dialog_master" class="widget-dialog">
+                 <a href="javascript:void('close');" class="close" hidefocus style=" margin: -6px -6px 0 0"></a>
+                 <div class="product_pic fll"><img src="image/golds_01.png" id="master_pic"></div>
+                 <div class=" product_info flr">
+                   <div class="charm_dis charm_dis_pop" id="master_nm"></div><!--名称-->
+                   <div class="masters" id="master_price"></div>
+                   <div class="confirm"><a href="javascript:void(0);" id="order_master"></a> </div>
+                 </div>
+            </div><!--widget-dialog Master points end/-->
+            <!--widget-dialog Charms-->
+            <div id="dialog_charm" class="widget-dialog">
+                 <a href="javascript:void('close');" class="close" hidefocus style=" margin: -6px -6px 0 0"></a>
+                 <div class="product_pic fll"><img src="image/golds_01.png" id="charm_pic"></div>
+                 <div class=" product_info flr ">
+                   <div class="charm_dis charm_dis_pop" id="charm_nm"></div><!--名称-->
+                   <div class="charms fll" id="charm_price"></div>
+                   <div style=" color: #f05d5d;" id="descr"></div>
+                   <div class="confirm fll"><a href="javascript:void(0);" id="order_charm"></a> </div>
+                 </div>
+            </div><!--widget-dialog Master points end/-->
+            <!--widget-dialog emojis Gold-->
+            <div id="dialog_emojis" class="widget-dialog">
+                 <a href="javascript:void('close');" class="close" hidefocus style=" margin: -6px -6px 0 0"></a>
+                 <div class="product_pic fll"><img src="image/golds_01.png" id="emoj_pic"></div>
+                 <div class=" product_info flr">
+                   <div class="charm_dis charm_dis_pop" id="emoj_nm"></div><!--名称-->
+                   <div class="charms" id="emoj_price"></div>
+                   <div class="confirm"><a href="javascript:void(0);" id="order_emoj"></a> </div>
+                 </div>
+            </div><!--widget-dialog emojis end/-->
+            <!--widget-dialog avatars-->
+            <div id="dialog_avat" class="widget-dialog">
+                 <a href="javascript:void('close');" class="close" hidefocus style=" margin: -6px -6px 0 0"></a>
+              <div class="product_pics fll"><img src="image/avatar_01.png" id="avatar_pic"></div>
+              <div class=" product_info flr pro_pad">
+                <div class="charms" id="avatar_price"></div>
+                <div class="confirm"><a href="javascript:void(0);" id="order_avatar"></a> </div>
+              </div>
+             </div><!--widget-dialog avatars end/-->
+             <!--widget-dialog worn显示提示信息-->
+             <div id="show_infos" class="widget-dialog">
+                 <a href="javascript:void('close');" class="close" hidefocus style=" margin: -6px -6px 0 0"></a>
+                 <div class="show_info"><p id="worn_info"></p></div>
+                 <div class="confirm" id="btn_cfirm"><a href="javascript:void('close');" id="btn_confirm"></a> </div>
+             </div><!--widget-dialog worn显示提示信息 end/-->
+            <!--widget-dialog worn显示提示信息-->
+            <div id="show_pay_info" class="widget-dialog">
+                <a href="javascript:void('close');" class="close" hidefocus style=" margin: -6px -6px 0 0"></a>
+                <div class="show_info"><p id="worn_pay_info"></p></div>
+                <div class="store" id="btn_store"><a href="javascript:void('close');" id="btn_buy"></a> </div>
+                <p id="links"><a href="javascript:void(0);" id="open_ps_center"></a></p>
+            </div><!--widget-dialog worn显示提示信息 end/-->
+            <!--widget-dialog worn点击如何获得大师分打开flash大师分弹窗-->
+                        <div id="open_flv_master" class="widget-dialog">
+                            <a href="javascript:void('close');" class="close" hidefocus style=" margin: -6px -6px 0 0"></a>
+                            <div class="show_info"><p id="worn_ms_info"></p></div>
+                            <p id="flv_master"></p>
+                        </div><!--widget-dialog worn点击如何获得大师分打开flash大师分弹窗 end/-->
+            <!--widget-dialog worn显示提示信息-->
+                        <div id="show_pay_charms" class="widget-dialog">
+                            <a href="javascript:void('close');" class="close" hidefocus style=" margin: -6px -6px 0 0"></a>
+                            <div class="show_info"><p id="worn_pay_chram"></p></div>
+                            <p id="to_charms"><a href="javascript:void(0);" id="open_ps_charm"></a></p>
+            </div><!--widget-dialog worn显示提示信息 end/-->
+          </div>
+     </div>
+     <div class="shop_b_bg"></div>
+</div>
+<script type="text/javascript" src="../js/our.js"></script>
+<script type="text/javascript" src="../js/tabpanel.js"></script>
+<script type="text/javascript" src="../js/dialog.js"></script>
+<script type="text/javascript" src="js/shop.js?v=2.2.7.1"></script>
+</body>
+</html>

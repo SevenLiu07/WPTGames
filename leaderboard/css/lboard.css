@@ -1,0 +1,61 @@
+ /*请浮动*/
+.close{z-index:1;}
+.clear:after{
+  display:block;
+  content:"clear";
+  height:0;
+  clear:both;
+  overflow:hidden;
+  visibility:hidden;}
+.clear{zoom:1;}
+a{text-decoration:none;}
+/*LeaderBoard*/
+.lboard{width: 646px; font: 12px/30px Verdana, Helvetica, Arial, "Microsoft YaHei", SimSun, sans-serif; position: relative;}
+.lboard .close,.widget-dialog .close{position: absolute; right: 0; top: 0; width: 45px; height: 45px; background:url(../image/icons.png) no-repeat -559px 1px;}
+.lboard .close:hover,.widget-dialog .close:hover{ background:url(../image/icons.png) no-repeat -559px -42px;}
+.lboard .close:active,.widget-dialog .close:active{ background:url(../image/icons.png) no-repeat -559px -85px;}
+.ld_t_bg{ background:url(../image/lb_top.png) no-repeat; width:646px; height:119px;}
+.ld_c_bg{ background:url(../image/lb_con_bg.png) no-repeat; width:556px; height:452px; padding: 0 45px;}
+/*选项卡*/
+div.widget-tabpanel { width:556px;}
+div.widget-tabpanel .tabs { width: 400px; height: 35px; list-style: none; padding: 0;}
+div.widget-tabpanel .tab{ float: left; border-bottom: none; cursor:pointer;}
+.top_div{width:556px;height:35px;}
+#tab1{float: left; width:135px; height: 35px; display:block; background:url(../image/icons.png) no-repeat 0 0;}
+#tab2{float: left; width:132px; height: 35px; display:block; background:url(../image/icons.png) no-repeat -136px 0;}
+#tab3{float: left; width:130px; height: 35px; display:block; background:url(../image/icons.png) no-repeat -272px 0;}
+#tab1.active,#tab1.active:hover{width:135px; background:url(../image/icons.png) no-repeat 0 -39px;}
+#tab2.active,#tab2.active:hover{width:132px; background:url(../image/icons.png) no-repeat -136px -39px;}
+#tab3.active,#tab3.active:hover{width:130px; background:url(../image/icons.png) no-repeat -272px -39px;}
+/*FRIENDS ONLY*/
+.friends{ width: 153px; height: 35px;}
+.checkbox{ width: 27px; height: 28px; float: left; margin-top: 5px;background:url(../image/icons.png) no-repeat -546px 0;margin-right:5px;}
+.checkbox:hover{ width: 27px; height: 28px; background:url(../image/icons.png) no-repeat -573px 0;}
+#check_btn{width:27px;height:28px;display:block;}
+.onlyFriend{background:url(../image/icons.png) no-repeat -546px -30px;}
+.frd{ width: 97px; height: 28px; background:url(../image/friend.png) no-repeat 0 10px; float: left;margin-right:3px;}
+.Leaderboard_History{float:left;width:21px;height:38px;background:url(../image/shuoming.png) no-repeat center center;}
+.Leaderboard_History:hover{background:url(../image/shuoming_hover.png) no-repeat center center;}
+.Leaderboard_History:active{background:url(../image/shuoming_active.png) no-repeat center center;}
+/*panels 出现滚动条区域*/
+/*.panelsul{ height: 400px; overflow-y: auto;position:relative;}*/
+.panel{ width:556px; padding: 8px 0 0 0;}
+.panelsul{ height: 353px; overflow-y: auto;position:relative;}
+.panelsul::-webkit-scrollbar { width:10px; height:10px;}
+.panelsul::-webkit-scrollbar-button{ background-color:#808080;  border-radius:4px; }
+.panelsul::-webkit-scrollbar-track{ background:#05214e; }
+.panelsul::-webkit-scrollbar-thumb{ background:#b4b4b4; border-radius:4px; }
+.panelsul::-webkit-scrollbar-corner{ background:#82AFFF; }
+.panelsul::-webkit-scrollbar-resizer{ background:#FF0BEE; }
+.lb_title{ background:url(../image/tit_bg.png) center top no-repeat; width: 556px; height: 35px; line-height: 35px; margin-bottom: 5px;}
+.lb_title a{ line-height:34px; font-size:18px; color:#fff; float:left; text-shadow: 2px 2px 2px #073661;}
+.lb_title .tit_rank{width:120px;text-align:center;height:35px;}
+.panelsul .tit_rank{width:115px;text-align:center;height:46px;;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;margin-right:5px}
+.role{ background:url(../image/role.png) right top no-repeat;height:36px;}
+.lb_title .tit_player{font-size:18px;width:200px;text-align:center;}
+.panelsul .tit_player1{float:left;color:#fff;line-height:46px;font-size:18px;width:200px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-align:left;margin-right:10px;cursor:pointer;}
+.panelsul .tit_num{width:200px;text-align:left;text-overflow: ellipsis;white-space: nowrap;overflow:hidden;float:left;}
+/*排行榜列表*/
+.panelsul li{ background:url(../image/li_bg.png) no-repeat; width: 538px; height: 46px; line-height: 46px; margin-bottom: 5px; }
+.panelsul li span{ color: #fff; line-height:46px; font-size: 18px; float:left;}
+.fll{ float: left;}.flr{ float:right;}

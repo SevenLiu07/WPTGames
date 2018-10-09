@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>404</title>
+    <link href="/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/css/error.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+   <div class="error" id="errorwh">
+       <div class="img">
+          <img id="aa" src="/image/404-2.png" alt=""/>
+          <div class="text"><a href="javascript:void(0);" id="homePage"></a></div>
+       </div>
+   </div>
+   <script>
+   var http_type = location.protocol + '//';
+   var baseUrl = http_type + location.host + '/';
+   var getHost = window.location.host.split('.');
+   function setAttribute(o, a, v) {
+     if (typeof o != 'object' || typeof a != 'string') {
+       return;
+     }
+     a == 'class' ? o.className = v : o.setAttribute(a, v);
+   }
+   var url = "";
+   if (location.href.indexOf('staging') !== -1) {
+     url = http_type + "staging-games." + getHost[1] + ".com/";
+   } else {
+     url = http_type + "games." + getHost[1] + ".com/";
+   }
+   var homePage = document.getElementById("homePage");
+   setAttribute(homePage, "href", url);
+   </script>
+</body>
+</html>

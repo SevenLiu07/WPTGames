@@ -1,0 +1,200 @@
+<div ms-controller="inventory" class="widget-dialog ms-controller inventory QA_myInventory" ms-widget="dialog,show_inventory,openDialog">
+    <!--nav-->
+    <div class="nav">
+        <ul>
+            <li ms-repeat="baseData"  ms-class="now:navIndex===$index"  ms-click="tabClick($index,el)">
+                <span class="inventory_01" ms-class="{{el}}"></span>
+            </li>
+        </ul>
+    </div>
+    <!--main-->
+    <div class="clear"></div>
+    <!--items-->
+    <!-- <div id="items" class="corner_bg content" ms-visible="items">
+          <div class="corner_con">
+              <div class="column_con">
+                  <div class="scroll-pane">
+                      <ul>
+                          <li ms-repeat="itemsData" >
+                              <img ms-src="el.url">
+                              <span class="text"><em class="red">{{el.number}}</em><em>{{el.name}}</em></span>
+                              <span class="inventory_01 button"></span>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="get_button">
+                  <span class="inventory_02 btn" ms-click="showStore('other')"></span>
+              </div>
+          </div>
+      </div>-->
+    <!--tickets-->
+    <div id="tickets" class="corner_bg" ms-visible="tickets">
+        <div class="content corner_con">
+            <div class="column_con">
+                <div class="title">
+                    <span class="name">Name</span>
+                    <span class="amount">Amount</span>
+                    <span class="exp_date">Expiration date</span>
+                </div>
+                <div class="scroll-pane">
+                    <ul>
+                        <li ms-repeat="ticketsData" >
+                            <span class="inventory_01 button"></span>
+                                  <span class="name">
+                                     <em class="inventory_01 btn"></em><a ms-title="el.name">{{el.name}}</a>
+                                 </span>
+                            <span class="amount">{{el.number}}</span>
+                            <span class="exp_date">{{el.validTime}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="get_button btn_padding">
+                <span class="inventory_02 tourmode" ms-click="tourmode()"></span>
+                <span class="inventory_02 btn" ms-click="tournaments()"></span>
+            </div>
+        </div>
+    </div>
+    <!--emojis-->
+    <div id="emojis"  class="corner_bg charms_avatars" ms-visible="emojis">
+        <div class="left">
+            <div class="corner_con">
+                <div class="content column_con">
+                    <div class="top">
+                        <div class="light"
+                             ms-class="zhaocaimao:curSmallCharmGoodsCode==='41001'"
+                             ms-class-1="yueya:curSmallCharmGoodsCode==='41002'"    ms-class-2="tuzijiao:curSmallCharmGoodsCode==='41003'"
+                             ms-class-3="siyecao:curSmallCharmGoodsCode==='41004'"  ms-class-4="heitao:curSmallCharmGoodsCode==='41005'">
+                            <div class="items">
+                                <img ms-src="{{smallCharmUrl}}">
+                            </div>
+                            <div class="avatars">
+                                <img ms-src="{{bigAvatarUrl}}">
+                            </div>
+                            <div class="select_avatars">
+                                <img ms-src="{{bigEmojisUrl}}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom"></div>
+                </div>
+                <div class="get_button">
+                    <span class="inventory_02 btn" ms-click="showStore('emojis')"></span>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="corner_con">
+                <div class="title">
+                    <a href="javascript:void(0)" class="inventory_01 emojis_01 now" ms-class="now:currentEmojisClass==='emojis_01'" ms-click="tabEmojis('emojis_01')"></a>
+                    <a href="javascript:void(0)" class="inventory_01 emojis_02"  ms-visible="showEmojisBtn02"  ms-class="now:currentEmojisClass==='emojis_02'" ms-click="tabEmojis('emojis_02')"></a>
+                </div>
+                <div class="column_con">
+                    <div class="scroll-pane">
+                        <ul ms-visible="showEmojis01">
+                            <li ms-repeat="emojisData01" class="inventory_01"  >
+                                           <span class="img" ms-click="clickEmojis01($index)">
+                                               <img ms-src="el.SmallEmojisUrl">
+                                           </span>
+                            </li>
+                        </ul>
+                        <ul ms-visible="showEmojis02">
+                            <li ms-repeat="emojisData02" class="inventory_01"  >
+                                           <span class="img" ms-click="clickEmojis02($index)">
+                                               <img ms-src="el.SmallEmojisUrl">
+                                           </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--charms-->
+    <div id="charms"  class="corner_bg charms_avatars"  ms-visible="charms">
+        <div class="left">
+            <div class="corner_con">
+                <div class="content column_con">
+                    <div class="top">
+                        <div class="light"
+                             ms-class="zhaocaimao:curSmallCharmGoodsCode==='41001'"
+                             ms-class-1="yueya:curSmallCharmGoodsCode==='41002'"    ms-class-2="tuzijiao:curSmallCharmGoodsCode==='41003'"
+                             ms-class-3="siyecao:curSmallCharmGoodsCode==='41004'"  ms-class-4="heitao:curSmallCharmGoodsCode==='41005'">
+                            <div class="items">
+                                <img  ms-src="{{smallCharmUrl}}">
+                            </div>
+                            <div class="avatars">
+                                <img  ms-src="{{bigAvatarUrl}}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom"></div>
+                </div>
+                <div class="get_button">
+                    <span class="inventory_02 btn" ms-click="showStore('charms')"></span>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="corner_con">
+                <div class="title">PLEASE SELECT A CHARM</div>
+                <div class="column_con">
+                    <div class="scroll-pane">
+                        <ul>
+                            <li ms-repeat="charmsData" class="inventory_01" ms-class="now:charmDataIndex===$index"  ms-click="clickCharm($index)">
+                                           <span class="img">
+                                               <img ms-src="el.largeUrl">
+                                           </span>
+                                <span class="now" ms-visible="el.currentCharms" ></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--avatars-->
+    <div id="avatars"  class="corner_bg charms_avatars" ms-visible="avatars">
+        <div class="left">
+            <div class="corner_con">
+                <div class="content column_con">
+                    <div class="top">
+                        <div class="light"
+                             ms-class="zhaocaimao:curSmallCharmGoodsCode==='41001'"
+                             ms-class-1="yueya:curSmallCharmGoodsCode==='41002'"    ms-class-2="tuzijiao:curSmallCharmGoodsCode==='41003'"
+                             ms-class-3="siyecao:curSmallCharmGoodsCode==='41004'"  ms-class-4="heitao:curSmallCharmGoodsCode==='41005'">
+                            <div class="items">
+                                <img  ms-src="{{smallCharmUrl}}">
+                            </div>
+                            <div class="avatars">
+                                <img  ms-src="{{bigAvatarUrl}}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom"></div>
+                </div>
+                <div class="get_button">
+                    <span class="inventory_02 btn" ms-click="showStore('avatars')"></span>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="corner_con">
+                <div class="title" ms-click="_confirm">PLEASE SELECT AN AVATAR</div>
+                <div class="column_con">
+                    <div class="scroll-pane">
+                        <ul>
+                            <li ms-repeat="avatarsData" class="inventory_01"     ms-click="clickAvatars($index)">
+                                           <span class="img">
+                                               <img ms-src="el.BigAvatarUrl">
+                                           </span>
+                                <span class="now" ms-visible="el.currentAvatars" ></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

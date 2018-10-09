@@ -1,0 +1,282 @@
+<div ms-controller="promotion"    class="widget-dialog ms-controller QA_redeem" ms-widget="dialog,show_promotion,openDialog">
+    <div class="popup popup_small">
+        <div class="top_pop">
+            <div class="top_leftbg fll"></div>
+            <div class="top_centbg top_centbg_small fll">
+                <div class="title title_small">
+                    <div class="title_leftbg">
+                        <div class="title_rightbg">
+                            <div class="title_name title_code"></div>
+                            <!--样式保留title_name-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top_rightbg fll">
+                <div class="close_btns flr" ms-click="_close"><a href="javascript:void(0)"></a></div>
+            </div>
+        </div><!--/end top_pop弹窗头部-->
+        <div class="pop_con_rightbg">
+            <div class="pop_con">
+                <!--exchange promotion code popups-->
+                <div class="cont">
+                            <div class="tip_cont">
+                                <div class="tip">Enter Your Code</div>
+                                <div class="ipt_code">
+                                    <input id="code_num" type="text"/>
+                                </div>
+                            </div>
+                </div>
+                <div class="btn_code">
+                    <a href="javascript:void(0); "  ms-click="submit_btn()"></a>
+                </div>
+                <div class="btn_collect" ms-visible="messageOtherInfo" >
+                    <a href="javascript:void(0); "></a>
+                </div>
+                <!--促销倒计时福利-->
+            </div>
+        </div>
+    </div><!--/end pop_con_rightbg弹窗内容部分-->
+    <div class="bottom_pop">
+        <div class="bot_leftbg fll"></div>
+        <div class="bot_centbg bot_centbg_small fll"></div>
+        <div class="bot_rightbg fll"></div>
+    </div>
+    <!-- exchange promotion code successful popups-->
+    <div  id="show-area"  class="widget-dialog" ms-widget="dialog,show_reddommSuc,openDialog" ms-visible="megsuccessIfo" >
+        <div class="popup popup_small">
+            <div class="top_pop">
+                <div class="top_leftbg fll"></div>
+                <div class="top_centbg top_centbg_small fll">
+                    <div class="title title_small">
+                        <div class="title_leftbg">
+                            <div class="title_rightbg">
+                                <div class="title_name title_success"></div>
+                                <!--样式保留title_name-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="top_rightbg fll">
+                    <div class="close_btns flr" ms-click="get_award"><a href="javascript:void(0)"></a></div>
+                </div>
+            </div><!--/end top_pop弹窗头部-->
+            <div class="pop_con_rightbg">
+                <div class="pop_con">
+                        <div id="button-left"></div>
+                        <div id="button-right"></div>
+                        <div class="slider-main ">
+                            <ul id="width_ul" >
+                                <!--gold-->
+                                <li class="slider-panel" ms-repeat="GoldData" >
+                                    <div class="nav_comment">
+                                        <p class="tital_con">YOU GET  <span class="txt_gold" >{{el.AwardLst}} {{el.Name}}</span></p>
+                                        <div class="con_commom">
+                                            <div class="stand_comm">
+                                                <div class="slider-nav">
+                                                    <div class="slider-item">
+                                                        <span id="coun_number"></span>
+                                                        <span class="staic_numb"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="one_img">
+                                                <img src="/wpt/www/module/promotion/images/1.png"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!--ticket-->
+                                <li class="slider-panel" ms-repeat="TicketData" >
+                                    <div class="nav_comment">
+                                        <p class="tital_con">YOU GET A TICKET :  <span class="txt_gold" >{{ticket}}</span></p>
+                                        <div class="con_commom">
+                                            <div class="stand_comm">
+                                                <div class="slider-nav">
+                                                    <div class="slider-item">
+                                                        <span id="coun_number"></span>
+                                                        <span class="staic_numb"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="one_img">
+                                                <img ms-src="{{el}}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!--avatar-->
+                                <li class="slider-panel" ms-repeat="AwardaData">
+                                    <div class="nav_comment3">
+                                        <p class="tital_con">YOU GET AN AVATAR<!-- :   <span class="txt_gold" >{{awards}}</span>--></p>
+                                    </div>
+                                    <div class="con_commom3">
+                                        <div class="one_img3">
+                                            <img ms-src="{{el}}">
+                                        </div>
+                                    </div>
+                                    <div class="stand_comm3">
+                                        <div class="slider-nav">
+                                            <div class="slider-item">
+                                                <span id="coun_number"></span>
+                                                <span class="staic_numb"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    <div class="btn_collect"><a href="javascript:void(0);" ms-click="get_award"></a></div>
+                </div>
+            </div>
+        </div><!--/end pop_con_rightbg弹窗内容部分-->
+        <div class="bottom_pop">
+            <div class="bot_leftbg fll"></div>
+            <div class="bot_centbg bot_centbg_small fll"></div>
+            <div class="bot_rightbg fll"></div>
+        </div>
+    </div>
+  <!--error popups-->
+    <div class="widget-dialog" ms-widget="dialog,show_reddommNotice,openDialog" >
+        <div class="popup popup_small">
+            <div class="top_pop">
+                <div class="top_leftbg fll"></div>
+                <div class="top_centbg top_centbg_small fll">
+                    <div class="title title_small">
+                        <div class="title_leftbg">
+                            <div class="title_rightbg">
+                                <div class="title_name title_notice"></div>
+                                <!--样式保留title_name-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="top_rightbg fll">
+                    <div class="close_btns flr" ms-click="get_award_link"><a href="javascript:void(0)"></a></div>
+                </div>
+            </div><!--/end top_pop弹窗头部-->
+            <div class="pop_con_rightbg">
+                <div class="pop_con">
+                    <div class="slider-notice">{{message}}</div>
+                </div>
+            </div>
+        </div><!--/end pop_con_rightbg弹窗内容部分-->
+        <div class="bottom_pop">
+            <div class="bot_leftbg fll"></div>
+            <div class="bot_centbg bot_centbg_small fll"></div>
+            <div class="bot_rightbg fll"></div>
+        </div>
+    </div>
+    <!--limited time promotion-->
+    <div class="widget-dialog" ms-widget="dialog,show_timedPromotion,openTimedPromotionDialog" >
+        <div class="timed_promotion" ms-class="timed_promotion_buy:hideBuyPicHref===false">
+            <div class="close_btn" ms-click="_close"></div>
+            <div class="content" ms-visible="hideBuyPicHref">
+                <div class="timed_promotion_icon title" ms-class="up_your_game:upGame===true" ms-class-1="one_day_sale:oneDaySale===true"></div>
+                <div class="message" ms-class="up_game_msg:upGame===true" ms-html="timedPromotionMsg" >
+                    {{timedPromotionMsg}}
+                </div>
+                <div class="price" ms-visible="showTimedPromotionPrice">
+                    <span class="border"></span> <em>${{timedPromotionPrice}}</em> <span class="border"></span>
+                </div>
+                <div ms-visible="showTimedPromotionBtn" class="timed_promotion_icon btn buy_red" ms-class="store_blue:timedPromotionBtn=='store_blue'" ms-click="buy"></div>
+            </div>
+            <img ms-src="buyPicHref" ms-visible="!hideBuyPicHref" ms-click="buy">
+            <div class="time" ms-visible="!hideBuyPicHref" ms-click="buy">
+                <span class="hour">{{countHour}}</span>
+                <span class="min">{{countMin}}</span>
+            </div>
+        </div>
+        <div class="gray_bg" id="loadingPromotion" >
+            <div class="ld_shadow">
+                <div class="loading"><p>LOADING...</p><span class="image"></span></div>
+            </div>
+        </div>
+    </div>
+    <!--limited time promotion 2-->
+    <div class="widget-dialog" ms-widget="dialog,show_timedPromotion_02,openTimedPromotion2Dialog" >
+        <div class="timed_promotion" ms-class="timed_promotion_buy_02">
+            <div class="close_btn close_btn_02" ms-click="_close"></div>
+            <img ms-src="buyPicHref"  ms-click="buy">
+            <div class="time"  ms-click="buy" style="display: none;">
+                <span class="hour">{{countHour}}</span>
+                <span class="min">{{countMin}}</span>
+            </div>
+        </div>
+    </div>
+    <!--limited time promotion 3-->
+    <div class="widget-dialog QA_shark" ms-widget="dialog,show_timedPromotion_03,openTimedPromotion3Dialog" >
+        <div class="timed_promotion" ms-class="timed_promotion_buy_03">
+            <a class="timer_pro_icon close_btn close_btn_03" ms-click="_close" href="javascript:void(0)"></a>
+            <img ms-src="buyPicHref"  >
+            <a class="btn" ms-click="buy" href="javascript:void(0)"></a>
+        </div>
+    </div>
+    <!--limited time promotion 4 -->
+    <div class="widget-dialog QA_types" ms-widget="dialog,show_timedPromotion_04,openTimedPromotion4Dialog" >
+        <div class="timed_promotion" ms-class="timed_promotion_buy_04" >
+            <a class="close_btn close_btn_04" ms-click="_close" href="javascript:void(0)"></a>
+            <img ms-src="buyPicHref" ms-click="buy" >
+        </div>
+    </div>
+    <!--limited time promotion 5 -->
+    <div class="widget-dialog QA_dog" ms-widget="dialog,show_timedPromotion_05,openTimedPromotion5Dialog" >
+        <div class="timed_promotion" ms-class="timed_promotion_buy_05" >
+            <a class="close_btn close_btn_05" ms-click="_close" href="javascript:void(0)"></a>
+            <img ms-src="buyPicHref" ms-click="buy" >
+        </div>
+    </div>
+    <!--successful purchase-->
+    <div class="widget-dialog" ms-widget="dialog,show_timedPromotionSuc,openTimedPromotionSucDialog" >
+        <div class="timed_promotion">
+            <div class="close_btn" ms-click="_close"></div>
+            <div class="content">
+                <div class="timed_promotion_icon title"></div>
+                <div class="message"  >
+                    <span>You have aleady taken this promotion</span>
+                </div>
+                <div ms-visible="showTimedPromotionBtn" class="timed_promotion_icon btn store_blue"  ms-click="buy"></div>
+            </div>
+        </div>
+        <div class="gray_bg" id="loadingPromotion" >
+            <div class="ld_shadow">
+                <div class="loading"><p>LOADING...</p><span class="image"></span></div>
+            </div>
+        </div>
+    </div>
+    <!--upgrade promotion-->
+    <div class="widget-dialog" ms-widget="dialog,show_timedPromotionUpGame,openPromotionUpGameDialog" >
+        <div class="timed_promotion">
+            <div class="close_btn" ms-click="_close"></div>
+            <div class="content">
+                <div class="timed_promotion_icon title upGame" ms-class="up_your_game:upGame===true" ms-class-1="one_day_sale:oneDaySale===true"></div>
+                <div class="message" ms-class="up_game_msg:upGame===true" ms-html="timedPromotionMsg" >
+                    {{timedPromotionMsg}}
+                </div>
+                <div class="price" ms-visible="showTimedPromotionPrice">
+                    <span class="border"></span> <em>${{timedPromotionPrice}}</em> <span class="border"></span>
+                </div>
+                <div ms-visible="showTimedPromotionBtn" class="timed_promotion_icon btn buy_red" ms-class="store_blue:timedPromotionBtn=='store_blue'" ms-click="buy"></div>
+            </div>
+        </div>
+        <div class="gray_bg" id="loadingPromotion" >
+            <div class="ld_shadow">
+                <div class="loading"><p>LOADING...</p><span class="image"></span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

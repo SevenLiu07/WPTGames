@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Play free poker online with the PlayWPT casino game. The most authentic texas holdem poker play online!" />
+    <meta name="keywords" content="poker,texas holdem,online poker,online casino,free poker,poker games,free texas holdem,free online poker,play wpt, wpt" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>PLAYWPT</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../../common/css/base.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../module/facebook/css/horserace.css" />
+    <script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js" ></script>
+</head>
+<body>
+
+<div class="horserace bg" ms-controller="horserace">
+   <div class="list">
+       <div class="">
+           <span>邀请者：</span>
+           <span id="inviterUserName">{{inviterUserName}}</span>
+       </div>
+       <ul>
+           <li ms-repeat="baseData"  ms-class="now:numIndex===$index"  ms-click="numClick($index,el)">
+               {{el}}
+           </li>
+       </ul>
+   </div>
+   <div class="button" ms-click="share">Share</div>
+</div>
+
+
+
+<!-- Google Analytics -->
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    /*统计对象*/
+    window.conversionLabels = {
+        as:"iIUfCJqZ7G0QzISpnAM",//Avatar selected
+        ue:"QXcECK7C0m0QzISpnAM",//Username entered
+        fb:"BsikCKvC0m0QzISpnAM",//Registration w/ Facebook
+        em:"rvKdCMzw5m0QzISpnAM" //Registration w/ Email Address
+    };
+</script>
+<script type="text/javascript" src="../../common/widget/avalon.js"></script>
+<script type="text/javascript" src="../../common/js/play-common.js"></script>
+<script type="text/javascript" src="../../module/facebook/js/horserace.js" ></script>
+<!-- End Google Analytics -->
+<script type="text/javascript" src="https://static.playwpt.com/www/scripts/google_tg.js" async></script><!--google统计-->
+<script type="text/javascript" src="https://www.googleadservices.com/pagead/conversion_async.js" charset="utf-8"  async></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+.ms-controller,.ms-important,[ms-controller],[ms-important]{
+    visibility: hidden;
+}
+.title_account{ background: url("/wpt/www/module/person/images/account.png") 0 30px no-repeat; width:254px;}
+.title_validate{ background: url("/wpt/www/module/person/images/validate.png") 0 30px no-repeat; width:325px;}
+.title_pwd{ background: url("/wpt/www/module/person/images/pwd.png") 0 30px no-repeat; width:357px;}
+.scroll_con{ min-height: 612px;}/*corner_bg 中含有padding：3px; so 619减去6px再减去1px的border*/
+.small_pop_con{ min-height: 295px;}/*小弹窗内容部分*/
+.small_pop_con p{ font-size: 30px; color: #aab3ed; line-height: 36px;}
+/*按钮*/
+.btn_validate,.btn_pwd{ width: 219px; height: 68px; margin: 10px auto 0 auto;}
+.btn_validate a,.btn_pwd a{ width: 219px; height: 68px; display: block;}
+.btn_validate a{ background:url(/wpt/www/module/person/images/icons.png) no-repeat 0 0;}
+.btn_validate a:hover{ background-position: -219px 0;}
+.btn_validate a:active{ background-position: -440px 0;}
+
+.btn_pwd a{ background:url(/wpt/www/module/person/images/icons.png) no-repeat 0 -70px;}
+.btn_pwd a:hover{ background-position: -219px -70px;}
+.btn_pwd a:active{ background-position: -440px -70px;}
+
+.show_txt{ padding: 18px 20px;}
+.show_txt p{ width: 40%; font-size: 30px; line-height: 47px;}
+.show_txt .change_input{ width: 50%; height: 47px; line-height: 47px; font-size: 30px; padding: 0 10px !important; background: #fff; border-radius: 4px; margin: 0 0 0 5px;}
+
+.info_width{ width:auto; padding: 6px ; margin-bottom: 3px;}
+ .column_title{ font-size: 23px; line-height: 30px; height: 30px; padding-bottom: 4px; font-weight: bold; color: #fff;}
+ .no_margin{ margin: 0 !important;}
+ .show_infos{ padding: 0;}
+  .show_infos ul li{ height: auto; min-height: 46px; line-height: 46px; padding: 0 10px; font-size: 24px;}
+  .show_infos ul li:nth-child(even){ background: #0c1017;}/*odd:奇数*/
+  .show_infos ul li p{ width: 28%; line-height: 45px; color: #9ea5b1;}
+  .show_infos ul li .infos{ width: 46%; color: #fff;}
+  .show_infos ul li .change_input{ width: 43%; height: 37px; line-height: 37px; padding: 0 10px !important; background: #fff; border-radius: 4px; margin-top: 4px;}
+  .show_infos ul li .input_other{ width: 18%; height: 37px; line-height: 37px; padding: 0 10px !important; background: #fff; border-radius: 4px; margin: 4px 0 0 5px;}
+  .show_infos ul li .sel_country{ width: 45%; height: 37px; line-height: 37px; padding: 0 !important; background: #fff; border-radius: 4px; margin-top: 4px;}
+  .show_infos ul li a{ color: #58c2ff; text-decoration: underline; font-size: 20px; float: right;}
+  .erro{ color: #ff4f4f; font-size: 18px; line-height: 20px !important; text-align: center;}
+.bg_gary{ background: #0c1017;}
+.fll{ float: left;}.flr{ float: right;}.pads{ padding: 20px;}

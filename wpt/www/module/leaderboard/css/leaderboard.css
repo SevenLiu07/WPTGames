@@ -1,0 +1,51 @@
+.lboard-dialog .top-pop .title{display: none}
+.lboard-dialog .oni-dialog-inner{margin-top: 35px;}
+.leaderboard{position: relative}
+.leaderboard .top{background: url("/wpt/www/module/leaderboard/images/top.png") center bottom no-repeat;position: absolute;left: 338px;top: -245px;z-index: -1;width: 311px;height: 182px;}
+.leaderboard .top-bar{position: absolute;top: -67px;left: 4px;}
+.sprites{ background:url("/wpt/www/module/leaderboard/images/icons.png") no-repeat;}
+.lb-con{}
+.tabs { height: 44px; list-style: none; padding: 0;}
+.tabs li{ width: 192px; height: 44px; overflow: hidden; list-style: none; padding: 0; float: left;}
+.tabs ul li a{ width:192px; height: 44px; display:block; float: left;}
+.tabs ul li .handswon{ background-position:0 -55px;}
+.tabs ul li .biggest{ background-position:-204px -55px;}
+.tabs ul li .mostchips{ background-position:-408px -55px;}
+.tabs ul li .handswon:hover{ background-position:0 0;}
+.tabs ul li .biggest:hover{ background-position:-204px 0;}
+.tabs ul li .mostchips:hover{ background-position:-408px 0;}
+.tabs ul .current .handswon,.tabs ul .current .handswon:hover{ background-position:0 -110px;}
+.tabs ul .current .biggest,.tabs ul .current .biggest:hover{ background-position:-205px -110px;}
+.tabs ul .current .mostchips,.tabs ul .current .mostchips:hover{ background-position:-409px -110px;}
+/*FRIENDS ONLY*/
+.friends{ width: 220px; height: 40px;}
+.fd-only{ width: 35px; height: 35px; display: block; background-position:-354px -166px; float: left;}
+.fd-only-check{ width: 35px; height: 35px; background-position:0 -166px; float: left;}
+.fd-only-check a,.fd-only a{ width: 35px; height: 35px; display: block;}
+.frd{ height: 40px; float: left; font-size: 22px; color:#848ab9; line-height: 40px;}
+.doubts{ width: 38px; height: 38px; background-position:0 -293px; float: right;}
+.doubts:hover{ width: 38px; height: 38px; background-position:0 -248px;}
+.doubts:active{ width: 38px; height: 38px; background-position:0 -338px;}
+/*panels 出现滚动条区域*/
+.leaderboard .scroll-pane{ overflow: hidden; height: 460px;}
+.leaderboard .panels{ height: 460px; width: 954px; position:relative; overflow: hidden;}
+.leaderboard .panel{ width:auto;}
+.icon-me{ background-position:0 -196px;}
+.lb-title{ background:url("/wpt/www/module/leaderboard/images/tit_bg.gif") center top repeat-x; height: 41px;}
+.lb-title a{ line-height:41px; font-size:21px; color:#9ea5b1; float:left; text-shadow: 2px 2px 2px #073661; display: block; cursor: pointer;}
+.tit-rank{ width: 205px; text-align: center;} .role{ background:url("/wpt/www/module/leaderboard/images/role.gif") right top no-repeat; height: 41px;}
+.tit-player{ width: 310px; text-align: center;}
+/*排行榜列表*/
+.leaderboard .panel ul{display: block;}
+.leaderboard .panel ul li{ background: #07090d; height: 54px; line-height: 54px; overflow: hidden;}/*odd:奇数*/
+.leaderboard .panel ul li:nth-child(even){ background: #0c1017; height: 54px; line-height: 54px; overflow: hidden;}/*odd:奇数*/
+.leaderboard .panel ul li .one{ background:url("/wpt/www/module/leaderboard/images/icons.png") no-repeat -558px -158px;}
+.leaderboard .panel ul li .two{ background:url("/wpt/www/module/leaderboard/images/icons.png") no-repeat -558px -215px;}
+.leaderboard .panel ul li .three{ background:url("/wpt/www/module/leaderboard/images/icons.png") no-repeat -558px -269px;}
+.leaderboard .panel ul li div{ color: #fff; line-height:54px; font-size: 18px; float:left;}
+.leaderboard .panel ul li span{ position: absolute; margin-left: 77px; display: block; width: 40px; height: 53px;}
+.leaderboard .panel ul li .icon-gold{ background-position:0 -383px; display: block; padding-left: 60px; width: 330px; text-align: left;}
+.leaderboard .panel ul li .icon-poker{ background-position:0 -432px; display: block; padding-left: 60px; width: 330px; text-align: left;}
+.leaderboard .panel ul li img{ width: 30px; margin-top: 8px;}
+.pad-tb{ padding: 8px 0;} .marg-top{ margin-top: 8px;}
+.leaderb_top{ background:url("/wpt/www/module/leaderboard/images/lboard_bar.png") no-repeat; width: 913px; height: 55px;}
